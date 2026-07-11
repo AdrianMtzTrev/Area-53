@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://bsqy3lhrn4y6a"]
+[gd_scene format=3 uid="uid://bsqy3lhrn4y6a"]
 
-[ext_resource type="Script" uid="uid://bpclntlnn2jme" path="res://UI/scripts/ui_frecuencia.gd" id="1_cbvv6"]
+[ext_resource type="Script" uid="uid://b8kcmsai4bdr6" path="res://UI/scripts/ui_frecuencia.gd" id="1_cbvv6"]
 [ext_resource type="FontFile" uid="uid://djnjkc6l5drdk" path="res://Fuentes/VT323-Regular.ttf" id="1_mfb48"]
+[ext_resource type="Shader" uid="uid://ckr4oecpfrgc2" path="res://Shaders/Glitch_Consolas.gdshader" id="3_mtkey"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vvr5o"]
 border_width_left = 2
@@ -13,10 +14,17 @@ corner_radius_top_right = 10
 corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
 
-[node name="UI_Frecuencia" type="CanvasLayer"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_cbvv6"]
+shader = ExtResource("3_mtkey")
+shader_parameter/curvature = 4.0
+shader_parameter/scanline_count = 120.0
+shader_parameter/scanline_intensity = 0.05
+shader_parameter/vignette_multiplier = 0.2
+
+[node name="UI_Frecuencia" type="CanvasLayer" unique_id=1324564595]
 script = ExtResource("1_cbvv6")
 
-[node name="MonitorMarco" type="Panel" parent="."]
+[node name="MonitorMarco" type="Panel" parent="." unique_id=425251283]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -30,7 +38,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_vvr5o")
 
-[node name="MarginContainer" type="MarginContainer" parent="MonitorMarco"]
+[node name="MarginContainer" type="MarginContainer" parent="MonitorMarco" unique_id=1143260220]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -42,15 +50,16 @@ theme_override_constants/margin_top = 15
 theme_override_constants/margin_right = 15
 theme_override_constants/margin_bottom = 15
 
-[node name="ColorRect" type="ColorRect" parent="MonitorMarco/MarginContainer"]
+[node name="ColorRect" type="ColorRect" parent="MonitorMarco/MarginContainer" unique_id=1723336439]
+clip_contents = true
 layout_mode = 2
 color = Color(0.078431375, 0.078431375, 0.078431375, 1)
 
-[node name="OndaSeñal" type="Line2D" parent="MonitorMarco/MarginContainer/ColorRect"]
+[node name="OndaSeñal" type="Line2D" parent="MonitorMarco/MarginContainer/ColorRect" unique_id=534316021]
 width = 3.0
 default_color = Color(0.43388975, 0.82237595, 0.35011828, 0.8392157)
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MonitorMarco/MarginContainer/ColorRect"]
+[node name="VBoxContainer" type="VBoxContainer" parent="MonitorMarco/MarginContainer/ColorRect" unique_id=1298329584]
 layout_mode = 1
 anchors_preset = 13
 anchor_left = 0.5
@@ -64,7 +73,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 44
 
-[node name="LabelObjetivo" type="Label" parent="MonitorMarco/MarginContainer/ColorRect/VBoxContainer"]
+[node name="LabelObjetivo" type="Label" parent="MonitorMarco/MarginContainer/ColorRect/VBoxContainer" unique_id=421823957]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.3541747, 0.60712075, 0.36677116, 1)
 theme_override_fonts/font = ExtResource("1_mfb48")
@@ -73,7 +82,7 @@ text = "Frecuencia Objetivo: 87.5 Mhz"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="LabelActual" type="Label" parent="MonitorMarco/MarginContainer/ColorRect/VBoxContainer"]
+[node name="LabelActual" type="Label" parent="MonitorMarco/MarginContainer/ColorRect/VBoxContainer" unique_id=2137894835]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.3541747, 0.60712075, 0.36677116, 1)
 theme_override_fonts/font = ExtResource("1_mfb48")
@@ -82,19 +91,21 @@ text = "Frecuencia Actua: 50.0 Mhz"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="HSlider" type="HSlider" parent="MonitorMarco/MarginContainer/ColorRect/VBoxContainer"]
+[node name="HSlider" type="HSlider" parent="MonitorMarco/MarginContainer/ColorRect/VBoxContainer" unique_id=281629065]
 layout_mode = 2
 
-[node name="Button" type="Button" parent="MonitorMarco/MarginContainer/ColorRect/VBoxContainer"]
+[node name="Button" type="Button" parent="MonitorMarco/MarginContainer/ColorRect/VBoxContainer" unique_id=340987876]
 layout_mode = 2
 size_flags_horizontal = 4
 text = "Sincronizar
 "
 
-[node name="FiltroCRT" type="ColorRect" parent="MonitorMarco/MarginContainer/ColorRect"]
+[node name="FiltroCRT" type="ColorRect" parent="MonitorMarco/MarginContainer/ColorRect" unique_id=922812860]
+material = SubResource("ShaderMaterial_cbvv6")
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2

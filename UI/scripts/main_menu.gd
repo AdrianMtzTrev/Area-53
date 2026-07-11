@@ -4,8 +4,7 @@ class_name Main_Menu
 
 
 func _on_start_bttn_pressed() -> void:
-	pass # Se elimina escena y se manda a la escena1
-	#get_tree().change_scene_to_file("res://...")
+	get_tree().change_scene_to_file("res://Scenes/escena_test.tscn")
 
 
 func _on_exit_bttn_pressed() -> void:

@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://bqamn4ldc1ssf" path="res://assets/textures/barren-ground-rock/barred_ground_rock_packed_albedo_height.png" id="1_p78ra"]
 [ext_resource type="Texture2D" uid="uid://bl706uthgiofo" path="res://assets/textures/barren-ground-rock/barren_ground_rock_packed_normal_roughness.png" id="2_y523t"]
+[ext_resource type="PackedScene" uid="uid://bc88qlep4jfmu" path="res://Player/player.tscn" id="3_y523t"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_64d8o"]
 sky_top_color = Color(0.11372549, 0.16470589, 0.2901961, 1)
@@ -15,16 +16,19 @@ sky_material = SubResource("ProceduralSkyMaterial_64d8o")
 background_mode = 2
 sky = SubResource("Sky_nhkl4")
 glow_enabled = true
-fog_enabled = true
 fog_light_color = Color(0.7647059, 0.60784316, 0.45882353, 1)
 fog_density = 0.0001
-fog_aerial_perspective = 0.7
+fog_aerial_perspective = 0.195
+fog_sky_affect = 0.7
+fog_depth_curve = 1.0717744
+fog_depth_end = 643.7
+volumetric_fog_density = 0.005
 
-[sub_resource type="Gradient" id="Gradient_p78ra"]
+[sub_resource type="Gradient" id="Gradient_y523t"]
 offsets = PackedFloat32Array(0.2, 1)
 colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
 
-[sub_resource type="FastNoiseLite" id="FastNoiseLite_y523t"]
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_w40sh"]
 noise_type = 2
 frequency = 0.03
 cellular_jitter = 3.0
@@ -36,47 +40,33 @@ domain_warp_fractal_type = 2
 domain_warp_fractal_lacunarity = 1.5
 domain_warp_fractal_gain = 1.0
 
-[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_w40sh"]
-noise = SubResource("FastNoiseLite_y523t")
-color_ramp = SubResource("Gradient_p78ra")
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_5fx24"]
+noise = SubResource("FastNoiseLite_w40sh")
+color_ramp = SubResource("Gradient_y523t")
 seamless = true
 
-[sub_resource type="Terrain3DMaterial" id="Terrain3DMaterial_5fx24"]
+[sub_resource type="Terrain3DMaterial" id="Terrain3DMaterial_ss4qg"]
 _shader_parameters = {
 &"bias_distance": null,
 &"blend_sharpness": null,
 &"depth_blur": null,
-&"dual_scale_far": 1.0000000475,
-&"dual_scale_near": 1.0000000475,
-&"dual_scale_reduction": 1.0,
-&"dual_scale_texture": 4,
 &"enable_macro_variation": null,
 &"enable_projection": null,
-&"flat_terrain_normals": false,
+&"flat_terrain_normals": null,
 &"macro_variation1": null,
 &"macro_variation2": null,
 &"macro_variation_slope": null,
 &"mipmap_bias": null,
 &"noise1_angle": null,
 &"noise1_offset": null,
-&"noise1_scale": 0.04,
+&"noise1_scale": null,
 &"noise2_scale": null,
-&"noise_texture": SubResource("NoiseTexture2D_w40sh"),
-&"projection_threshold": null,
-&"tri_scale_reduction": 0.10000000475000001,
-&"world_noise_fragment_normals": null,
-&"world_noise_height": null,
-&"world_noise_lod_distance": null,
-&"world_noise_max_octaves": null,
-&"world_noise_min_octaves": null,
-&"world_noise_offset": null,
-&"world_noise_region_blend": null,
-&"world_noise_scale": null
+&"noise_texture": SubResource("NoiseTexture2D_5fx24"),
+&"projection_threshold": null
 }
-world_background = 2
-dual_scaling = true
+world_background = 0
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_v0nnn"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5vpc2"]
 transparency = 4
 cull_mode = 2
 vertex_color_use_as_albedo = true
@@ -86,25 +76,22 @@ distance_fade_mode = 1
 distance_fade_min_distance = 128.0
 distance_fade_max_distance = 96.0
 
-[sub_resource type="Terrain3DMeshAsset" id="Terrain3DMeshAsset_5vpc2"]
+[sub_resource type="Terrain3DMeshAsset" id="Terrain3DMeshAsset_vdou1"]
 generated_type = 1
 height_offset = 0.5
-material_override = SubResource("StandardMaterial3D_v0nnn")
+material_override = SubResource("StandardMaterial3D_5vpc2")
 last_lod = 0
 last_shadow_lod = 0
 lod0_range = 128.0
 
-[sub_resource type="Terrain3DTextureAsset" id="Terrain3DTextureAsset_p78ra"]
+[sub_resource type="Terrain3DTextureAsset" id="Terrain3DTextureAsset_y523t"]
 name = "barred_ground_rock_packed_albedo_height"
 albedo_texture = ExtResource("1_p78ra")
 normal_texture = ExtResource("2_y523t")
-normal_depth = 0.8
-roughness = 0.8
-uv_scale = 0.3
 
-[sub_resource type="Terrain3DAssets" id="Terrain3DAssets_vdou1"]
-mesh_list = Array[Terrain3DMeshAsset]([SubResource("Terrain3DMeshAsset_5vpc2")])
-texture_list = Array[Terrain3DTextureAsset]([SubResource("Terrain3DTextureAsset_p78ra")])
+[sub_resource type="Terrain3DAssets" id="Terrain3DAssets_04ov5"]
+mesh_list = Array[Terrain3DMeshAsset]([SubResource("Terrain3DMeshAsset_vdou1")])
+texture_list = Array[Terrain3DTextureAsset]([SubResource("Terrain3DTextureAsset_y523t")])
 
 [node name="Node3D" type="Node3D" unique_id=1265703151]
 
@@ -117,9 +104,12 @@ light_color = Color(1, 0.6901961, 0.3764706, 1)
 light_energy = 2.5
 shadow_enabled = true
 
-[node name="Terrain3D" type="Terrain3D" parent="." unique_id=2123317301]
-data_directory = "res://Maps/Exterior/Terrain"
-material = SubResource("Terrain3DMaterial_5fx24")
-assets = SubResource("Terrain3DAssets_vdou1")
+[node name="Terrain3D2" type="Terrain3D" parent="." unique_id=247859224]
+data_directory = "res://Maps/Exterior/Terrain2"
+material = SubResource("Terrain3DMaterial_ss4qg")
+assets = SubResource("Terrain3DAssets_04ov5")
 top_level = true
 metadata/_edit_lock_ = true
+
+[node name="Player" parent="." unique_id=196113240 instance=ExtResource("3_y523t")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.450922, -75.85051)

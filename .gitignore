@@ -9,6 +9,7 @@ addons/terrain_3d/bin/*
 !addons/terrain_3d/bin/libterrain.linux.*
 !addons/terrain_3d/bin/libterrain.web.*
 demo/
+road_demos/
 
 # Filtros específicos de Godot
 .godot/

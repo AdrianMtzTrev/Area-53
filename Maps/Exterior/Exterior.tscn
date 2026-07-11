@@ -4,8 +4,9 @@
 [ext_resource type="Texture2D" uid="uid://bl706uthgiofo" path="res://assets/textures/barren-ground-rock/barren_ground_rock_packed_normal_roughness.png" id="2_y523t"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_64d8o"]
-sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
-ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+sky_top_color = Color(0.11372549, 0.16470589, 0.2901961, 1)
+sky_horizon_color = Color(1, 0.49411765, 0.2509804, 1)
+ground_horizon_color = Color(0.91764706, 0.6313726, 0.43137255, 1)
 
 [sub_resource type="Sky" id="Sky_nhkl4"]
 sky_material = SubResource("ProceduralSkyMaterial_64d8o")
@@ -14,6 +15,10 @@ sky_material = SubResource("ProceduralSkyMaterial_64d8o")
 background_mode = 2
 sky = SubResource("Sky_nhkl4")
 glow_enabled = true
+fog_enabled = true
+fog_light_color = Color(0.7647059, 0.60784316, 0.45882353, 1)
+fog_density = 0.0001
+fog_aerial_perspective = 0.7
 
 [sub_resource type="Gradient" id="Gradient_p78ra"]
 offsets = PackedFloat32Array(0.2, 1)
@@ -107,7 +112,9 @@ texture_list = Array[Terrain3DTextureAsset]([SubResource("Terrain3DTextureAsset_
 environment = SubResource("Environment_p78ra")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=216144787]
-transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+transform = Transform3D(-0.8660254, -0.43301278, 0.24999999, -0.42290378, 0.9010997, 0.09576908, -0.26674414, -0.022787452, -0.96349794, 0, 0, 0)
+light_color = Color(1, 0.6901961, 0.3764706, 1)
+light_energy = 2.5
 shadow_enabled = true
 
 [node name="Terrain3D" type="Terrain3D" parent="." unique_id=2123317301]

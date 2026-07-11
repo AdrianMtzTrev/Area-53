@@ -16,8 +16,8 @@ func _ready():
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	
 func _input(event):
-	#Detecta movimiento del mouse
-	if	event is InputEventMouseMotion:
+	#Detecta movimiento del mouse solo si esta oculto
+	if	event is InputEventMouseMotion and Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:
 		#Rotar cuerpo entero Eje Y
 		rotate_y(-event.relative.x * mouse_sensibilidad)
 		
@@ -45,8 +45,10 @@ func _physics_process(delta):
 	if not is_on_floor():
 		velocity.y -= gravity * delta
 		
-	#Obtener teclas de movimiento
-	var input_dir = Input.get_vector("move_left","move_right","move_forward","move_backward")
+	#Obtener teclas de movimiento si no estamos en un menu
+	var input_dir = Vector2.ZERO
+	if Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:
+		input_dir = Input.get_vector("move_left","move_right","move_forward","move_backward")
 	
 	#Calcular direccion donde mira el jugador
 	var direction = (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()

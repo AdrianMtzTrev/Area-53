@@ -5,3 +5,16 @@
 # Game Jam Exclusions
 addons/terrain_3d/bin/
 demo/
+
+# Filtros específicos de Godot
+.godot/
+
+# Archivos UID (Generan conflictos en Godot 4)
+*.uid
+
+# Archivos específicos del sistema / editores externos
+.DS_Store
+.mono/
+.vs/
+android/
+

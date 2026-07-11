@@ -37,7 +37,7 @@ func _input(event):
 			var objeto_mirado = raycast.get_collider()
 			
 			#Comprobamos si el objeto tiene la funcion llamada "Iniciar_Puzzle"
-			if objeto_mirado.has_method("Iniciar_Puzzle"):
+			if objeto_mirado.has_method("iniciar_puzzle"):
 				objeto_mirado.iniciar_puzzle()
 	
 func _physics_process(delta):
@@ -54,9 +54,9 @@ func _physics_process(delta):
 	#Moverse o detenerse
 	if direction:
 		velocity.x = direction.x * SPEED
-		velocity.y = direction.y * SPEED
+		velocity.z = direction.z * SPEED
 	else :
 		velocity.x = move_toward(velocity.x, 0, SPEED)
-		velocity.y = move_toward(velocity.y, 0, SPEED)
+		velocity.z = move_toward(velocity.z, 0, SPEED)
 		
 	move_and_slide()

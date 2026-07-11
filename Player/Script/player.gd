@@ -29,7 +29,11 @@ func _input(event):
 		
 	#Prsionar Esc para liberar mouse
 	if	event.is_action_pressed("ui_cancel"):
-		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+		if not get_tree().paused:
+			var menu_pausa = preload("res://UI/menu_pausa.tscn").instantiate()
+			get_tree().root.add_child(menu_pausa)
+			get_tree().paused = true
+			Input.mouse_mode =Input.MOUSE_MODE_VISIBLE
 		
 	#Interaccion E
 	if event.is_action_pressed("Interactuar"):

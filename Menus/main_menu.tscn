@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://b2cwfxvwxd47w" path="res://Menus/custom_button.tscn" id="1_jf8mj"]
 [ext_resource type="Script" uid="uid://b24lr65iyhvyl" path="res://Menus/scripts/main_menu.gd" id="1_p3jrs"]
+[ext_resource type="Shader" uid="uid://d3skny64x4u4f" path="res://Menus/Shaders/Glitch_MainMenu.gdshader" id="2_at0u2"]
 
 [sub_resource type="Theme" id="Theme_2em5r"]
 MarginContainer/constants/margin_bottom = 10
@@ -9,6 +10,14 @@ MarginContainer/constants/margin_left = 10
 MarginContainer/constants/margin_right = 10
 MarginContainer/constants/margin_top = 10
 VBoxContainer/constants/separation = 12
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_p3jrs"]
+shader = ExtResource("2_at0u2")
+shader_parameter/scanline_count = 50.0
+shader_parameter/scanline_intensity = 0.25
+shader_parameter/curvature = 3.0
+shader_parameter/chromatic_aberration = 1.5
+shader_parameter/noise_intensity = 0.15
 
 [node name="MainMenu" type="Control" unique_id=797164402]
 layout_mode = 3
@@ -21,6 +30,7 @@ theme = SubResource("Theme_2em5r")
 script = ExtResource("1_p3jrs")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1974859445]
+material = SubResource("ShaderMaterial_p3jrs")
 layout_mode = 0
 offset_left = 10.0
 offset_top = 10.0

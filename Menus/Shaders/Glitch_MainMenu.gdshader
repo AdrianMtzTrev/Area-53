@@ -1,0 +1,43 @@
+shader_type canvas_item;
+
+uniform float scanline_count : hint_range(0.0, 1080.0) = 50.0;
+uniform float scanline_intensity : hint_range(0.0, 1.0) = 0.25;
+uniform float curvature : hint_range(0.0, 10.0) = 3.0;
+uniform float chromatic_aberration : hint_range(0.0, 10.0) = 1.5;
+uniform float noise_intensity : hint_range(0.0, 1.0) = 0.15;
+uniform sampler2D screen_texture : hint_screen_texture, repeat_disable, filter_nearest;
+
+// Función para generar ruido aleatorio
+float random(vec2 uv) {
+    return fract(sin(dot(uv.xy, vec2(12.9898, 78.233))) * 43758.5453123);
+}
+
+void fragment() {
+    // 1. Curvatura de la pantalla
+    vec2 centered_uv = UV * 2.0 - 1.0;
+    vec2 offset = centered_uv.yx / curvature;
+    vec2 warped_uv = centered_uv + centered_uv * offset * offset;
+    warped_uv = warped_uv * 0.5 + 0.5;
+
+    // Si nos salimos de los bordes curvos, pintamos de negro
+    if (warped_uv.x < 0.0 || warped_uv.x > 1.0 || warped_uv.y < 0.0 || warped_uv.y > 1.0) {
+        COLOR = vec4(0.0, 0.0, 0.0, 1.0);
+    } else {
+        // 2. Aberración cromática (separa un poco los canales RGB)
+        float color_shift = chromatic_aberration / 1000.0;
+        float r = texture(screen_texture, warped_uv + vec2(color_shift, 0.0)).r;
+        float g = texture(screen_texture, warped_uv).g;
+        float b = texture(screen_texture, warped_uv - vec2(color_shift, 0.0)).b;
+        vec4 base_color = vec4(r, g, b, 1.0);
+
+        // 3. Líneas de escaneo (Scanlines)
+        float scanlines = 0.5 - cos(warped_uv.y * scanline_count * 3.14159) * 0.5;
+        base_color.rgb -= scanlines * scanline_intensity;
+
+        // 4. Ruido / Estática (Interferencia de satélite)
+        float noise = random(warped_uv * TIME);
+        base_color.rgb -= noise * noise_intensity;
+
+        COLOR = base_color;
+    }
+}

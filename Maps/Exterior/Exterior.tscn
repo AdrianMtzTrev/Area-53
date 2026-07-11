@@ -1,0 +1,118 @@
+[gd_scene format=3 uid="uid://13x8ms8ii8mv"]
+
+[ext_resource type="Texture2D" uid="uid://bqamn4ldc1ssf" path="res://assets/textures/barren-ground-rock/barred_ground_rock_packed_albedo_height.png" id="1_p78ra"]
+[ext_resource type="Texture2D" uid="uid://bl706uthgiofo" path="res://assets/textures/barren-ground-rock/barren_ground_rock_packed_normal_roughness.png" id="2_y523t"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_64d8o"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_nhkl4"]
+sky_material = SubResource("ProceduralSkyMaterial_64d8o")
+
+[sub_resource type="Environment" id="Environment_p78ra"]
+background_mode = 2
+sky = SubResource("Sky_nhkl4")
+glow_enabled = true
+
+[sub_resource type="Gradient" id="Gradient_p78ra"]
+offsets = PackedFloat32Array(0.2, 1)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_y523t"]
+noise_type = 2
+frequency = 0.03
+cellular_jitter = 3.0
+cellular_return_type = 0
+domain_warp_enabled = true
+domain_warp_type = 1
+domain_warp_amplitude = 50.0
+domain_warp_fractal_type = 2
+domain_warp_fractal_lacunarity = 1.5
+domain_warp_fractal_gain = 1.0
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_w40sh"]
+noise = SubResource("FastNoiseLite_y523t")
+color_ramp = SubResource("Gradient_p78ra")
+seamless = true
+
+[sub_resource type="Terrain3DMaterial" id="Terrain3DMaterial_5fx24"]
+_shader_parameters = {
+&"bias_distance": null,
+&"blend_sharpness": null,
+&"depth_blur": null,
+&"dual_scale_far": 1.0000000475,
+&"dual_scale_near": 1.0000000475,
+&"dual_scale_reduction": 1.0,
+&"dual_scale_texture": 4,
+&"enable_macro_variation": null,
+&"enable_projection": null,
+&"flat_terrain_normals": false,
+&"macro_variation1": null,
+&"macro_variation2": null,
+&"macro_variation_slope": null,
+&"mipmap_bias": null,
+&"noise1_angle": null,
+&"noise1_offset": null,
+&"noise1_scale": 0.04,
+&"noise2_scale": null,
+&"noise_texture": SubResource("NoiseTexture2D_w40sh"),
+&"projection_threshold": null,
+&"tri_scale_reduction": 0.10000000475000001,
+&"world_noise_fragment_normals": null,
+&"world_noise_height": null,
+&"world_noise_lod_distance": null,
+&"world_noise_max_octaves": null,
+&"world_noise_min_octaves": null,
+&"world_noise_offset": null,
+&"world_noise_region_blend": null,
+&"world_noise_scale": null
+}
+world_background = 2
+dual_scaling = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_v0nnn"]
+transparency = 4
+cull_mode = 2
+vertex_color_use_as_albedo = true
+backlight_enabled = true
+backlight = Color(0.5, 0.5, 0.5, 1)
+distance_fade_mode = 1
+distance_fade_min_distance = 128.0
+distance_fade_max_distance = 96.0
+
+[sub_resource type="Terrain3DMeshAsset" id="Terrain3DMeshAsset_5vpc2"]
+generated_type = 1
+height_offset = 0.5
+material_override = SubResource("StandardMaterial3D_v0nnn")
+last_lod = 0
+last_shadow_lod = 0
+lod0_range = 128.0
+
+[sub_resource type="Terrain3DTextureAsset" id="Terrain3DTextureAsset_p78ra"]
+name = "barred_ground_rock_packed_albedo_height"
+albedo_texture = ExtResource("1_p78ra")
+normal_texture = ExtResource("2_y523t")
+normal_depth = 0.8
+roughness = 0.8
+uv_scale = 0.3
+
+[sub_resource type="Terrain3DAssets" id="Terrain3DAssets_vdou1"]
+mesh_list = Array[Terrain3DMeshAsset]([SubResource("Terrain3DMeshAsset_5vpc2")])
+texture_list = Array[Terrain3DTextureAsset]([SubResource("Terrain3DTextureAsset_p78ra")])
+
+[node name="Node3D" type="Node3D" unique_id=1265703151]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=206003664]
+environment = SubResource("Environment_p78ra")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=216144787]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+shadow_enabled = true
+
+[node name="Terrain3D" type="Terrain3D" parent="." unique_id=2123317301]
+data_directory = "res://Maps/Exterior/Terrain"
+material = SubResource("Terrain3DMaterial_5fx24")
+assets = SubResource("Terrain3DAssets_vdou1")
+top_level = true
+metadata/_edit_lock_ = true

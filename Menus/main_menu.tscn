@@ -2,7 +2,8 @@
 
 [ext_resource type="PackedScene" uid="uid://b2cwfxvwxd47w" path="res://Menus/custom_button.tscn" id="1_jf8mj"]
 [ext_resource type="Script" uid="uid://b24lr65iyhvyl" path="res://Menus/scripts/main_menu.gd" id="1_p3jrs"]
-[ext_resource type="Shader" uid="uid://d3skny64x4u4f" path="res://Menus/Shaders/Glitch_MainMenu.gdshader" id="2_at0u2"]
+[ext_resource type="FontFile" uid="uid://djnjkc6l5drdk" path="res://Fuentes/VT323-Regular.ttf" id="2_11gta"]
+[ext_resource type="Shader" uid="uid://d3skny64x4u4f" path="res://Shaders/Glitch_MainMenu.gdshader" id="2_at0u2"]
 
 [sub_resource type="Theme" id="Theme_2em5r"]
 MarginContainer/constants/margin_bottom = 10
@@ -29,17 +30,6 @@ grow_vertical = 2
 theme = SubResource("Theme_2em5r")
 script = ExtResource("1_p3jrs")
 
-[node name="ColorRect" type="ColorRect" parent="." unique_id=1974859445]
-material = SubResource("ShaderMaterial_p3jrs")
-layout_mode = 0
-offset_left = 10.0
-offset_top = 10.0
-offset_right = 1142.0
-offset_bottom = 638.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=1692078488]
 layout_mode = 1
 anchors_preset = 15
@@ -56,15 +46,33 @@ size_flags_vertical = 4
 [node name="Label" type="Label" parent="MarginContainer/VBoxContainer" unique_id=131515163]
 layout_mode = 2
 size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0.48235294, 0.85882354, 0.15686275, 0.9019608)
+theme_override_fonts/font = ExtResource("2_11gta")
+theme_override_font_sizes/font_size = 72
 text = "AREA 53"
 
 [node name="StartBttn" parent="MarginContainer/VBoxContainer" unique_id=808894799 instance=ExtResource("1_jf8mj")]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_11gta")
+theme_override_font_sizes/font_size = 32
 text = "START GAME"
 
 [node name="ExitBttn" parent="MarginContainer/VBoxContainer" unique_id=31921776 instance=ExtResource("1_jf8mj")]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_11gta")
+theme_override_font_sizes/font_size = 32
 text = "EXIT GAME"
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1974859445]
+material = SubResource("ShaderMaterial_p3jrs")
+layout_mode = 0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 1142.0
+offset_bottom = 638.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/StartBttn" to="." method="_on_start_bttn_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/ExitBttn" to="." method="_on_exit_bttn_pressed"]

@@ -3,7 +3,11 @@
 /android/
 
 # Game Jam Exclusions
-addons/terrain_3d/bin/
+# terrain_3d binaries: only windows/linux/web are tracked, other platforms excluded
+addons/terrain_3d/bin/*
+!addons/terrain_3d/bin/libterrain.windows.*
+!addons/terrain_3d/bin/libterrain.linux.*
+!addons/terrain_3d/bin/libterrain.web.*
 demo/
 
 # Filtros específicos de Godot

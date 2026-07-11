@@ -2,6 +2,7 @@ shader_type canvas_item;
 
 uniform float scanline_count : hint_range(0.0, 1080.0) = 50.0;
 uniform float scanline_intensity : hint_range(0.0, 1.0) = 0.25;
+uniform float scanline_speed : hint_range(0.0, 5.0) = 0.05;
 uniform float curvature : hint_range(0.0, 10.0) = 3.0;
 uniform float chromatic_aberration : hint_range(0.0, 10.0) = 1.5;
 uniform float noise_intensity : hint_range(0.0, 1.0) = 0.15;
@@ -30,8 +31,8 @@ void fragment() {
         float b = texture(screen_texture, warped_uv - vec2(color_shift, 0.0)).b;
         vec4 base_color = vec4(r, g, b, 1.0);
 
-        // 3. Líneas de escaneo (Scanlines)
-        float scanlines = 0.5 - cos(warped_uv.y * scanline_count * 3.14159) * 0.5;
+        // 3. Líneas de escaneo con Movimiento hacia abajo
+        float scanlines = 0.5 - cos((warped_uv.y - TIME * scanline_speed) * scanline_count * 3.14159) * 0.5;
         base_color.rgb -= scanlines * scanline_intensity;
 
         // 4. Ruido / Estática (Interferencia de satélite)

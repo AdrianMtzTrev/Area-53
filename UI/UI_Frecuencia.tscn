@@ -1,6 +1,6 @@
-[gd_scene format=3 uid="uid://bsqy3lhrn4y6a"]
+[gd_scene load_steps=4 format=3 uid="uid://bsqy3lhrn4y6a"]
 
-[ext_resource type="Script" uid="uid://b8kcmsai4bdr6" path="res://UI/scripts/ui_frecuencia.gd" id="1_cbvv6"]
+[ext_resource type="Script" uid="uid://bpclntlnn2jme" path="res://UI/scripts/ui_frecuencia.gd" id="1_cbvv6"]
 [ext_resource type="FontFile" uid="uid://djnjkc6l5drdk" path="res://Fuentes/VT323-Regular.ttf" id="1_mfb48"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vvr5o"]
@@ -13,10 +13,10 @@ corner_radius_top_right = 10
 corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
 
-[node name="UI_Frecuencia" type="CanvasLayer" unique_id=1468454744]
+[node name="UI_Frecuencia" type="CanvasLayer"]
 script = ExtResource("1_cbvv6")
 
-[node name="MonitorMarco" type="Panel" parent="." unique_id=397547574]
+[node name="MonitorMarco" type="Panel" parent="."]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -30,7 +30,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_vvr5o")
 
-[node name="MarginContainer" type="MarginContainer" parent="MonitorMarco" unique_id=1782209876]
+[node name="MarginContainer" type="MarginContainer" parent="MonitorMarco"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -42,15 +42,15 @@ theme_override_constants/margin_top = 15
 theme_override_constants/margin_right = 15
 theme_override_constants/margin_bottom = 15
 
-[node name="ColorRect" type="ColorRect" parent="MonitorMarco/MarginContainer" unique_id=2009174729]
+[node name="ColorRect" type="ColorRect" parent="MonitorMarco/MarginContainer"]
 layout_mode = 2
 color = Color(0.078431375, 0.078431375, 0.078431375, 1)
 
-[node name="OndaSeñal" type="Line2D" parent="MonitorMarco/MarginContainer/ColorRect" unique_id=412783249]
+[node name="OndaSeñal" type="Line2D" parent="MonitorMarco/MarginContainer/ColorRect"]
 width = 3.0
 default_color = Color(0.43388975, 0.82237595, 0.35011828, 0.8392157)
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MonitorMarco/MarginContainer/ColorRect" unique_id=1986828142]
+[node name="VBoxContainer" type="VBoxContainer" parent="MonitorMarco/MarginContainer/ColorRect"]
 layout_mode = 1
 anchors_preset = 13
 anchor_left = 0.5
@@ -64,7 +64,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 44
 
-[node name="LabelObjetivo" type="Label" parent="MonitorMarco/MarginContainer/ColorRect/VBoxContainer" unique_id=1349515444]
+[node name="LabelObjetivo" type="Label" parent="MonitorMarco/MarginContainer/ColorRect/VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.3541747, 0.60712075, 0.36677116, 1)
 theme_override_fonts/font = ExtResource("1_mfb48")
@@ -73,7 +73,7 @@ text = "Frecuencia Objetivo: 87.5 Mhz"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="LabelActual" type="Label" parent="MonitorMarco/MarginContainer/ColorRect/VBoxContainer" unique_id=903914611]
+[node name="LabelActual" type="Label" parent="MonitorMarco/MarginContainer/ColorRect/VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.3541747, 0.60712075, 0.36677116, 1)
 theme_override_fonts/font = ExtResource("1_mfb48")
@@ -82,16 +82,16 @@ text = "Frecuencia Actua: 50.0 Mhz"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="HSlider" type="HSlider" parent="MonitorMarco/MarginContainer/ColorRect/VBoxContainer" unique_id=1330090578]
+[node name="HSlider" type="HSlider" parent="MonitorMarco/MarginContainer/ColorRect/VBoxContainer"]
 layout_mode = 2
 
-[node name="Button" type="Button" parent="MonitorMarco/MarginContainer/ColorRect/VBoxContainer" unique_id=1553718550]
+[node name="Button" type="Button" parent="MonitorMarco/MarginContainer/ColorRect/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 text = "Sincronizar
 "
 
-[node name="FiltroCRT" type="ColorRect" parent="MonitorMarco/MarginContainer/ColorRect" unique_id=1786657484]
+[node name="FiltroCRT" type="ColorRect" parent="MonitorMarco/MarginContainer/ColorRect"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0

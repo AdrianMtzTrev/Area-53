@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://0jk2a1gyfii"]
+
+[ext_resource type="PackedScene" uid="uid://rw4mgj6glued" path="res://assets/Objects/models/estante/Estante.glb" id="1_est01"]
+
+[node name="Estante" type="MeshInstance3D" unique_id=102269525]
+
+[node name="Estante" parent="." unique_id=265681784 instance=ExtResource("1_est01")]

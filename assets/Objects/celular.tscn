@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://cmnotqeaqqk6k"]
+
+[ext_resource type="PackedScene" uid="uid://b2wnnep1hnmus" path="res://assets/Objects/models/celular/celular.glb" id="1_i42pa"]
+
+[node name="celular" type="MeshInstance3D" unique_id=203951609]
+
+[node name="celular" parent="." unique_id=495642022 instance=ExtResource("1_i42pa")]

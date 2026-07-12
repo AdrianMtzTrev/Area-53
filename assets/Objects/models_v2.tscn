@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://001216dd4a76"]
+
+[ext_resource type="PackedScene" uid="uid://co4454ymijdbx" path="res://assets/Objects/models/models_v2/models_v2.glb" id="1_mv201"]
+
+[node name="models_v2" type="MeshInstance3D" unique_id=233921812]
+
+[node name="models_v2" parent="." unique_id=171000228 instance=ExtResource("1_mv201")]

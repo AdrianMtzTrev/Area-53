@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://c70chk23qne7y"]
+
+[ext_resource type="PackedScene" uid="uid://k14h6ni0kjln" path="res://assets/Objects/models/LuzEmergenciaRoja/LuzEmergenciaRoja.glb" id="1_luer1"]
+
+[node name="LuzEmergenciaRoja" type="MeshInstance3D" unique_id=154669162]
+
+[node name="LuzEmergenciaRoja" parent="." unique_id=152140688 instance=ExtResource("1_luer1")]

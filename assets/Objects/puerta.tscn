@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://b705fu0esn350"]
+
+[ext_resource type="PackedScene" uid="uid://cftlgjim7v07l" path="res://assets/Objects/models/puerta/puerta.glb" id="1_pue01"]
+
+[node name="puerta" type="MeshInstance3D" unique_id=693858873]
+
+[node name="puerta" parent="." unique_id=311371629 instance=ExtResource("1_pue01")]

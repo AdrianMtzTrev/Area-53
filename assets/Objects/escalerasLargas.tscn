@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://d0f07slibr4vr"]
+
+[ext_resource type="PackedScene" uid="uid://dwift6ombimrh" path="res://assets/Objects/models/escalerasLargas/escalerasLargas.glb" id="1_esl01"]
+
+[node name="escalerasLargas" type="MeshInstance3D" unique_id=353473689]
+
+[node name="escalerasLargas" parent="." unique_id=449427214 instance=ExtResource("1_esl01")]

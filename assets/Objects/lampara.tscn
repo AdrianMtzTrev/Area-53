@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://b8set8dxuykfe"]
+
+[ext_resource type="PackedScene" uid="uid://4oo1idpiroaa" path="res://assets/Objects/models/lampara/lampara.glb" id="1_lam01"]
+
+[node name="lampara" type="MeshInstance3D" unique_id=112181212]
+
+[node name="lampara" parent="." unique_id=1028912006 instance=ExtResource("1_lam01")]

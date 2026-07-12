@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://chr2ktr5jn056"]
+
+[ext_resource type="PackedScene" uid="uid://ei2o0w7vm42y" path="res://assets/Objects/models/tabla/tabla.glb" id="1_tab01"]
+
+[node name="tabla" type="MeshInstance3D" unique_id=163598820]
+
+[node name="tabla" parent="." unique_id=115694627 instance=ExtResource("1_tab01")]

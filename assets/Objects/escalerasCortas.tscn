@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://bc44jnv6qrfx6"]
+
+[ext_resource type="PackedScene" uid="uid://dir70wupo1si4" path="res://assets/Objects/models/escalerasCortas/escalerasCortas.glb" id="1_esc01"]
+
+[node name="escalerasCortas" type="MeshInstance3D" unique_id=427630456]
+
+[node name="escalerasCortas" parent="." unique_id=104723313 instance=ExtResource("1_esc01")]

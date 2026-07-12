@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://b4x6ksskt04ms"]
+
+[ext_resource type="PackedScene" uid="uid://bjl3cviuf3qyn" path="res://assets/Objects/models/tablaNormal/tablanormal.glb" id="1_tabn1"]
+
+[node name="tablanormal" type="MeshInstance3D" unique_id=120945087]
+
+[node name="tablanormal" parent="." unique_id=455400559 instance=ExtResource("1_tabn1")]

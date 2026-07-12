@@ -133,3 +133,8 @@ func _on_zona_puerta_body_entered(body: Node3D) -> void:
 			tween.tween_interval(4.0)
 			tween.tween_property(texto_dialogo1, "modulate:a", 0.0, 0.5)
 			tween.tween_callback(texto_dialogo1.hide)
+
+
+func _on_puerta_bunker_body_entered(body: Node3D) -> void:
+		if body == self:
+			get_tree().change_scene_to_file("res://Maps/Interior/Interior.tscn")

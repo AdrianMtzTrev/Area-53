@@ -1,17 +1,13 @@
 [gd_scene format=3 uid="uid://cdy5cgixgs8"]
 
-[ext_resource type="PackedScene" uid="uid://bc88qlep4jfmu" path="res://Player/player.tscn" id="1_qdgch"]
-[ext_resource type="Script" uid="uid://4xlw7ovo5y1n" path="res://Player/Script/consola_frecuencia.gd" id="2_mtiyj"]
+[ext_resource type="PackedScene" uid="uid://bc88qlep4jfmu" path="res://Player/player.tscn" id="1_7y1yv"]
+[ext_resource type="PackedScene" uid="uid://c7jygptcjinel" path="res://assets/Objects/consola_frecuencia.tscn" id="2_6bcb5"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_vvr5o"]
 size = Vector2(20, 20)
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_mtiyj"]
 data = PackedVector3Array(10, 0, 10, -10, 0, 10, 10, 0, -10, -10, 0, 10, -10, 0, -10, 10, 0, -10)
-
-[sub_resource type="BoxMesh" id="BoxMesh_2em5r"]
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_orc5f"]
 
 [node name="Escena_Test" type="Node3D" unique_id=590581945]
 
@@ -27,15 +23,8 @@ mesh = SubResource("PlaneMesh_vvr5o")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Plataforma/StaticBody3D" unique_id=1278336440]
 shape = SubResource("ConcavePolygonShape3D_mtiyj")
 
-[node name="Player" parent="." unique_id=196113240 instance=ExtResource("1_qdgch")]
+[node name="Player" parent="." unique_id=196113240 instance=ExtResource("1_7y1yv")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.63827205, 0)
 
-[node name="ConsolaFrecuencia" type="StaticBody3D" parent="." unique_id=1931778536]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0796492, -4.424078)
-script = ExtResource("2_mtiyj")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="ConsolaFrecuencia" unique_id=1102499504]
-mesh = SubResource("BoxMesh_2em5r")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="ConsolaFrecuencia" unique_id=572033150]
-shape = SubResource("BoxShape3D_orc5f")
+[node name="ConsolaFrecuencia" parent="." unique_id=1482601158 instance=ExtResource("2_6bcb5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 1, 0)

@@ -1,16 +1,15 @@
 [gd_scene format=3 uid="uid://c7jygptcjinel"]
 
-[ext_resource type="Script" uid="uid://4xlw7ovo5y1n" path="res://Player/Script/consola_frecuencia.gd" id="1_muexp"]
+[ext_resource type="Script" uid="uid://4xlw7ovo5y1n" path="res://Player/Script/consola_frecuencia.gd" id="1_idtju"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_2em5r"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_orc5f"]
 
 [node name="ConsolaFrecuencia" type="StaticBody3D" unique_id=1482601158]
-script = ExtResource("1_muexp")
+script = ExtResource("1_idtju")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=2133892435]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4.4340134)
 mesh = SubResource("BoxMesh_2em5r")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1763010066]

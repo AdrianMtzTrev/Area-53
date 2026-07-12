@@ -11,6 +11,7 @@ var mouse_sensibilidad = 0.003
 #variables de inventario
 var slot_activo : int = 1
 var tiene_linterna : bool = true
+@onready var pantalla_negra = $CanvasLayer/ColorRect
 
 #Referencia a la linterna y la camara
 @onready var linterna = $SpotLight3D
@@ -28,6 +29,8 @@ var t_bob = 0.0
 func _ready():
 	#Ocultar cursor del raton y bloquea al cetro de la pantalla
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+	
+	pantalla_negra.modulate.a = 0.0
 	
 	altura_camara_original = camera.position.y
 	
@@ -137,4 +140,9 @@ func _on_zona_puerta_body_entered(body: Node3D) -> void:
 
 func _on_puerta_bunker_body_entered(body: Node3D) -> void:
 		if body == self:
-			get_tree().change_scene_to_file("res://Maps/Interior/Interior.tscn")
+			var tween = create_tween()
+			tween.tween_property(pantalla_negra, "modulate:a", 1.0, 1.5)
+			tween.tween_callback(cambiar_escena_bunker)
+
+func cambiar_escena_bunker():
+	get_tree().change_scene_to_file("res://Maps/Interior/Interior.tscn")

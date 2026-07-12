@@ -272,3 +272,7 @@ func _ui_refresh_set(value: bool) -> void:
 
 #endregion
 # ------------------------------------------------------------------------------
+
+
+func _on_puerta_bunker_body_shape_entered(body_rid: RID, body: Node3D, body_shape_index: int, local_shape_index: int) -> void:
+	pass # Replace with function body.

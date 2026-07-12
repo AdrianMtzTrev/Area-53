@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dy7vmoqfbav3i"]
 
-[ext_resource type="Script" uid="uid://bjtw1kujkooli" path="res://Objects/Scripts/palanca.gd" id="1_stjnv"]
+[ext_resource type="Script" uid="uid://bjtw1kujkooli" path="res://assets/Objects/Scripts/palanca.gd" id="1_stjnv"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_vvr5o"]
 size = Vector3(0.2, 0.4, 0.1)

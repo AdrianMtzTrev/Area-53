@@ -7,13 +7,26 @@ var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 #Sensibilidad del raton
 var mouse_sensibilidad = 0.003
 
-#Referencia a la camara
+#variables de inventario
+var slot_activo : int = 1
+var tiene_linterna : bool = true
+
+#Referencia a la linterna y la camara
+@onready var linterna = $SpotLight3D
 @onready var camera = $Camera3D
 @onready var raycast = $Camera3D/RayCast3D
+
+#variables de tambaleo
+const BOB_FRECUENCIA = 2.0
+const BOB_AMPLITUD = 0.88
+var t_bob = 0.0
 
 func _ready():
 	#Ocultar cursor del raton y bloquea al cetro de la pantalla
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+	
+	#Linterna apagada al iniciar
+	linterna.visible = false
 	
 func _input(event):
 	#Detecta movimiento del mouse solo si esta oculto
@@ -43,11 +56,18 @@ func _input(event):
 			#Comprobamos si el objeto tiene la funcion llamada "Iniciar_Puzzle"
 			if objeto_mirado.has_method("iniciar_puzzle"):
 				objeto_mirado.iniciar_puzzle()
+				
+	#Interaccion F Linterna
+	if event.is_action_pressed("LINTERNA"):
+		if slot_activo == 1:
+			linterna.visible = !linterna.visible
 	
 func _physics_process(delta):
 	#Aplicar gravedad si el player no toca el suelo
 	if not is_on_floor():
 		velocity.y -= gravity * delta
+		
+	
 		
 	#Obtener teclas de movimiento si no estamos en un menu
 	var input_dir = Vector2.ZERO

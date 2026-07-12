@@ -412,7 +412,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -44.70737, -11.975783, 68.920
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1207188673]
 stream = ExtResource("15_y2q48")
-volume_db = -10.297
+volume_db = -1.254
 autoplay = true
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=90544724]

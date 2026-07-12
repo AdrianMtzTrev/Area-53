@@ -2,6 +2,21 @@
 
 [ext_resource type="PackedScene" uid="uid://bmwoubo8gdpmr" path="res://assets/Objects/models/Warning-barricade/Warning-barricade.glb" id="1_2apkk"]
 
-[node name="MeshInstance3D" type="MeshInstance3D" unique_id=1022578693]
+[sub_resource type="BoxMesh" id="BoxMesh_2apkk"]
+size = Vector3(1.3710327, 1.8634033, 0.6699829)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_2apkk"]
+size = Vector3(1.3710327, 1.8634033, 0.6699829)
+
+[node name="WariningBarricade" type="StaticBody3D" unique_id=122473697]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1320649897]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0047912598, -0.025817871, 0.0059509277)
+visible = false
+mesh = SubResource("BoxMesh_2apkk")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=981233841]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0047912598, -0.025817871, 0.0059509277)
+shape = SubResource("BoxShape3D_2apkk")
 
 [node name="Warning-barricade" parent="." unique_id=1226651321 instance=ExtResource("1_2apkk")]

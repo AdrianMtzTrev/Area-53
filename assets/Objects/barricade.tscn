@@ -2,6 +2,21 @@
 
 [ext_resource type="PackedScene" uid="uid://cmhgb5jjtger5" path="res://assets/Objects/models/Barricade/Barricade.glb" id="1_wplg3"]
 
-[node name="Barricade" type="MeshInstance3D" unique_id=1382054055]
+[sub_resource type="BoxMesh" id="BoxMesh_wplg3"]
+size = Vector3(1.9871826, 0.64331055, 0.23181152)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_wplg3"]
+size = Vector3(1.9871826, 0.64331055, 0.36593628)
+
+[node name="Barricade" type="StaticBody3D" unique_id=1550176190]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1116847979]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0005493164, -0.026245117, -0.00018310547)
+visible = false
+mesh = SubResource("BoxMesh_wplg3")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1831530913]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0005493164, -0.026245117, -0.0012969971)
+shape = SubResource("BoxShape3D_wplg3")
 
 [node name="Barricade" parent="." unique_id=1286394610 instance=ExtResource("1_wplg3")]

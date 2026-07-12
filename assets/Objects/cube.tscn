@@ -2,6 +2,36 @@
 
 [ext_resource type="PackedScene" uid="uid://lnj44i55cx34" path="res://assets/Objects/models/cube/cube.glb" id="1_lwkpu"]
 
+[sub_resource type="BoxMesh" id="BoxMesh_vvr5o"]
+size = Vector3(3.92276, 0.3647461, 5.1504517)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_lwkpu"]
+size = Vector3(3.8725586, 0.35662842, 5.0839844)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_vvr5o"]
+size = Vector3(4.0008545, 5.0459595, 0.12625122)
+
 [node name="StaticBody3D" type="StaticBody3D" unique_id=1493292461]
 
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=546005137]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0010528564, -1.7668705, -0.023345947)
+visible = false
+mesh = SubResource("BoxMesh_vvr5o")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=550074656]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.039871216, -1.7145939, -0.018463135)
+shape = SubResource("BoxShape3D_lwkpu")
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="." unique_id=1953818858]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.039871216, 3.4726424, -0.018463135)
+shape = SubResource("BoxShape3D_lwkpu")
+
 [node name="cube" parent="." unique_id=1273567681 instance=ExtResource("1_lwkpu")]
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="." unique_id=1982537244]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.009338379, 0.8960266, 2.5022075)
+shape = SubResource("BoxShape3D_vvr5o")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="." unique_id=27502916]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.009338379, 0.8960266, -2.4538202)
+shape = SubResource("BoxShape3D_vvr5o")

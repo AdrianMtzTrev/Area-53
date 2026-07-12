@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://dmychytn1s86i"]
+
+[ext_resource type="PackedScene" uid="uid://b8w5tyrq7xudy" path="res://assets/Objects/cerebro_fusibles.tscn" id="1_wuskx"]
+[ext_resource type="PackedScene" uid="uid://dy7vmoqfbav3i" path="res://assets/Objects/palanca.tscn" id="2_b2snk"]
+
+[node name="Puzzle_Fusibles" type="Node3D" unique_id=876557669]
+
+[node name="Cerebro_Fusibles" parent="." unique_id=1997753483 instance=ExtResource("1_wuskx")]
+
+[node name="Palanca" parent="." unique_id=2050251294 node_paths=PackedStringArray("cerebro_puzzle") groups=["grupo_palancas"] instance=ExtResource("2_b2snk")]
+cerebro_puzzle = NodePath("../Cerebro_Fusibles")
+
+[node name="Palanca2" parent="." unique_id=1822696631 node_paths=PackedStringArray("cerebro_puzzle") groups=["grupo_palancas"] instance=ExtResource("2_b2snk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.25064328, 0, 0)
+numero_palanca = 2
+cerebro_puzzle = NodePath("../Cerebro_Fusibles")
+
+[node name="Palanca3" parent="." unique_id=878690265 node_paths=PackedStringArray("cerebro_puzzle") groups=["grupo_palancas"] instance=ExtResource("2_b2snk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5043037, 0, 0)
+numero_palanca = 3
+cerebro_puzzle = NodePath("../Cerebro_Fusibles")
+
+[node name="Palanca4" parent="." unique_id=570401864 node_paths=PackedStringArray("cerebro_puzzle") groups=["grupo_palancas"] instance=ExtResource("2_b2snk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.75561434, 0, 0)
+numero_palanca = 4
+cerebro_puzzle = NodePath("../Cerebro_Fusibles")
+
+[node name="Palanca5" parent="." unique_id=922638072 node_paths=PackedStringArray("cerebro_puzzle") groups=["grupo_palancas"] instance=ExtResource("2_b2snk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.0024242, 0, 0)
+numero_palanca = 5
+cerebro_puzzle = NodePath("../Cerebro_Fusibles")
+
+[node name="Palanca6" parent="." unique_id=2132747743 node_paths=PackedStringArray("cerebro_puzzle") groups=["grupo_palancas"] instance=ExtResource("2_b2snk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2491361, 0, 0)
+numero_palanca = 6
+cerebro_puzzle = NodePath("../Cerebro_Fusibles")

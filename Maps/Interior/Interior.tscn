@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://0jk2a1gyfii" path="res://assets/Objects/Estante.tscn" id="11_sfmky"]
 [ext_resource type="PackedScene" uid="uid://c26wstpsbbuyg" path="res://assets/Objects/telarana.tscn" id="14_hin2i"]
 [ext_resource type="PackedScene" uid="uid://b4x6ksskt04ms" path="res://assets/Objects/tablanormal.tscn" id="15_kuiyd"]
+[ext_resource type="AudioStream" uid="uid://60iikesdw4do" path="res://assets/Sounds/Create-a-seamless-looping-ambient-sound-for-an-aba.mp3" id="15_y2q48"]
 [ext_resource type="PackedScene" uid="uid://bc88qlep4jfmu" path="res://Player/player.tscn" id="16_y2q48"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_y2q48"]
@@ -29,6 +30,43 @@ sky_material = SubResource("ProceduralSkyMaterial_y2q48")
 background_mode = 2
 sky = SubResource("Sky_kitki")
 glow_enabled = true
+
+[sub_resource type="Animation" id="Animation_kuiyd"]
+resource_name = "Fade_to_Blak"
+length = 3.0000000000000004
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_y2q48"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_kitki"]
+_data = {
+&"Fade_to_Blak": SubResource("Animation_kuiyd"),
+&"RESET": SubResource("Animation_y2q48")
+}
 
 [node name="Node3D" type="Node3D" unique_id=713244312]
 
@@ -371,3 +409,22 @@ transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -22.
 
 [node name="cuarto3" parent="." unique_id=848173460 instance=ExtResource("10_pm2pk")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -44.70737, -11.975783, 68.92038)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1207188673]
+stream = ExtResource("15_y2q48")
+volume_db = -10.297
+autoplay = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=90544724]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=1980699762]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer" unique_id=966872297]
+libraries/ = SubResource("AnimationLibrary_kitki")
+autoplay = &"Fade_to_Blak"

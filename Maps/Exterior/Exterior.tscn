@@ -15,6 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://pasghspr68y8" path="res://assets/Objects/entrada_bunker.tscn" id="13_k5x7x"]
 [ext_resource type="PackedScene" uid="uid://cus3q83qiyp4j" path="res://assets/Objects/antena.tscn" id="14_6vmss"]
 [ext_resource type="PackedScene" uid="uid://bwyx5l0i756t0" path="res://assets/Objects/cube.tscn" id="15_o6l2h"]
+[ext_resource type="AudioStream" uid="uid://60iikesdw4do" path="res://assets/Sounds/Create-a-seamless-looping-ambient-sound-for-an-aba.mp3" id="16_qhdpk"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_64d8o"]
 sky_top_color = Color(0.11372549, 0.16470589, 0.2901961, 1)
@@ -178,6 +179,8 @@ _data = {
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_dgl0r"]
 size = Vector3(23.327698, 6.775879, 1)
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_52a8s"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_o6l2h"]
 
@@ -616,6 +619,19 @@ shape = SubResource("BoxShape3D_dgl0r")
 
 [node name="EntradaBunker" parent="." unique_id=1334098734 instance=ExtResource("13_k5x7x")]
 transform = Transform3D(0.010639899, 0, -0.9999434, 0, 1, 0, 0.9999434, 0, 0.010639899, -1.814084, 4.2128983, 14.085742)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="EntradaBunker" unique_id=117663884]
+transform = Transform3D(1.0000008, 0, -9.313226e-10, 0, 1, 0, 9.313226e-10, 0, 1.0000008, 13.304624, -6.0409513, 0.14156795)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="EntradaBunker/StaticBody3D" unique_id=2014081769]
+shape = SubResource("SphereShape3D_52a8s")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="EntradaBunker/StaticBody3D/CollisionShape3D" unique_id=965960377]
+transform = Transform3D(0.01063989, 0, 0.99994254, 0, 1, 0, -0.99994254, 0, 0.01063989, -2.8330116, 2.192926, -0.79069126)
+stream = ExtResource("16_qhdpk")
+volume_db = 8.156
+autoplay = true
+max_distance = 20.0
 
 [node name="antena" parent="." unique_id=1628755682 instance=ExtResource("14_6vmss")]
 transform = Transform3D(-7.0665617, 0, -13.231164, 0, 15, 0, 13.231164, 0, -7.0665617, -136.40567, 147.16595, 166.02422)

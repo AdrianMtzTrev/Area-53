@@ -3,5 +3,6 @@
 [ext_resource type="PackedScene" uid="uid://nlk438nrs3rt" path="res://assets/Objects/models/antena/antena.glb" id="1_22xdx"]
 
 [node name="antena" type="MeshInstance3D" unique_id=425362639]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0, 0)
 
 [node name="antena" parent="." unique_id=1866920200 instance=ExtResource("1_22xdx")]

@@ -4,15 +4,17 @@
 [ext_resource type="Texture2D" uid="uid://bqamn4ldc1ssf" path="res://assets/textures/barren-ground-rock/barred_ground_rock_packed_albedo_height.png" id="1_p78ra"]
 [ext_resource type="Texture2D" uid="uid://bl706uthgiofo" path="res://assets/textures/barren-ground-rock/barren_ground_rock_packed_normal_roughness.png" id="2_y523t"]
 [ext_resource type="PackedScene" uid="uid://bc88qlep4jfmu" path="res://Player/player.tscn" id="3_y523t"]
-[ext_resource type="Script" uid="uid://dttlorogss63u" path="res://addons/road-generator/nodes/road_manager.gd" id="4_ss4qg"]
-[ext_resource type="Script" uid="uid://cjexxsbvofju2" path="res://addons/road-generator/nodes/road_container.gd" id="5_v0nnn"]
-[ext_resource type="Script" uid="uid://dourxilcpbol7" path="res://addons/road-generator/nodes/road_point.gd" id="6_5vpc2"]
+[ext_resource type="Script" uid="uid://bxp3i4cnonh8y" path="res://addons/road-generator/nodes/road_manager.gd" id="4_ss4qg"]
+[ext_resource type="Script" uid="uid://cph7euje06kel" path="res://addons/road-generator/nodes/road_container.gd" id="5_v0nnn"]
+[ext_resource type="Script" uid="uid://difs1qg4mpcpw" path="res://addons/road-generator/nodes/road_point.gd" id="6_5vpc2"]
 [ext_resource type="PackedScene" uid="uid://dwx51e6sccww0" path="res://assets/Objects/valla.tscn" id="7_v0nnn"]
 [ext_resource type="PackedScene" uid="uid://8m4wcu4shfaw" path="res://assets/Objects/van.tscn" id="9_vdou1"]
 [ext_resource type="PackedScene" uid="uid://cmhgb5jjtger5" path="res://assets/Objects/models/Barricade/Barricade.glb" id="11_ixc55"]
 [ext_resource type="PackedScene" uid="uid://bmwoubo8gdpmr" path="res://assets/Objects/models/Warning-barricade/Warning-barricade.glb" id="12_sl16p"]
 [ext_resource type="FontFile" uid="uid://djnjkc6l5drdk" path="res://assets/Fuentes/VT323-Regular.ttf" id="13_6vmss"]
 [ext_resource type="PackedScene" uid="uid://pasghspr68y8" path="res://assets/Objects/entrada_bunker.tscn" id="13_k5x7x"]
+[ext_resource type="PackedScene" uid="uid://cus3q83qiyp4j" path="res://assets/Objects/antena.tscn" id="14_6vmss"]
+[ext_resource type="PackedScene" uid="uid://bwyx5l0i756t0" path="res://assets/Objects/cube.tscn" id="15_o6l2h"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_64d8o"]
 sky_top_color = Color(0.11372549, 0.16470589, 0.2901961, 1)
@@ -514,28 +516,40 @@ transform = Transform3D(0.99696577, 0, 0.077841744, 0, 1, 0, -0.077841744, 0, 0.
 shape = SubResource("BoxShape3D_orc5f")
 
 [node name="Barricade" parent="." unique_id=1328823690 instance=ExtResource("11_ixc55")]
-transform = Transform3D(0.8835731, 0.4682908, 0.001413708, -0.0015161783, 0.0058796704, -0.9999814, -0.46829045, 0.8835548, 0.0059051067, 0, 2.6418924, -70.45907)
+transform = Transform3D(1.7671466, 0.9365816, 0.0028262346, -0.003030964, 0.011753938, -1.9999632, -0.936581, 1.7671096, 0.011804838, -0.00019137541, 2.7773178, -70.45987)
 
 [node name="Barricade6" parent="." unique_id=1092437229 instance=ExtResource("11_ixc55")]
-transform = Transform3D(0.931976, 0.036746707, -0.3606521, -0.05577517, 0.9975386, -0.042492136, 0.35820305, 0.059716962, 0.9317318, -10.544555, 1.680521, -29.027534)
+transform = Transform3D(1.8639524, 0.073493496, -0.72130436, -0.11155036, 1.9950776, -0.08498401, 0.71640617, 0.119433954, 1.8634639, -10.544555, 1.680521, -29.027534)
+
+[node name="Barricade9" parent="." unique_id=1286394610 instance=ExtResource("11_ixc55")]
+transform = Transform3D(1.9797382, -0.15799373, 0.23595577, 0.17385846, 1.9883558, -0.12733984, -0.2245225, 0.14656122, 1.981946, 2.3989882, 1.7098714, -27.474533)
 
 [node name="Barricade3" parent="." unique_id=705298245 instance=ExtResource("11_ixc55")]
-transform = Transform3D(0.77231157, -0.032514136, -0.63441104, 0.06932469, 0.9970382, 0.033294667, 0.63144946, -0.06969433, 0.77227813, -10.366737, 2.979898, -78.96952)
+transform = Transform3D(1.5446234, -0.06502807, -1.2688221, 0.1386494, 1.9940767, 0.06658944, 1.2628993, -0.13938853, 1.5445569, -10.366737, 2.979898, -78.96952)
 
 [node name="Barricade2" parent="." unique_id=252503762 instance=ExtResource("11_ixc55")]
 transform = Transform3D(0.9975814, -0.04980974, -0.048475504, 0.05168876, 0.99792814, 0.038309556, 0.0464668, -0.04072246, 0.99808925, 0, 2.8638048, -62.98491)
 
 [node name="Barricade5" parent="." unique_id=2132185571 instance=ExtResource("11_ixc55")]
-transform = Transform3D(0.9975814, -0.04980974, -0.048475504, 0.05168876, 0.99792814, 0.038309556, 0.0464668, -0.04072246, 0.99808925, 0, 2.8638048, -62.98491)
+transform = Transform3D(1.9951632, -0.09961978, -0.096950874, 0.103377536, 1.9958563, 0.07661897, 0.092933625, -0.08144494, 1.9961789, 0, 2.8638048, -62.98491)
+
+[node name="Barricade7" parent="." unique_id=1350634559 instance=ExtResource("11_ixc55")]
+transform = Transform3D(1.6624402, -0.09961978, -1.1074151, 0.12804879, 1.9958562, 0.012684211, 1.104489, -0.08144494, 1.6653742, 10.92411, 3.790603, -53.635056)
 
 [node name="Barricade4" parent="." unique_id=2082733801 instance=ExtResource("11_ixc55")]
-transform = Transform3D(0.8299986, -0.0999369, -0.54873914, 0.061800983, 0.99423736, -0.08759416, 0.55433077, 0.038790617, 0.8313919, -11.610632, 2.2018428, -53.834885)
+transform = Transform3D(1.6599975, -0.19987413, -1.0974783, 0.12360198, 1.9884746, -0.17518856, 1.1086618, 0.07758104, 1.6627839, -11.610632, 2.2018428, -53.834885)
+
+[node name="Barricade8" parent="." unique_id=1994640137 instance=ExtResource("11_ixc55")]
+transform = Transform3D(1.2633898, -0.19987413, 1.5374969, 0.18704024, 1.9884747, 0.10480671, -1.5391108, 0.07758103, 1.2748015, -24.983189, 2.252607, -51.24422)
 
 [node name="Warning-barricade" parent="." unique_id=794286082 instance=ExtResource("12_sl16p")]
-transform = Transform3D(0.47722614, 0.86835885, 0.13493738, 0.09002142, 0.10443616, -0.9904489, -0.87415767, 0.48481563, -0.028331175, 2.8604965, 2.5121047, -46.184765)
+transform = Transform3D(0.95445216, 1.7367178, 0.2698739, 0.18004218, 0.20887157, -1.9808981, -1.7483151, 0.9696306, -0.05666226, 2.8604965, 2.5121047, -46.184765)
+
+[node name="Warning-barricade3" parent="." unique_id=1226651321 instance=ExtResource("12_sl16p")]
+transform = Transform3D(0.9544521, 0.13774015, 1.7521554, 0.18004222, 1.9756972, -0.25338763, -1.7483152, 0.27865416, 0.93045473, -9.743667, 2.620656, -43.23259)
 
 [node name="Warning-barricade2" parent="." unique_id=1661959861 instance=ExtResource("12_sl16p")]
-transform = Transform3D(0.874399, 0.03325024, -0.48406732, -0.018066611, 0.99918866, 0.035999253, 0.4848716, -0.022732362, 0.8742898, -9.457411, 3.3407235, -70.27663)
+transform = Transform3D(1.7487975, 0.06650091, -0.9681346, -0.03613321, 1.998377, 0.071998484, 0.96974295, -0.04546448, 1.7485799, -9.457411, 3.3407235, -70.27663)
 
 [node name="EfectoEntrada" type="CanvasLayer" parent="." unique_id=2143048567]
 
@@ -600,5 +614,17 @@ shape = SubResource("BoxShape3D_dgl0r")
 
 [node name="EntradaBunker" parent="." unique_id=1058019590 instance=ExtResource("13_k5x7x")]
 transform = Transform3D(0.010639899, 0, -0.9999434, 0, 1, 0, 0.9999434, 0, 0.010639899, -1.814084, 4.2128983, 14.085742)
+
+[node name="antena" parent="." unique_id=425362639 instance=ExtResource("14_6vmss")]
+transform = Transform3D(-7.0665617, 0, -13.231164, 0, 15, 0, 13.231164, 0, -7.0665617, -136.40567, 147.16595, 166.02422)
+
+[node name="antena3" parent="." unique_id=63062976 instance=ExtResource("14_6vmss")]
+transform = Transform3D(-7.0665617, 0, -13.231164, 0, 15, 0, 13.231164, 0, -7.0665617, -527.8902, 84.627716, 57.788116)
+
+[node name="antena2" parent="." unique_id=667351877 instance=ExtResource("14_6vmss")]
+transform = Transform3D(-7.0665617, 0, -13.231164, 0, 15, 0, 13.231164, 0, -7.0665617, 265.05313, 109.24217, 131.51364)
+
+[node name="StaticBody3D" parent="." unique_id=1493292461 instance=ExtResource("15_o6l2h")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -1.05358, 0.36487293, 24.549849)
 
 [connection signal="body_entered" from="ZonaPuerta" to="Player" method="_on_zona_puerta_body_entered"]

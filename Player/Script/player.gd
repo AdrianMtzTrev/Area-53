@@ -127,7 +127,7 @@ func _on_zona_puerta_body_entered(body: Node3D) -> void:
 		
 		if texto_dialogo1:
 			var tween = create_tween()
-			texto_dialogo1.text = "Debo revisar mi celular... en esa página de Reddit filtraron las clavez de acceso."
+			texto_dialogo1.text = "Debo revisar mi celular... en esa página de Reddit filtraron las claves de acceso."
 			tween.tween_callback(texto_dialogo1.show)
 			tween.tween_property(texto_dialogo1, "modulate:a", 1.0, 1.0)
 			tween.tween_interval(4.0)

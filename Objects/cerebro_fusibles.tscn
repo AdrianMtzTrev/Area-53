@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://b8w5tyrq7xudy"]
+
+[ext_resource type="Script" uid="uid://0ygpi03pqsfv" path="res://Objects/Scripts/cerebro_fusibles.gd" id="1_ccnck"]
+
+[node name="Cerebro_Fusibles" type="Node3D" unique_id=1997753483]
+script = ExtResource("1_ccnck")

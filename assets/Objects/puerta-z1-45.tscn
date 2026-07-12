@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://ctgg205w0hlk8"]
+
+[ext_resource type="PackedScene" uid="uid://l671uw6axvhr" path="res://assets/Objects/models/puerta/puerta.glb" id="1_lygpq"]
+
+[node name="puerta" type="MeshInstance3D" unique_id=693858873]
+
+[node name="puerta" parent="." unique_id=1031352124 instance=ExtResource("1_lygpq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.45, 0, 0, 0)

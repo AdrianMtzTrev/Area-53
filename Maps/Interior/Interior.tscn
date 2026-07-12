@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://bc44jnv6qrfx6" path="res://assets/Objects/escalerasCortas.tscn" id="6_corta1"]
 [ext_resource type="PackedScene" uid="uid://b705fu0esn350" path="res://assets/Objects/puerta.tscn" id="7_x3fpc"]
 [ext_resource type="PackedScene" uid="uid://chr2ktr5jn056" path="res://assets/Objects/tabla.tscn" id="8_u7ig7"]
+[ext_resource type="PackedScene" uid="uid://ctgg205w0hlk8" path="res://assets/Objects/puerta-z1-45.tscn" id="9_u7ig7"]
 
 [node name="Node3D" type="Node3D" unique_id=713244312]
 
@@ -60,4 +61,13 @@ transform = Transform3D(-1, 0, -1.2676303e-07, 0, 1, 0, 8.742278e-08, 0, -1.45, 
 transform = Transform3D(2, 0, 0, 0, 1.36608, -2.1911428, 0, 1.4607619, 2.04912, -33.366116, -11.16356, 27.929836)
 
 [node name="tabla2" parent="." unique_id=1117127025 instance=ExtResource("8_u7ig7")]
-transform = Transform3D(2, 0, 0, 0, 1.4001237, 2.1422467, 0, -1.4281645, 2.1001856, -33.33977, -11.130817, 28.847168)
+transform = Transform3D(2, 0, 0, 0, -1.3993266, -2.143418, 0, 1.4289454, -2.09899, -33.33977, -10.255028, 27.95284)
+
+[node name="StaticBody3D4" parent="." unique_id=932653161 instance=ExtResource("2_cube1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -35.776283, -11.564691, 28.380407)
+
+[node name="puerta" parent="." unique_id=1047029743 instance=ExtResource("9_u7ig7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.794716, -13.190404, 39.41495)
+
+[node name="puerta3" parent="." unique_id=1139832952 instance=ExtResource("9_u7ig7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.718874, -13.271499, 36.790344)

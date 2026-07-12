@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://cjtx4if04irql"]
+
+[ext_resource type="PackedScene" uid="uid://dajynahau3byn" path="res://assets/Objects/models/entrada/EntradaCompleta.glb" id="1_ognqd"]
+
+[node name="StaticBody3D" type="StaticBody3D" unique_id=30468986]
+
+[node name="EntradaCompleta" parent="." unique_id=1643265791 instance=ExtResource("1_ognqd")]

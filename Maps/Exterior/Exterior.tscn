@@ -6,7 +6,8 @@
 [ext_resource type="Script" uid="uid://bxp3i4cnonh8y" path="res://addons/road-generator/nodes/road_manager.gd" id="4_ss4qg"]
 [ext_resource type="Script" uid="uid://cph7euje06kel" path="res://addons/road-generator/nodes/road_container.gd" id="5_v0nnn"]
 [ext_resource type="Script" uid="uid://difs1qg4mpcpw" path="res://addons/road-generator/nodes/road_point.gd" id="6_5vpc2"]
-[ext_resource type="PackedScene" uid="uid://dwx51e6sccww0" path="res://Objects/valla.tscn" id="7_v0nnn"]
+[ext_resource type="PackedScene" uid="uid://dwx51e6sccww0" path="res://assets/Objects/valla.tscn" id="7_v0nnn"]
+[ext_resource type="PackedScene" uid="uid://cjtx4if04irql" path="res://assets/Objects/EntradaCompleta.tscn" id="8_5vpc2"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_64d8o"]
 sky_top_color = Color(0.11372549, 0.16470589, 0.2901961, 1)
@@ -385,3 +386,6 @@ transform = Transform3D(3.9999998, 0, 0, 0, 4, 0, 0, 0, 3.9999998, 13.4696045, 4
 
 [node name="Valla39" parent="Vallas-Perimetrales" unique_id=1673011497 instance=ExtResource("7_v0nnn")]
 transform = Transform3D(3.9999998, 0, 0, 0, 4, 0, 0, 0, 3.9999998, 5.7422028, 4.846705, -88.80226)
+
+[node name="Entrada" parent="." unique_id=30468986 instance=ExtResource("8_5vpc2")]
+transform = Transform3D(0.09289866, 0, -0.99567556, 0, 1, 0, 0.99567556, 0, 0.09289866, -1.0284905, 4.4513164, 13.619283)

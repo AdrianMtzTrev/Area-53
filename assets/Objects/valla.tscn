@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://c3mbdoua05a32"]
+[gd_scene format=3 uid="uid://dwx51e6sccww0"]
 
 [ext_resource type="PackedScene" uid="uid://gwfdej6oq2lt" path="res://assets/Objects/models/Valla/Valla-militar.glb" id="1_b0d4f"]
 
@@ -18,6 +18,6 @@ mesh = SubResource("QuadMesh_2em5r")
 transform = Transform3D(2, 0, 0, 0, 1.273, 0, 0, 0, 2, 0, -0.1433, 0.003967285)
 shape = SubResource("BoxShape3D_v0nnn")
 
-[node name="Node3D" type="Node3D" parent="." unique_id=523412622]
+[node name="Funciona" type="Node3D" parent="." unique_id=523412622]
 
-[node name="Valla-militar" parent="Node3D" unique_id=1664570911 instance=ExtResource("1_b0d4f")]
+[node name="Valla-militar" parent="Funciona" unique_id=1664570911 instance=ExtResource("1_b0d4f")]

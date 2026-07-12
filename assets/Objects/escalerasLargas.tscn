@@ -6,7 +6,7 @@
 size = Vector3(10.095917, 0.5977173, 5.2008057)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_2nw5m"]
-size = Vector3(10.095917, 0.5977173, 5.2008057)
+size = Vector3(11.070854, 0.5977173, 5.2008057)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_vvr5o"]
 size = Vector3(10.090103, 2.987793, 0.10253906)
@@ -19,7 +19,7 @@ visible = false
 mesh = SubResource("BoxMesh_vvr5o")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=146651749]
-transform = Transform3D(0.83973026, -0.5430037, 0, 0.5430037, 0.83973026, 0, 0, 0, 1, -0.07969153, -0.4924307, 0.01208663)
+transform = Transform3D(0.83973026, -0.5430037, 0, 0.5430037, 0.83973026, 0, 0, 0, 1, -0.48903376, -0.757128, 0.01208663)
 shape = SubResource("BoxShape3D_2nw5m")
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="." unique_id=691795805]

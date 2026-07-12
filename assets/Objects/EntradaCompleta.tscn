@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://cjtx4if04irql"]
 
 [ext_resource type="PackedScene" uid="uid://dajynahau3byn" path="res://assets/Objects/models/entrada/EntradaCompleta.glb" id="1_ognqd"]
+[ext_resource type="PackedScene" uid="uid://b705fu0esn350" path="res://assets/Objects/puerta.tscn" id="2_mjxd4"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_ognqd"]
 size = Vector3(6.0638123, 0.6533203, 5.663452)
@@ -12,10 +13,13 @@ size = Vector3(5.8449707, 1.0545654, 4.8831787)
 size = Vector3(5.8706665, 6.7301025, 0.31237793)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_2em5r"]
-size = Vector3(10.42749, 0.7685547, 4.9795227)
+size = Vector3(11.205078, 0.7685547, 4.9795227)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_orc5f"]
 size = Vector3(10.071747, 3.631958, 0.2849121)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_dgl0r"]
+size = Vector3(0.3067627, 6.894165, 4.602478)
 
 [node name="StaticBody3D" type="StaticBody3D" unique_id=30468986]
 
@@ -39,7 +43,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.8882675, 4.0988727, 2.5477
 shape = SubResource("BoxShape3D_vvr5o")
 
 [node name="CollisionShape3D4" type="CollisionShape3D" parent="." unique_id=904699905]
-transform = Transform3D(0.8439449, 0.53642994, 0, -0.53642994, 0.8439449, 0, 0, 0, 1, 2.5462384, -2.358394, -0.0033111572)
+transform = Transform3D(0.8439449, 0.53642994, 0, -0.53642994, 0.8439449, 0, 0, 0, 1, 2.8743591, -2.5669546, -0.0033111572)
 shape = SubResource("BoxShape3D_2em5r")
 
 [node name="CollisionShape3D5" type="CollisionShape3D" parent="." unique_id=759709093]
@@ -49,3 +53,13 @@ shape = SubResource("BoxShape3D_orc5f")
 [node name="CollisionShape3D6" type="CollisionShape3D" parent="." unique_id=1493445940]
 transform = Transform3D(0.8377655, 0.54603016, 0, -0.54603016, 0.8377655, 0, 0, 0, 1, 2.7167106, 0.2539488, -2.5824404)
 shape = SubResource("BoxShape3D_orc5f")
+
+[node name="CollisionShape3D7" type="CollisionShape3D" parent="." unique_id=1466262734]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.843734, 4.120314, -0.022064209)
+shape = SubResource("BoxShape3D_dgl0r")
+
+[node name="puerta" parent="." unique_id=693858873 instance=ExtResource("2_mjxd4")]
+transform = Transform3D(1, 0, 0, 0, 1.3, 0, 0, 0, 1.055, -7.813305, 3.7982304, -0.8840411)
+
+[node name="puerta2" parent="." unique_id=1528057266 instance=ExtResource("2_mjxd4")]
+transform = Transform3D(-1, 0, -1.6081054e-07, 0, 1.3, 0, 1.509958e-07, 0, -1.065, -7.813305, 3.7982304, 0.8511579)

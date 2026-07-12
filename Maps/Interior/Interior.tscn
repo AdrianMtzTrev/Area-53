@@ -11,13 +11,38 @@
 [ext_resource type="PackedScene" uid="uid://ctgg205w0hlk8" path="res://assets/Objects/puerta-z1-45.tscn" id="9_u7ig7"]
 [ext_resource type="PackedScene" uid="uid://8aaatsfcm7wt" path="res://assets/Objects/cuarto.tscn" id="10_pm2pk"]
 [ext_resource type="PackedScene" uid="uid://0jk2a1gyfii" path="res://assets/Objects/Estante.tscn" id="11_sfmky"]
-[ext_resource type="PackedScene" uid="uid://dm0xslk03j7r8" path="res://assets/Objects/models/models_v2/models_v2.glb" id="12_4csx5"]
-[ext_resource type="PackedScene" uid="uid://cm6wpoph6fjy5" path="res://assets/Objects/models/PasilloUnion/PasilloUnion.glb" id="13_hin2i"]
 [ext_resource type="PackedScene" uid="uid://c26wstpsbbuyg" path="res://assets/Objects/telarana.tscn" id="14_hin2i"]
 [ext_resource type="PackedScene" uid="uid://b4x6ksskt04ms" path="res://assets/Objects/tablanormal.tscn" id="15_kuiyd"]
 [ext_resource type="PackedScene" uid="uid://bc88qlep4jfmu" path="res://Player/player.tscn" id="16_y2q48"]
 
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_y2q48"]
+sky_top_color = Color(0, 0, 0, 1)
+sky_horizon_color = Color(0, 0, 0, 1)
+sky_cover_modulate = Color(0, 0, 0, 1)
+ground_bottom_color = Color(0, 0, 0, 1)
+ground_horizon_color = Color(0, 0, 0, 1)
+
+[sub_resource type="Sky" id="Sky_kitki"]
+sky_material = SubResource("ProceduralSkyMaterial_y2q48")
+
+[sub_resource type="Environment" id="Environment_l6fi3"]
+background_mode = 2
+sky = SubResource("Sky_kitki")
+glow_enabled = true
+
 [node name="Node3D" type="Node3D" unique_id=713244312]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=312392672]
+environment = SubResource("Environment_l6fi3")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=928729331]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 89.71686, -103.59608, -155.39413)
+light_color = Color(0, 0, 0, 1)
+light_energy = 0.0
+light_indirect_energy = 0.0
+light_volumetric_fog_energy = 0.0
+light_specular = 0.0
+shadow_enabled = true
 
 [node name="EntradaCompleta" parent="." unique_id=30468986 instance=ExtResource("1_1lqce")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
@@ -100,12 +125,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -33.780296, -11.998976, 38.94
 [node name="Estante" parent="." unique_id=102269525 instance=ExtResource("11_sfmky")]
 transform = Transform3D(-1.3, -1.1454595e-07, -1.5940756e-07, 0, 1.0557085, -0.7586036, 1.9629454e-07, -0.7586036, -1.0557085, -25.628714, -12.440576, 39.36947)
 
-[node name="models_v3" parent="." unique_id=1013724144 instance=ExtResource("12_4csx5")]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 16.398033, -7.2773833, 28.04327)
-
-[node name="PasilloUnion4" parent="." unique_id=1012911629 instance=ExtResource("13_hin2i")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.760847, -7.22341, 28.13956)
-
 [node name="StaticBody3D7" parent="." unique_id=1757100771 instance=ExtResource("2_cube1")]
 transform = Transform3D(-6.556708e-08, 0, 1.5, 0, 1.5, 0, -1.5, 0, -6.556708e-08, -55.1054, -5.4960814, 27.997)
 
@@ -115,14 +134,8 @@ transform = Transform3D(-6.556708e-08, 0, 1.5, 0, 1.5, 0, -1.5, 0, -6.556708e-08
 [node name="StaticBody3D9" parent="." unique_id=549942971 instance=ExtResource("2_cube1")]
 transform = Transform3D(-1.4987684, 0, -0.060772184, 0, 1.5, 0, 0.060772184, 0, -1.4987684, 21.031622, -5.4960814, 17.293758)
 
-[node name="cubePasillo4" parent="." unique_id=694235195 instance=ExtResource("3_pasi1")]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 21.539465, -7.298161, 40.835674)
-
 [node name="Node3D" type="Node3D" parent="." unique_id=273292008]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 6.0695086, -5.950928, 46.5093)
-
-[node name="PasilloUnion5" parent="Node3D" unique_id=1305445307 instance=ExtResource("13_hin2i")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.760847, -7.22341, 28.13956)
 
 [node name="StaticBody3D10" parent="Node3D" unique_id=1212528304 instance=ExtResource("2_cube1")]
 transform = Transform3D(-6.556708e-08, 0, 1.5, 0, 1.5, 0, -1.5, 0, -6.556708e-08, 27.860538, -5.4960814, 27.996996)
@@ -131,7 +144,7 @@ transform = Transform3D(-6.556708e-08, 0, 1.5, 0, 1.5, 0, -1.5, 0, -6.556708e-08
 transform = Transform3D(-1.4987684, 0, -0.060772184, 0, 1.5, 0, 0.060772184, 0, -1.4987684, 21.031622, -5.4960814, 17.293758)
 
 [node name="cubePasillo7" parent="Node3D" unique_id=1779262399 instance=ExtResource("3_pasi1")]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 21.539465, -7.298161, 40.835674)
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 21.539465, -7.418307, 40.835674)
 
 [node name="cubePasillo5" parent="." unique_id=1310555831 instance=ExtResource("3_pasi1")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -22.300076, -13.3226795, 50.547955)
@@ -149,22 +162,16 @@ transform = Transform3D(0.8532475, -0.28528142, 0.43655837, 0.06617912, 0.889574
 transform = Transform3D(-0.82078624, -0.23380902, 0.521194, -0.418951, 0.86662465, -0.27100205, -0.38831666, -0.4407894, -0.8092681, 4.094651, -3.1993492, 30.502327)
 
 [node name="cuarto2" parent="." unique_id=1892334361 instance=ExtResource("10_pm2pk")]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 22.363766, -5.9232492, 50.87788)
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 22.363766, -5.9825087, 50.87788)
 
 [node name="DerechaAll" type="Node3D" parent="." unique_id=40137081]
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -44.566856, 0, 0.004616576)
-
-[node name="PasilloUnion6" parent="DerechaAll" unique_id=1580560701 instance=ExtResource("13_hin2i")]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -22.070053, -13.174338, 68.27014)
 
 [node name="StaticBody3D12" parent="DerechaAll" unique_id=278647234 instance=ExtResource("2_cube1")]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -21.92749, -11.44701, 74.369835)
 
 [node name="StaticBody3D13" parent="DerechaAll" unique_id=515528750 instance=ExtResource("2_cube1")]
 transform = Transform3D(-0.060772117, 0, 1.4987684, 0, 1.5, 0, -1.4987684, 0, -0.060772117, -11.22425, -11.44701, 67.540924)
-
-[node name="cubePasillo8" parent="DerechaAll" unique_id=1745802386 instance=ExtResource("3_pasi1")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -34.766167, -13.249089, 68.04877)
 
 [node name="escalerasCortas2" parent="DerechaAll" unique_id=1883847914 instance=ExtResource("6_corta1")]
 transform = Transform3D(-4.3711385e-08, 0, 0.99999994, 0, 1, 0, -0.99999994, 0, -4.3711385e-08, -22.321426, -12.10011, 13.757768)
@@ -280,12 +287,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -33.780296, -11.998976, 38.94
 [node name="Estante3" parent="DerechaAll/Node3D" unique_id=357322131 instance=ExtResource("11_sfmky")]
 transform = Transform3D(-1.3, -1.1454595e-07, -1.5940756e-07, 0, 1.0557085, -0.7586036, 1.9629454e-07, -0.7586036, -1.0557085, -25.628714, -12.440576, 39.36947)
 
-[node name="models_v5" parent="DerechaAll" unique_id=1837434548 instance=ExtResource("12_4csx5")]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 16.398033, -7.2773833, 28.04327)
-
-[node name="PasilloUnion8" parent="DerechaAll" unique_id=1823932860 instance=ExtResource("13_hin2i")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.760847, -7.22341, 28.13956)
-
 [node name="StaticBody3D15" parent="DerechaAll" unique_id=137026133 instance=ExtResource("2_cube1")]
 transform = Transform3D(-6.556708e-08, 0, 1.5, 0, 1.5, 0, -1.5, 0, -6.556708e-08, -55.1054, -5.4960814, 27.997)
 
@@ -337,3 +338,36 @@ offset_bottom = 23.0
 [node name="Linterna" type="Label" parent="Player" unique_id=17332620]
 offset_right = 40.0
 offset_bottom = 23.0
+
+[node name="PasilloUnion5" parent="." unique_id=1486545060 instance=ExtResource("4_union1")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -22.432562, -13.235745, -68.359764)
+
+[node name="cubePasillo7" parent="." unique_id=1917241230 instance=ExtResource("3_pasi1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.654074, -13.389026, -68.04079)
+
+[node name="StaticBody3D5" parent="." unique_id=246141925 instance=ExtResource("2_cube1")]
+transform = Transform3D(-8.742278e-08, 0, 2, 0, 2, 0, -2, 0, -8.742278e-08, -29.74353, -11.623072, -0.9026183)
+
+[node name="StaticBody3D10" parent="." unique_id=340659611 instance=ExtResource("2_cube1")]
+transform = Transform3D(2.8660283e-15, 6.556708e-08, 1.5, 1.5, -6.556708e-08, 0, 6.556708e-08, 1.5, -6.556708e-08, -16.024277, -10.322188, 37.29264)
+
+[node name="PasilloUnion4" parent="." unique_id=1690403574 instance=ExtResource("4_union1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.650942, -7.2353234, 28.198912)
+
+[node name="cubePasillo4" parent="." unique_id=319608966 instance=ExtResource("3_pasi1")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 21.411171, -7.3556914, 40.851883)
+
+[node name="models_v3" parent="." unique_id=88606720 instance=ExtResource("9_4yasb")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 16.374851, -7.3251257, 28.116283)
+
+[node name="models_v4" parent="." unique_id=1017619291 instance=ExtResource("9_4yasb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -61.0313, -7.286604, -28.069132)
+
+[node name="PasilloUnion6" parent="." unique_id=75254278 instance=ExtResource("4_union1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -66.09264, -7.3191686, -28.730661)
+
+[node name="PasilloUnion7" parent="." unique_id=415654174 instance=ExtResource("4_union1")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -22.53841, -13.211459, 67.856445)
+
+[node name="cuarto3" parent="." unique_id=848173460 instance=ExtResource("10_pm2pk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -44.70737, -11.975783, 68.92038)

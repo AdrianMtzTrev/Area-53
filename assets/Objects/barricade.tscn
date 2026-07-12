@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://dve71paodrloc"]
+
+[ext_resource type="PackedScene" uid="uid://cmhgb5jjtger5" path="res://assets/Objects/models/Barricade/Barricade.glb" id="1_wplg3"]
+
+[node name="Barricade" type="MeshInstance3D" unique_id=1382054055]
+
+[node name="Barricade" parent="." unique_id=1286394610 instance=ExtResource("1_wplg3")]

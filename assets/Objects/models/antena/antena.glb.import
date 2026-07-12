@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://1aneqh38ft8c"
-path="res://.godot/imported/cubePasillo.glb-536bc1b017a438c06445dfc783c52c9a.scn"
+uid="uid://nlk438nrs3rt"
+path="res://.godot/imported/antena.glb-d2b99d99fe378aaf2e6e6d841a4c6686.scn"
 
 [deps]
 
-source_file="res://assets/Objects/models/cubePasillo/cubePasillo.glb"
-dest_files=["res://.godot/imported/cubePasillo.glb-536bc1b017a438c06445dfc783c52c9a.scn"]
+source_file="res://assets/Objects/models/antena/antena.glb"
+dest_files=["res://.godot/imported/antena.glb-d2b99d99fe378aaf2e6e6d841a4c6686.scn"]
 
 [params]
 

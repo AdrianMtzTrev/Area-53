@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://dnlvihcx0bs3d"]
+
+[ext_resource type="PackedScene" uid="uid://1aneqh38ft8c" path="res://assets/Objects/models/cubePasillo/cubePasillo.glb" id="1_1i42o"]
+
+[node name="cubePasillo" type="MeshInstance3D" unique_id=867408062]
+
+[node name="cubePasillo" parent="." unique_id=1832327440 instance=ExtResource("1_1i42o")]

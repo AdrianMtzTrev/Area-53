@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://bxo5anuny538f"]
+
+[ext_resource type="PackedScene" uid="uid://cm6wpoph6fjy5" path="res://assets/Objects/models/PasilloUnion/PasilloUnion.glb" id="1_k6hi4"]
+
+[node name="PasilloUnion" type="MeshInstance3D" unique_id=1896054858]
+
+[node name="PasilloUnion" parent="." unique_id=1012911629 instance=ExtResource("1_k6hi4")]

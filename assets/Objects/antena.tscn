@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://cus3q83qiyp4j"]
+
+[ext_resource type="PackedScene" uid="uid://nlk438nrs3rt" path="res://assets/Objects/models/antena/antena.glb" id="1_22xdx"]
+
+[node name="antena" type="MeshInstance3D" unique_id=425362639]
+
+[node name="antena" parent="." unique_id=1866920200 instance=ExtResource("1_22xdx")]

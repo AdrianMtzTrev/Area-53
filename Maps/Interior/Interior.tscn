@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://c2kid6xtub8r8"]
+
+[ext_resource type="PackedScene" uid="uid://cjtx4if04irql" path="res://assets/Objects/EntradaCompleta.tscn" id="1_1lqce"]
+
+[node name="Node3D" type="Node3D" unique_id=713244312]
+
+[node name="EntradaCompleta" parent="." unique_id=30468986 instance=ExtResource("1_1lqce")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)

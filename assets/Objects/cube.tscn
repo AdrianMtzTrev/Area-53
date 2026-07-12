@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://bwyx5l0i756t0"]
+
+[ext_resource type="PackedScene" uid="uid://lnj44i55cx34" path="res://assets/Objects/models/cube/cube.glb" id="1_lwkpu"]
+
+[node name="StaticBody3D" type="StaticBody3D" unique_id=1493292461]
+
+[node name="cube" parent="." unique_id=1273567681 instance=ExtResource("1_lwkpu")]

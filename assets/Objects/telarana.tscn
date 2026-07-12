@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://c26wstpsbbuyg"]
+
+[ext_resource type="PackedScene" uid="uid://dcqs81y74s5wo" path="res://assets/Objects/models/Telaraña/Telaraña.glb" id="1_m7uol"]
+
+[node name="Telarana" type="MeshInstance3D" unique_id=1215427646]
+
+[node name="Telaraña" parent="." unique_id=650183863 instance=ExtResource("1_m7uol")]

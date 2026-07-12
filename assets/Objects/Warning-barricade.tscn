@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://bsajhj6kn4dp8"]
+
+[ext_resource type="PackedScene" uid="uid://bmwoubo8gdpmr" path="res://assets/Objects/models/Warning-barricade/Warning-barricade.glb" id="1_2apkk"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" unique_id=1022578693]
+
+[node name="Warning-barricade" parent="." unique_id=1226651321 instance=ExtResource("1_2apkk")]

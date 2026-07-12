@@ -4,13 +4,13 @@
 [ext_resource type="Texture2D" uid="uid://bqamn4ldc1ssf" path="res://assets/textures/barren-ground-rock/barred_ground_rock_packed_albedo_height.png" id="1_p78ra"]
 [ext_resource type="Texture2D" uid="uid://bl706uthgiofo" path="res://assets/textures/barren-ground-rock/barren_ground_rock_packed_normal_roughness.png" id="2_y523t"]
 [ext_resource type="PackedScene" uid="uid://bc88qlep4jfmu" path="res://Player/player.tscn" id="3_y523t"]
-[ext_resource type="Script" uid="uid://dttlorogss63u" path="res://addons/road-generator/nodes/road_manager.gd" id="4_ss4qg"]
-[ext_resource type="Script" uid="uid://cjexxsbvofju2" path="res://addons/road-generator/nodes/road_container.gd" id="5_v0nnn"]
-[ext_resource type="Script" uid="uid://dourxilcpbol7" path="res://addons/road-generator/nodes/road_point.gd" id="6_5vpc2"]
+[ext_resource type="Script" uid="uid://bxp3i4cnonh8y" path="res://addons/road-generator/nodes/road_manager.gd" id="4_ss4qg"]
+[ext_resource type="Script" uid="uid://cph7euje06kel" path="res://addons/road-generator/nodes/road_container.gd" id="5_v0nnn"]
+[ext_resource type="Script" uid="uid://difs1qg4mpcpw" path="res://addons/road-generator/nodes/road_point.gd" id="6_5vpc2"]
 [ext_resource type="PackedScene" uid="uid://dwx51e6sccww0" path="res://assets/Objects/valla.tscn" id="7_v0nnn"]
 [ext_resource type="PackedScene" uid="uid://cjtx4if04irql" path="res://assets/Objects/EntradaCompleta.tscn" id="8_5vpc2"]
 [ext_resource type="PackedScene" uid="uid://8m4wcu4shfaw" path="res://assets/Objects/van.tscn" id="9_vdou1"]
-[ext_resource type="PackedScene" uid="uid://cs6mdkirq7ti6" path="res://assets/Objects/models/cube/cube.glb" id="10_04ov5"]
+[ext_resource type="PackedScene" uid="uid://lnj44i55cx34" path="res://assets/Objects/models/cube/cube.glb" id="10_04ov5"]
 [ext_resource type="PackedScene" uid="uid://cmhgb5jjtger5" path="res://assets/Objects/models/Barricade/Barricade.glb" id="11_ixc55"]
 [ext_resource type="PackedScene" uid="uid://bmwoubo8gdpmr" path="res://assets/Objects/models/Warning-barricade/Warning-barricade.glb" id="12_sl16p"]
 [ext_resource type="FontFile" uid="uid://djnjkc6l5drdk" path="res://assets/Fuentes/VT323-Regular.ttf" id="13_6vmss"]
@@ -478,6 +478,9 @@ transform = Transform3D(3.9999998, 0, 0, 0, 4, 0, 0, 0, 3.9999998, 5.7422028, 4.
 [node name="Entrada" parent="." unique_id=30468986 instance=ExtResource("8_5vpc2")]
 transform = Transform3D(0.09289866, 0, -0.99567556, 0, 1, 0, 0.99567556, 0, 0.09289866, -1.0284905, 4.4513164, 13.619283)
 
+[node name="cube" parent="Entrada" unique_id=1273567681 instance=ExtResource("10_04ov5")]
+transform = Transform3D(-8.742278e-08, 0, 2, 0, 2, 0, -2, 0, -8.742278e-08, 12.13091, -1.8738222, 0.85566485)
+
 [node name="Van" parent="." unique_id=1616981070 instance=ExtResource("9_vdou1")]
 transform = Transform3D(0.7617603, 0, 0.64785904, 0, 1, 0, -0.64785904, 0, 0.7617603, -2.8142335, 2.3108883, -89.46598)
 
@@ -515,9 +518,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32.983665, 0, 0)
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Limites_Invisibles/Muro_4" unique_id=88698759]
 transform = Transform3D(0.99696577, 0, 0.077841744, 0, 1, 0, -0.077841744, 0, 0.99696577, -41.64418, -1.6484051, 59.123917)
 shape = SubResource("BoxShape3D_orc5f")
-
-[node name="FondoEntrada" parent="Limites_Invisibles" unique_id=1352713306 instance=ExtResource("10_04ov5")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -22.658346, -10.070016, 26.20237)
 
 [node name="PisoBunker" type="StaticBody3D" parent="Limites_Invisibles" unique_id=1608413243]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5686836, 0, 8.103077)

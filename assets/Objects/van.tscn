@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://8m4wcu4shfaw"]
+
+[ext_resource type="PackedScene" uid="uid://cdnllbf37j4eg" path="res://assets/Objects/models/Van/van.glb" id="1_v46bs"]
+
+[node name="Van" type="StaticBody3D" unique_id=1616981070]
+
+[node name="van" parent="." unique_id=2094610141 instance=ExtResource("1_v46bs")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.035336375, 0, 0.21484494)

@@ -595,7 +595,7 @@ texto_dialogo1 = NodePath("../EfectoEntrada/TextoDialogo")
 [node name="ZonaPuerta" type="Area3D" parent="." unique_id=1010661859]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="ZonaPuerta" unique_id=1512145024]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.6861877, 2.8879395, -5.7411985)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.9335947, 2.8879395, -24.561504)
 shape = SubResource("BoxShape3D_dgl0r")
 
 [node name="EntradaBunker" parent="." unique_id=1058019590 instance=ExtResource("13_k5x7x")]

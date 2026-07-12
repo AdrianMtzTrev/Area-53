@@ -120,12 +120,6 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_66fhq")
 
-[sub_resource type="BoxMesh" id="BoxMesh_vvr5o"]
-size = Vector3(0.67822266, 0.5859375, 0.5470581)
-
-[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_167ml"]
-data = PackedVector3Array(-0.3391, 0.29299998, 0.2814, 0.3391, 0.29299998, 0.2814, -0.3391, -0.29299998, 0.2814, 0.3391, 0.29299998, 0.2814, 0.3391, -0.29299998, 0.2814, -0.3391, -0.29299998, 0.2814, 0.3391, 0.29299998, -0.2814, -0.3391, 0.29299998, -0.2814, 0.3391, -0.29299998, -0.2814, -0.3391, 0.29299998, -0.2814, -0.3391, -0.29299998, -0.2814, 0.3391, -0.29299998, -0.2814, 0.3391, 0.29299998, 0.2814, 0.3391, 0.29299998, -0.2814, 0.3391, -0.29299998, 0.2814, 0.3391, 0.29299998, -0.2814, 0.3391, -0.29299998, -0.2814, 0.3391, -0.29299998, 0.2814, -0.3391, 0.29299998, -0.2814, -0.3391, 0.29299998, 0.2814, -0.3391, -0.29299998, -0.2814, -0.3391, 0.29299998, 0.2814, -0.3391, -0.29299998, 0.2814, -0.3391, -0.29299998, -0.2814, 0.3391, 0.29299998, 0.2814, -0.3391, 0.29299998, 0.2814, 0.3391, 0.29299998, -0.2814, -0.3391, 0.29299998, 0.2814, -0.3391, 0.29299998, -0.2814, 0.3391, 0.29299998, -0.2814, -0.3391, -0.29299998, 0.2814, 0.3391, -0.29299998, 0.2814, -0.3391, -0.29299998, -0.2814, 0.3391, -0.29299998, 0.2814, 0.3391, -0.29299998, -0.2814, -0.3391, -0.29299998, -0.2814)
-
 [sub_resource type="QuadMesh" id="QuadMesh_orc5f"]
 size = Vector2(0.2, 1)
 
@@ -154,17 +148,6 @@ skeleton = NodePath("")
 transform = Transform3D(-3.6142125, 0, -2.1855695e-07, 0, 2.3492818, 0, 3.1596448e-07, 0, -2.5, 2.7679462, -2.080739, -0.00987196)
 mesh = SubResource("ArrayMesh_11r4h")
 skeleton = NodePath("")
-
-[node name="PanelAcceso" type="StaticBody3D" parent="." unique_id=354131569 groups=["boton_acceso"]]
-transform = Transform3D(0.00044103066, 0, 0.9999999, 0, 1, 0, -0.9999999, 0, 0.00044103066, -7.878359, 2.3862684, 1.7894895)
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="PanelAcceso" unique_id=608347951]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.3198204, 1.0222025, -0.14101696)
-mesh = SubResource("BoxMesh_vvr5o")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="PanelAcceso" unique_id=1677194380]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.3198204, 1.0222025, -0.12099457)
-shape = SubResource("ConcavePolygonShape3D_167ml")
 
 [node name="PuertaBunker" type="StaticBody3D" parent="." unique_id=1485360333]
 script = ExtResource("3_mfijc")

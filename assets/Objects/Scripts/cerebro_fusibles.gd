@@ -3,15 +3,22 @@ extends Node3D
 var secuencia_correcta = [5, 3, 1, 2, 6, 4]
 var progreso = []
 
-func comprobar_palanca(numero):
-	progreso.append(numero)
-	var indice = progreso.size() -1
+func comprobar_palanca(numero, agregando):
+	if agregando:
+		progreso.append(numero)
+	else:
+		progreso.erase(numero)
+		
+	print("Progreso actual: ", progreso)
 	
-	#contraseña incorrecta
-	if progreso[indice] != secuencia_correcta[indice]:
-		print("Secuencia incorrecta")
+	if progreso.size() == secuencia_correcta.size():
+		validar_secuencia()
+
+func validar_secuencia():
+	if progreso == secuencia_correcta:
+		print("Secuencia Correcta")
+	else:
+		print("Secuencia Incorrecta")
 		progreso.clear()
 		get_tree().call_group("grupo_palancas", "reiniciar")
-	else:
-		print("Secuencia Correcta")
 		

@@ -3,17 +3,19 @@ extends StaticBody3D
 @export var numero_palanca : int = 1
 @export var cerebro_puzzle : Node3D
 
-var bajada = false
+var esta_bajada = false
 
 func iniciar_puzzle():
-	if bajada: return
+	esta_bajada = !esta_bajada
 	
-	bajada = true
-	rotation_degrees.x = -45
-	
+	if esta_bajada:
+		rotation_degrees.x = -45
+	else:
+		rotation_degrees.x = 0
+		
 	if cerebro_puzzle:
-		cerebro_puzzle.comprobar_palanca(numero_palanca)
+		cerebro_puzzle.comprobar_palanca(numero_palanca, esta_bajada)
 		
 func reiniciar():
-	bajada = false
+	esta_bajada = false
 	rotation_degrees.x = 0

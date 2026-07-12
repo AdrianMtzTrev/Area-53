@@ -32,6 +32,10 @@ project/assembly_name="xp-game-jam"
 
 enabled=PackedStringArray("res://addons/road-generator/plugin.cfg", "res://addons/terrain_3d/plugin.cfg")
 
+[global_group]
+
+grupo_palancas=""
+
 [input]
 
 move_forward={

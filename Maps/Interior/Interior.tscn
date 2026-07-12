@@ -1,8 +1,63 @@
 [gd_scene format=3 uid="uid://c2kid6xtub8r8"]
 
 [ext_resource type="PackedScene" uid="uid://cjtx4if04irql" path="res://assets/Objects/EntradaCompleta.tscn" id="1_1lqce"]
+[ext_resource type="PackedScene" uid="uid://bwyx5l0i756t0" path="res://assets/Objects/cube.tscn" id="2_cube1"]
+[ext_resource type="PackedScene" uid="uid://dnlvihcx0bs3d" path="res://assets/Objects/cube_pasillo.tscn" id="3_pasi1"]
+[ext_resource type="PackedScene" uid="uid://bxo5anuny538f" path="res://assets/Objects/pasillo_union.tscn" id="4_union1"]
+[ext_resource type="PackedScene" uid="uid://d0f07slibr4vr" path="res://assets/Objects/escalerasLargas.tscn" id="5_larga1"]
+[ext_resource type="PackedScene" uid="uid://bc44jnv6qrfx6" path="res://assets/Objects/escalerasCortas.tscn" id="6_corta1"]
+[ext_resource type="PackedScene" uid="uid://b705fu0esn350" path="res://assets/Objects/puerta.tscn" id="7_x3fpc"]
+[ext_resource type="PackedScene" uid="uid://chr2ktr5jn056" path="res://assets/Objects/tabla.tscn" id="8_u7ig7"]
 
 [node name="Node3D" type="Node3D" unique_id=713244312]
 
 [node name="EntradaCompleta" parent="." unique_id=30468986 instance=ExtResource("1_1lqce")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
+
+[node name="StaticBody3D" parent="." unique_id=1493292461 instance=ExtResource("2_cube1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.911169, -3.7147908, 0.042411327)
+
+[node name="PasilloUnion" parent="." unique_id=1896054858 instance=ExtResource("4_union1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.036844, -11.304461, -0.21760094)
+
+[node name="escalerasLargas" parent="." unique_id=353473689 instance=ExtResource("5_larga1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.4620495, -7.700098, 0.0675025)
+
+[node name="escalerasCortas" parent="." unique_id=427630456 instance=ExtResource("6_corta1")]
+transform = Transform3D(-4.3711385e-08, 0, 0.99999994, 0, 1, 0, -0.99999994, 0, -4.3711385e-08, -22.321426, -12.10011, 13.757768)
+
+[node name="StaticBody3D2" parent="." unique_id=38330474 instance=ExtResource("2_cube1")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -22.282719, -9.573997, 9.482664)
+
+[node name="cubePasillo" parent="." unique_id=867408062 instance=ExtResource("3_pasi1")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -22.295673, -13.36314, 20.808376)
+
+[node name="PasilloUnion2" parent="." unique_id=1354227107 instance=ExtResource("4_union1")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -22.530945, -13.251263, 28.133682)
+
+[node name="PasilloUnion3" parent="." unique_id=778810440 instance=ExtResource("4_union1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.099895, -13.242429, 37.895737)
+
+[node name="cubePasillo2" parent="." unique_id=1603742712 instance=ExtResource("3_pasi1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.755858, -13.328082, 28.356443)
+
+[node name="escalerasLargas2" parent="." unique_id=391764420 instance=ExtResource("5_larga1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.45431185, -9.534808, 28.336226)
+
+[node name="cubePasillo3" parent="." unique_id=950933091 instance=ExtResource("3_pasi1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.105238, -7.309851, 28.369045)
+
+[node name="StaticBody3D3" parent="." unique_id=966575991 instance=ExtResource("2_cube1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -31.782454, -11.576188, 28.37967)
+
+[node name="puerta1" parent="." unique_id=693858873 instance=ExtResource("7_x3fpc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.45, -33.414772, -13.286518, 29.526047)
+
+[node name="puerta2" parent="." unique_id=685801211 instance=ExtResource("7_x3fpc")]
+transform = Transform3D(-1, 0, -1.2676303e-07, 0, 1, 0, 8.742278e-08, 0, -1.45, -33.414772, -13.286518, 27.101116)
+
+[node name="tabla" parent="." unique_id=163598820 instance=ExtResource("8_u7ig7")]
+transform = Transform3D(2, 0, 0, 0, 1.36608, -2.1911428, 0, 1.4607619, 2.04912, -33.366116, -11.16356, 27.929836)
+
+[node name="tabla2" parent="." unique_id=1117127025 instance=ExtResource("8_u7ig7")]
+transform = Transform3D(2, 0, 0, 0, 1.4001237, 2.1422467, 0, -1.4281645, 2.1001856, -33.33977, -11.130817, 28.847168)

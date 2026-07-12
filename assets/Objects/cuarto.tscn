@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://8aaatsfcm7wt"]
+
+[ext_resource type="PackedScene" uid="uid://tlqo2etftb6x" path="res://assets/Objects/models/cuarto/cuarto.glb" id="1_cua01"]
+
+[node name="cuarto" type="MeshInstance3D" unique_id=135123349]
+
+[node name="cuarto" parent="." unique_id=155476790 instance=ExtResource("1_cua01")]

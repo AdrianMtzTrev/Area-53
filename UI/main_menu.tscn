@@ -21,6 +21,43 @@ shader_parameter/curvature = 3.0
 shader_parameter/chromatic_aberration = 1.5
 shader_parameter/noise_intensity = 0.15
 
+[sub_resource type="Animation" id="Animation_4cwpn"]
+resource_name = "Fade_to_Black"
+length = 3.0000000000000004
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Fade:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_f40uw"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Fade:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_8ctay"]
+_data = {
+&"Fade_to_Black": SubResource("Animation_4cwpn"),
+&"RESET": SubResource("Animation_f40uw")
+}
+
 [node name="MainMenu" type="Control" unique_id=797164402]
 layout_mode = 3
 anchors_preset = 15
@@ -76,6 +113,20 @@ offset_bottom = 638.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
+
+[node name="FadeLayer" type="CanvasLayer" parent="." unique_id=2093400038]
+
+[node name="Fade" type="ColorRect" parent="FadeLayer" unique_id=1868261863]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 0)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="FadeLayer" unique_id=1602162622]
+libraries/ = SubResource("AnimationLibrary_8ctay")
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/StartBttn" to="." method="_on_start_bttn_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/ExitBttn" to="." method="_on_exit_bttn_pressed"]

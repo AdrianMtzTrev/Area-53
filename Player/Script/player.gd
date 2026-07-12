@@ -15,18 +15,23 @@ var tiene_linterna : bool = true
 @onready var linterna = $SpotLight3D
 @onready var camera = $Camera3D
 @onready var raycast = $Camera3D/RayCast3D
+@export var texto_tutorial = Label
+var altura_camara_original: float = 0.0
 
 #variables de tambaleo
-const BOB_FRECUENCIA = 0.5
-const BOB_AMPLITUD = 0.28
+const BOB_FRECUENCIA = 3.8
+const BOB_AMPLITUD = 0.03
 var t_bob = 0.0
 
 func _ready():
 	#Ocultar cursor del raton y bloquea al cetro de la pantalla
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	
+	altura_camara_original = camera.position.y
+	
 	#Linterna apagada al iniciar
 	linterna.visible = false
+	linterna.set_as_top_level(true)
 	
 func _input(event):
 	#Detecta movimiento del mouse solo si esta oculto
@@ -61,6 +66,11 @@ func _input(event):
 	if event.is_action_pressed("LINTERNA"):
 		if slot_activo == 1:
 			linterna.visible = !linterna.visible
+			
+			if texto_tutorial and texto_tutorial.visible:
+				var tween = create_tween()
+				tween.tween_property(texto_tutorial, "modulate:a", 0.0, 0.5)
+				tween.tween_callback(texto_tutorial.hide)
 	
 func _physics_process(delta):
 	#Aplicar gravedad si el player no toca el suelo
@@ -70,9 +80,9 @@ func _physics_process(delta):
 	#Tambaleo
 	if is_on_floor() and (velocity.x != 0 or velocity.z != 0):
 		t_bob += delta * velocity.length()
-		camera.position.y =sin(t_bob * BOB_FRECUENCIA) * BOB_AMPLITUD
+		camera.position.y = altura_camara_original + sin(t_bob * BOB_FRECUENCIA) * BOB_AMPLITUD
 	else:
-		camera.position.y = move_toward(camera.position.y, 0.0, delta)
+		camera.position.y = move_toward(camera.position.y, altura_camara_original, delta)
 		
 	#Obtener teclas de movimiento si no estamos en un menu
 	var input_dir = Vector2.ZERO
@@ -94,4 +104,4 @@ func _physics_process(delta):
 	
 func _process(delta):
 	linterna.global_position = camera.global_position
-	linterna.global_transform.basis = linterna.global_transform.basis.slerp(camera.global_transform.basis, 12.0 * delta).orthonormalized()
+	linterna.global_transform.basis = linterna.global_transform.basis.slerp(camera.global_transform.basis, 9.0 * delta).orthonormalized()

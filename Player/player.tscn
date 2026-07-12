@@ -3,23 +3,28 @@
 [ext_resource type="Script" uid="uid://b7j5mjjwc6t4j" path="res://Player/Script/player.gd" id="1_l8h54"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_vvr5o"]
+height = 3.1015005
 
 [node name="Player" type="CharacterBody3D" unique_id=196113240]
 script = ExtResource("1_l8h54")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=740173766]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0937047, 0)
 shape = SubResource("CapsuleShape3D_vvr5o")
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=808171248]
-transform = Transform3D(1, 0, 0, 0, 0.9961132, 0.08808317, 0, -0.08808317, 0.9961132, -0.21839273, 0.8862489, -0.405648)
+transform = Transform3D(1, 0, 0, 0, 0.9961132, 0.08808317, 0, -0.08808317, 0.9961132, -0.21839273, 2.1992836, -0.405648)
 
 [node name="RayCast3D" type="RayCast3D" parent="Camera3D" unique_id=114135315]
 target_position = Vector3(0, 0, -2)
 
 [node name="SpotLight3D" type="SpotLight3D" parent="." unique_id=601384255]
 transform = Transform3D(1, 0, 0, 0, 0.9961132, 0.08808317, 0, -0.08808317, 0.9961132, -0.21839273, 0.8862489, -0.405648)
-light_color = Color(0.99267596, 1, 0.8094236, 1)
-light_energy = 1.366
+light_color = Color(0.94909304, 0.9532618, 0.78938496, 1)
+light_energy = 2.0
+light_indirect_energy = 1.2
+light_volumetric_fog_energy = 3.5
 shadow_enabled = true
-spot_range = 25.0
+spot_range = 30.0
+spot_attenuation = 1.4
 spot_angle = 35.0

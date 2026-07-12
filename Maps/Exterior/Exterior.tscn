@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://13x8ms8ii8mv"]
 
+[ext_resource type="PackedScene" uid="uid://ccteaw5lr6fvp" path="res://assets/Objects/models/LuzEmergencia/LuzEmergencia.glb" id="1_k5x7x"]
 [ext_resource type="Texture2D" uid="uid://bqamn4ldc1ssf" path="res://assets/textures/barren-ground-rock/barred_ground_rock_packed_albedo_height.png" id="1_p78ra"]
 [ext_resource type="Texture2D" uid="uid://bl706uthgiofo" path="res://assets/textures/barren-ground-rock/barren_ground_rock_packed_normal_roughness.png" id="2_y523t"]
 [ext_resource type="PackedScene" uid="uid://bc88qlep4jfmu" path="res://Player/player.tscn" id="3_y523t"]
@@ -10,6 +11,9 @@
 [ext_resource type="PackedScene" uid="uid://cjtx4if04irql" path="res://assets/Objects/EntradaCompleta.tscn" id="8_5vpc2"]
 [ext_resource type="PackedScene" uid="uid://8m4wcu4shfaw" path="res://assets/Objects/van.tscn" id="9_vdou1"]
 [ext_resource type="PackedScene" uid="uid://cs6mdkirq7ti6" path="res://assets/Objects/models/cube/cube.glb" id="10_04ov5"]
+[ext_resource type="PackedScene" uid="uid://cmhgb5jjtger5" path="res://assets/Objects/models/Barricade/Barricade.glb" id="11_ixc55"]
+[ext_resource type="PackedScene" uid="uid://bmwoubo8gdpmr" path="res://assets/Objects/models/Warning-barricade/Warning-barricade.glb" id="12_sl16p"]
+[ext_resource type="FontFile" uid="uid://djnjkc6l5drdk" path="res://assets/Fuentes/VT323-Regular.ttf" id="13_6vmss"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_64d8o"]
 sky_top_color = Color(0.11372549, 0.16470589, 0.2901961, 1)
@@ -24,7 +28,7 @@ background_mode = 1
 background_color = Color(0.028007371, 0.058840267, 0.1452328, 1)
 sky = SubResource("Sky_nhkl4")
 ambient_light_source = 2
-ambient_light_color = Color(0.17283267, 0.17283267, 0.17283261, 1)
+ambient_light_color = Color(0.10747976, 0.10747973, 0.10747973, 1)
 ambient_light_energy = 0.34
 glow_enabled = true
 fog_enabled = true
@@ -109,7 +113,71 @@ texture_list = Array[Terrain3DTextureAsset]([SubResource("Terrain3DTextureAsset_
 size = Vector3(10.498169, 6.904785, 4.7886963)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_orc5f"]
-size = Vector3(9.364746, 21.292572, 105.25209)
+size = Vector3(17.798584, 21.292572, 105.25209)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_2em5r"]
+size = Vector3(4.2660522, 1.5262451, 7.0612183)
+
+[sub_resource type="Animation" id="Animation_k5x7x"]
+resource_name = "Fade_in_mundo"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Texto Tutorial:theme_override_colors/font_color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(3, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_6vmss"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Texto Tutorial:theme_override_colors/font_color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_o6l2h"]
+_data = {
+&"Fade_in_mundo": SubResource("Animation_k5x7x"),
+&"RESET": SubResource("Animation_6vmss")
+}
 
 [node name="Node3D" type="Node3D" unique_id=1265703151]
 
@@ -118,19 +186,27 @@ environment = SubResource("Environment_p78ra")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=216144787]
 transform = Transform3D(-0.8660254, -0.43301278, 0.24999999, -0.42290378, 0.9010997, 0.09576908, -0.26674414, -0.022787452, -0.96349794, 0, 0, 0)
-light_color = Color(0.034169655, 0.14166129, 0.3668269, 1)
+light_color = Color(0.012695551, 0.07476909, 0.2078701, 1)
 light_energy = 0.5
+shadow_enabled = true
+
+[node name="LuzEmergencia" parent="DirectionalLight3D" unique_id=1668635670 instance=ExtResource("1_k5x7x")]
+physics_interpolation_mode = 2
+transform = Transform3D(-0.8872724, 0.4567505, -0.0642391, -0.08945127, -0.033766586, 0.9954187, 0.4524892, 0.8889532, 0.07081694, -5.1790075, 11.288194, -4.9232907)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="DirectionalLight3D/LuzEmergencia" unique_id=1699503311]
+transform = Transform3D(1, -8.940697e-08, -2.849847e-07, 2.9802322e-08, 1.0000006, 2.0861626e-07, 2.3748726e-07, -7.450581e-09, 1.0000002, 0.04335916, 0.73312855, 0.040540695)
+light_color = Color(1, 0.55628604, 0.49291283, 1)
+light_energy = 5.119
 shadow_enabled = true
 
 [node name="Terrain3D2" type="Terrain3D" parent="." unique_id=247859224]
 data_directory = "res://Maps/Exterior/Terrain2"
 material = SubResource("Terrain3DMaterial_ss4qg")
 assets = SubResource("Terrain3DAssets_04ov5")
+collision_shape_size = 8
 top_level = true
 metadata/_edit_lock_ = true
-
-[node name="Player" parent="." unique_id=196113240 instance=ExtResource("3_y523t")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.450922, -80.77153)
 
 [node name="RoadManager" type="Node3D" parent="." unique_id=520265310]
 script = ExtResource("4_ss4qg")
@@ -413,17 +489,101 @@ shape = SubResource("BoxShape3D_vvr5o")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.2389507, 0)
 
 [node name="Muro_1" type="StaticBody3D" parent="Limites_Invisibles" unique_id=1481021076]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.987442, 0, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Limites_Invisibles/Muro_1" unique_id=595229825]
 transform = Transform3D(0.99818486, 0, 0.060224995, 0, 1, 0, -0.060224995, 0, 0.99818486, -18.914322, 6.288904, -36.679825)
 shape = SubResource("BoxShape3D_orc5f")
 
 [node name="Muro_2" type="StaticBody3D" parent="Limites_Invisibles" unique_id=1857227453]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29.562548, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32.983665, 0, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Limites_Invisibles/Muro_2" unique_id=1739832433]
 transform = Transform3D(0.99818486, 0, 0.060224995, 0, 1, 0, -0.060224995, 0, 0.99818486, -18.914322, 6.288904, -36.679825)
 shape = SubResource("BoxShape3D_orc5f")
 
+[node name="Muro_3" type="StaticBody3D" parent="Limites_Invisibles" unique_id=844888505]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32.983665, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Limites_Invisibles/Muro_3" unique_id=1211854628]
+transform = Transform3D(0.99696577, 0, 0.077841744, 0, 1, 0, -0.077841744, 0, 0.99696577, -20.025612, -1.6236057, 57.454155)
+shape = SubResource("BoxShape3D_orc5f")
+
+[node name="Muro_4" type="StaticBody3D" parent="Limites_Invisibles" unique_id=1346725959]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32.983665, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Limites_Invisibles/Muro_4" unique_id=88698759]
+transform = Transform3D(0.99696577, 0, 0.077841744, 0, 1, 0, -0.077841744, 0, 0.99696577, -41.64418, -1.6484051, 59.123917)
+shape = SubResource("BoxShape3D_orc5f")
+
 [node name="FondoEntrada" parent="Limites_Invisibles" unique_id=1352713306 instance=ExtResource("10_04ov5")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -22.658346, -10.070016, 26.20237)
+
+[node name="PisoBunker" type="StaticBody3D" parent="Limites_Invisibles" unique_id=1608413243]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5686836, 0, 8.103077)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Limites_Invisibles/PisoBunker" unique_id=447706759]
+transform = Transform3D(0.99515325, 0, 0.09833642, 0, 1, 0, -0.09833642, 0, 0.99515325, -0.17905593, 0.26312256, 1.1557598)
+shape = SubResource("BoxShape3D_2em5r")
+
+[node name="Barricade" parent="." unique_id=1328823690 instance=ExtResource("11_ixc55")]
+transform = Transform3D(0.8835731, 0.4682908, 0.001413708, -0.0015161783, 0.0058796704, -0.9999814, -0.46829045, 0.8835548, 0.0059051067, 0, 2.6418924, -70.45907)
+
+[node name="Barricade6" parent="." unique_id=1092437229 instance=ExtResource("11_ixc55")]
+transform = Transform3D(0.931976, 0.036746707, -0.3606521, -0.05577517, 0.9975386, -0.042492136, 0.35820305, 0.059716962, 0.9317318, -10.544555, 1.680521, -29.027534)
+
+[node name="Barricade3" parent="." unique_id=705298245 instance=ExtResource("11_ixc55")]
+transform = Transform3D(0.77231157, -0.032514136, -0.63441104, 0.06932469, 0.9970382, 0.033294667, 0.63144946, -0.06969433, 0.77227813, -10.366737, 2.979898, -78.96952)
+
+[node name="Barricade2" parent="." unique_id=252503762 instance=ExtResource("11_ixc55")]
+transform = Transform3D(0.9975814, -0.04980974, -0.048475504, 0.05168876, 0.99792814, 0.038309556, 0.0464668, -0.04072246, 0.99808925, 0, 2.8638048, -62.98491)
+
+[node name="Barricade5" parent="." unique_id=2132185571 instance=ExtResource("11_ixc55")]
+transform = Transform3D(0.9975814, -0.04980974, -0.048475504, 0.05168876, 0.99792814, 0.038309556, 0.0464668, -0.04072246, 0.99808925, 0, 2.8638048, -62.98491)
+
+[node name="Barricade4" parent="." unique_id=2082733801 instance=ExtResource("11_ixc55")]
+transform = Transform3D(0.8299986, -0.0999369, -0.54873914, 0.061800983, 0.99423736, -0.08759416, 0.55433077, 0.038790617, 0.8313919, -11.610632, 2.2018428, -53.834885)
+
+[node name="Warning-barricade" parent="." unique_id=794286082 instance=ExtResource("12_sl16p")]
+transform = Transform3D(0.47722614, 0.86835885, 0.13493738, 0.09002142, 0.10443616, -0.9904489, -0.87415767, 0.48481563, -0.028331175, 2.8604965, 2.5121047, -46.184765)
+
+[node name="Warning-barricade2" parent="." unique_id=1661959861 instance=ExtResource("12_sl16p")]
+transform = Transform3D(0.874399, 0.03325024, -0.48406732, -0.018066611, 0.99918866, 0.035999253, 0.4848716, -0.022732362, 0.8742898, -9.457411, 3.3407235, -70.27663)
+
+[node name="EfectoEntrada" type="CanvasLayer" parent="." unique_id=2143048567]
+
+[node name="ColorRect" type="ColorRect" parent="EfectoEntrada" unique_id=124819061]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="EfectoEntrada" unique_id=1086606943]
+libraries/ = SubResource("AnimationLibrary_o6l2h")
+autoplay = &"Fade_in_mundo"
+
+[node name="Texto Tutorial" type="Label" parent="EfectoEntrada" unique_id=568298733]
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -11.5
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 0)
+theme_override_fonts/font = ExtResource("13_6vmss")
+theme_override_font_sizes/font_size = 32
+text = "Presiona [F] para encender la linterna"
+horizontal_alignment = 1
+
+[node name="TextoDialogo" type="Label" parent="EfectoEntrada" unique_id=1630206796]
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="Player" parent="." unique_id=196113240 node_paths=PackedStringArray("texto_tutorial") instance=ExtResource("3_y523t")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.7293477, 2.983676, -82.37264)
+texto_tutorial = NodePath("../EfectoEntrada/Texto Tutorial")

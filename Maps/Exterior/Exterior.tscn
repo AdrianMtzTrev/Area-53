@@ -6,7 +6,7 @@
 [ext_resource type="Script" uid="uid://bxp3i4cnonh8y" path="res://addons/road-generator/nodes/road_manager.gd" id="4_ss4qg"]
 [ext_resource type="Script" uid="uid://cph7euje06kel" path="res://addons/road-generator/nodes/road_container.gd" id="5_v0nnn"]
 [ext_resource type="Script" uid="uid://difs1qg4mpcpw" path="res://addons/road-generator/nodes/road_point.gd" id="6_5vpc2"]
-[ext_resource type="PackedScene" uid="uid://c3mbdoua05a32" path="res://Objects/valla.tscn" id="7_v0nnn"]
+[ext_resource type="PackedScene" path="res://Objects/valla.tscn" id="7_v0nnn"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_64d8o"]
 sky_top_color = Color(0.11372549, 0.16470589, 0.2901961, 1)
@@ -258,128 +258,130 @@ prior_mag = 17.560795
 next_mag = 17.560795
 prior_pt_init = NodePath("../RP_012")
 
-[node name="Valla" parent="." unique_id=1072294590 instance=ExtResource("7_v0nnn")]
+[node name="Vallas-Perimetrales" type="Node3D" parent="." unique_id=1593477324]
+
+[node name="Valla" parent="Vallas-Perimetrales" unique_id=1072294590 instance=ExtResource("7_v0nnn")]
 transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -11.084286, 5.133463, -88.20191)
 
-[node name="Valla2" parent="." unique_id=1441809821 instance=ExtResource("7_v0nnn")]
+[node name="Valla2" parent="Vallas-Perimetrales" unique_id=1441809821 instance=ExtResource("7_v0nnn")]
 transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -19.084286, 5.133463, -88.20191)
 
-[node name="Valla3" parent="." unique_id=1496141787 instance=ExtResource("7_v0nnn")]
+[node name="Valla3" parent="Vallas-Perimetrales" unique_id=1496141787 instance=ExtResource("7_v0nnn")]
 transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -27.084286, 5.133463, -88.20191)
 
-[node name="Valla4" parent="." unique_id=1057719575 instance=ExtResource("7_v0nnn")]
+[node name="Valla4" parent="Vallas-Perimetrales" unique_id=1057719575 instance=ExtResource("7_v0nnn")]
 transform = Transform3D(3.4641016, 0, 2, 0, 4, 0, -2, 0, 3.4641016, -34.084286, 5.133463, -86.20191)
 
-[node name="Valla5" parent="." unique_id=1718572893 instance=ExtResource("7_v0nnn")]
+[node name="Valla5" parent="Vallas-Perimetrales" unique_id=1718572893 instance=ExtResource("7_v0nnn")]
 transform = Transform3D(3.4641016, 0, 2, 0, 4, 0, -2, 0, 3.4641016, -41.084286, 4.6747136, -82.20191)
 
-[node name="Valla6" parent="." unique_id=1816157315 instance=ExtResource("7_v0nnn")]
+[node name="Valla6" parent="Vallas-Perimetrales" unique_id=1816157315 instance=ExtResource("7_v0nnn")]
 transform = Transform3D(3.4641016, 0, 2, 0, 4, 0, -2, 0, 3.4641016, -48.084286, 4.551002, -78.20191)
 
-[node name="Valla7" parent="." unique_id=1127192826 instance=ExtResource("7_v0nnn")]
+[node name="Valla7" parent="Vallas-Perimetrales" unique_id=1127192826 instance=ExtResource("7_v0nnn")]
 transform = Transform3D(3.4641016, 0, 2, 0, 4, 0, -2, 0, 3.4641016, -55.084286, 4.4002905, -74.20191)
 
-[node name="Valla8" parent="." unique_id=1632866246 instance=ExtResource("7_v0nnn")]
+[node name="Valla8" parent="Vallas-Perimetrales" unique_id=1632866246 instance=ExtResource("7_v0nnn")]
 transform = Transform3D(3.4641016, 0, 2, 0, 4, 0, -2, 0, 3.4641016, -62.084286, 4.513674, -70.20191)
 
-[node name="Valla9" parent="." unique_id=1158876643 instance=ExtResource("7_v0nnn")]
+[node name="Valla9" parent="Vallas-Perimetrales" unique_id=1158876643 instance=ExtResource("7_v0nnn")]
 transform = Transform3D(3.4641016, 0, 2, 0, 4, 0, -2, 0, 3.4641016, -69.08429, 4.2659607, -66.20191)
 
-[node name="Valla10" parent="." unique_id=681075039 instance=ExtResource("7_v0nnn")]
+[node name="Valla10" parent="Vallas-Perimetrales" unique_id=681075039 instance=ExtResource("7_v0nnn")]
 transform = Transform3D(2.8284268, 0, 2.828427, 0, 4, 0, -2.828427, 0, 2.8284268, -75.293434, 4.1340213, -61.23933)
 
-[node name="Valla11" parent="." unique_id=238918336 instance=ExtResource("7_v0nnn")]
+[node name="Valla11" parent="Vallas-Perimetrales" unique_id=238918336 instance=ExtResource("7_v0nnn")]
 transform = Transform3D(2.8284268, 0, 2.828427, 0, 4, 0, -2.828427, 0, 2.8284268, -81.05373, 3.846705, -55.8355)
 
-[node name="Valla12" parent="." unique_id=1411091599 instance=ExtResource("7_v0nnn")]
+[node name="Valla12" parent="Vallas-Perimetrales" unique_id=1411091599 instance=ExtResource("7_v0nnn")]
 transform = Transform3D(1.0352759, 0, 3.8637028, 0, 4, 0, -3.8637028, 0, 1.0352759, -84.70462, 3.846705, -49.119858)
 
-[node name="Valla13" parent="." unique_id=982133032 instance=ExtResource("7_v0nnn")]
+[node name="Valla13" parent="Vallas-Perimetrales" unique_id=982133032 instance=ExtResource("7_v0nnn")]
 transform = Transform3D(1.0352759, 0, 3.8637028, 0, 4, 0, -3.8637028, 0, 1.0352759, -86.70462, 3.846705, -41.119858)
 
-[node name="Valla14" parent="." unique_id=1796536409 instance=ExtResource("7_v0nnn")]
+[node name="Valla14" parent="Vallas-Perimetrales" unique_id=1796536409 instance=ExtResource("7_v0nnn")]
 transform = Transform3D(-1.1920929e-07, 0, 3.9999998, 0, 4, 0, -3.9999998, 0, -1.1920929e-07, -87.70462, 3.846705, -33.119858)
 
-[node name="Valla15" parent="." unique_id=1018913872 instance=ExtResource("7_v0nnn")]
+[node name="Valla15" parent="Vallas-Perimetrales" unique_id=1018913872 instance=ExtResource("7_v0nnn")]
 transform = Transform3D(-1.1920929e-07, 0, 3.9999998, 0, 4, 0, -3.9999998, 0, -1.1920929e-07, -87.70462, 3.846705, -25.119858)
 
-[node name="Valla16" parent="." unique_id=1376448711 instance=ExtResource("7_v0nnn")]
+[node name="Valla16" parent="Vallas-Perimetrales" unique_id=1376448711 instance=ExtResource("7_v0nnn")]
 transform = Transform3D(-1.1920929e-07, 0, 3.9999998, 0, 4, 0, -3.9999998, 0, -1.1920929e-07, -87.70462, 3.846705, -17.119858)
 
-[node name="Valla17" parent="." unique_id=1283054949 instance=ExtResource("7_v0nnn")]
+[node name="Valla17" parent="Vallas-Perimetrales" unique_id=1283054949 instance=ExtResource("7_v0nnn")]
 transform = Transform3D(-1.1920929e-07, 0, 3.9999998, 0, 4, 0, -3.9999998, 0, -1.1920929e-07, -87.70462, 3.846705, -9.119858)
 
-[node name="Valla18" parent="." unique_id=363024573 instance=ExtResource("7_v0nnn")]
+[node name="Valla18" parent="Vallas-Perimetrales" unique_id=363024573 instance=ExtResource("7_v0nnn")]
 transform = Transform3D(-1.1920929e-07, 0, 3.9999998, 0, 4, 0, -3.9999998, 0, -1.1920929e-07, -87.70462, 3.846705, -1.1198578)
 
-[node name="Valla19" parent="." unique_id=748613903 instance=ExtResource("7_v0nnn")]
+[node name="Valla19" parent="Vallas-Perimetrales" unique_id=748613903 instance=ExtResource("7_v0nnn")]
 transform = Transform3D(-1.1920929e-07, 0, 3.9999998, 0, 4, 0, -3.9999998, 0, -1.1920929e-07, -87.70462, 4.846705, 6.880142)
 
-[node name="Valla20" parent="." unique_id=387847674 instance=ExtResource("7_v0nnn")]
+[node name="Valla20" parent="Vallas-Perimetrales" unique_id=387847674 instance=ExtResource("7_v0nnn")]
 transform = Transform3D(-1.1920929e-07, 0, 3.9999998, 0, 4, 0, -3.9999998, 0, -1.1920929e-07, -87.70462, 7.846705, 14.880142)
 
-[node name="Valla21" parent="." unique_id=587988519 instance=ExtResource("7_v0nnn")]
+[node name="Valla21" parent="Vallas-Perimetrales" unique_id=587988519 instance=ExtResource("7_v0nnn")]
 transform = Transform3D(-1.0352763, 0, -3.8637033, 0, 4, 0, 3.8637033, 0, -1.0352763, 77.75361, 6.133463, 6.816345)
 
-[node name="Valla40" parent="." unique_id=704629857 instance=ExtResource("7_v0nnn")]
+[node name="Valla40" parent="Vallas-Perimetrales" unique_id=704629857 instance=ExtResource("7_v0nnn")]
 transform = Transform3D(-1.0352763, 0, -3.8637033, 0, 4, 0, 3.8637033, 0, -1.0352763, 75.75361, 7.133463, 14.816345)
 
-[node name="Valla41" parent="." unique_id=1981019930 instance=ExtResource("7_v0nnn")]
+[node name="Valla41" parent="Vallas-Perimetrales" unique_id=1981019930 instance=ExtResource("7_v0nnn")]
 transform = Transform3D(-1.0352763, 0, -3.8637033, 0, 4, 0, 3.8637033, 0, -1.0352763, 73.75361, 10.133463, 21.816345)
 
-[node name="Valla42" parent="." unique_id=399419444 instance=ExtResource("7_v0nnn")]
+[node name="Valla42" parent="Vallas-Perimetrales" unique_id=399419444 instance=ExtResource("7_v0nnn")]
 transform = Transform3D(-1.0352763, 0, -3.8637033, 0, 4, 0, 3.8637033, 0, -1.0352763, 72.75361, 14.133463, 25.816345)
 
-[node name="Valla22" parent="." unique_id=550154794 instance=ExtResource("7_v0nnn")]
+[node name="Valla22" parent="Vallas-Perimetrales" unique_id=550154794 instance=ExtResource("7_v0nnn")]
 transform = Transform3D(-1.0352763, 0, -3.8637033, 0, 4, 0, 3.8637033, 0, -1.0352763, 79.82416, 5.133463, -0.91106415)
 
-[node name="Valla23" parent="." unique_id=1232250658 instance=ExtResource("7_v0nnn")]
+[node name="Valla23" parent="Vallas-Perimetrales" unique_id=1232250658 instance=ExtResource("7_v0nnn")]
 transform = Transform3D(-1.0352763, 0, -3.8637033, 0, 4, 0, 3.8637033, 0, -1.0352763, 81.894714, 5.133463, -8.63847)
 
-[node name="Valla24" parent="." unique_id=563457714 instance=ExtResource("7_v0nnn")]
+[node name="Valla24" parent="Vallas-Perimetrales" unique_id=563457714 instance=ExtResource("7_v0nnn")]
 transform = Transform3D(1.035276, 0, -3.863703, 0, 4, 0, 3.863703, 0, 1.035276, 81.7746, 5.133463, -15.917587)
 
-[node name="Valla25" parent="." unique_id=338022486 instance=ExtResource("7_v0nnn")]
+[node name="Valla25" parent="Vallas-Perimetrales" unique_id=338022486 instance=ExtResource("7_v0nnn")]
 transform = Transform3D(1.035276, 0, -3.863703, 0, 4, 0, 3.863703, 0, 1.035276, 79.722626, 4.6747136, -23.714344)
 
-[node name="Valla26" parent="." unique_id=1176714403 instance=ExtResource("7_v0nnn")]
+[node name="Valla26" parent="Vallas-Perimetrales" unique_id=1176714403 instance=ExtResource("7_v0nnn")]
 transform = Transform3D(1.035276, 0, -3.863703, 0, 4, 0, 3.863703, 0, 1.035276, 77.670654, 4.551002, -31.5111)
 
-[node name="Valla27" parent="." unique_id=677178753 instance=ExtResource("7_v0nnn")]
+[node name="Valla27" parent="Vallas-Perimetrales" unique_id=677178753 instance=ExtResource("7_v0nnn")]
 transform = Transform3D(1.035276, 0, -3.863703, 0, 4, 0, 3.863703, 0, 1.035276, 75.61868, 4.4002905, -39.307858)
 
-[node name="Valla28" parent="." unique_id=1208053664 instance=ExtResource("7_v0nnn")]
+[node name="Valla28" parent="Vallas-Perimetrales" unique_id=1208053664 instance=ExtResource("7_v0nnn")]
 transform = Transform3D(1.035276, 0, -3.863703, 0, 4, 0, 3.863703, 0, 1.035276, 73.56671, 4.513674, -47.104614)
 
-[node name="Valla29" parent="." unique_id=1433532136 instance=ExtResource("7_v0nnn")]
+[node name="Valla29" parent="Vallas-Perimetrales" unique_id=1433532136 instance=ExtResource("7_v0nnn")]
 transform = Transform3D(1.035276, 0, -3.863703, 0, 4, 0, 3.863703, 0, 1.035276, 71.51475, 4.2659607, -54.90137)
 
-[node name="Valla30" parent="." unique_id=366574577 instance=ExtResource("7_v0nnn")]
+[node name="Valla30" parent="Vallas-Perimetrales" unique_id=366574577 instance=ExtResource("7_v0nnn")]
 transform = Transform3D(1.9999995, 0, -3.464101, 0, 4, 0, 3.464101, 0, 1.9999995, 68.3283, 4.1340213, -62.183357)
 
-[node name="Valla31" parent="." unique_id=1147956838 instance=ExtResource("7_v0nnn")]
+[node name="Valla31" parent="Vallas-Perimetrales" unique_id=1147956838 instance=ExtResource("7_v0nnn")]
 transform = Transform3D(1.9999995, 0, -3.464101, 0, 4, 0, 3.464101, 0, 1.9999995, 64.59948, 4.846705, -69.14598)
 
-[node name="Valla32" parent="." unique_id=299305118 instance=ExtResource("7_v0nnn")]
+[node name="Valla32" parent="Vallas-Perimetrales" unique_id=299305118 instance=ExtResource("7_v0nnn")]
 transform = Transform3D(3.4641018, 0, -2.0000002, 0, 4, 0, 2.0000002, 0, 3.4641018, 59.057587, 4.846705, -74.410614)
 
-[node name="Valla33" parent="." unique_id=383576951 instance=ExtResource("7_v0nnn")]
+[node name="Valla33" parent="Vallas-Perimetrales" unique_id=383576951 instance=ExtResource("7_v0nnn")]
 transform = Transform3D(3.4641018, 0, -2.0000002, 0, 4, 0, 2.0000002, 0, 3.4641018, 51.84782, 4.846705, -78.41302)
 
-[node name="Valla34" parent="." unique_id=422864026 instance=ExtResource("7_v0nnn")]
+[node name="Valla34" parent="Vallas-Perimetrales" unique_id=422864026 instance=ExtResource("7_v0nnn")]
 transform = Transform3D(3.8637028, 0, -1.035276, 0, 4, 0, 1.035276, 0, 3.8637028, 44.37923, 4.846705, -81.44949)
 
-[node name="Valla35" parent="." unique_id=233248274 instance=ExtResource("7_v0nnn")]
+[node name="Valla35" parent="Vallas-Perimetrales" unique_id=233248274 instance=ExtResource("7_v0nnn")]
 transform = Transform3D(3.8637028, 0, -1.035276, 0, 4, 0, 1.035276, 0, 3.8637028, 36.651825, 4.846705, -83.52005)
 
-[node name="Valla36" parent="." unique_id=750409264 instance=ExtResource("7_v0nnn")]
+[node name="Valla36" parent="Vallas-Perimetrales" unique_id=750409264 instance=ExtResource("7_v0nnn")]
 transform = Transform3D(3.8637028, 0, -1.035276, 0, 4, 0, 1.035276, 0, 3.8637028, 28.92442, 4.846705, -85.5906)
 
-[node name="Valla37" parent="." unique_id=1798405853 instance=ExtResource("7_v0nnn")]
+[node name="Valla37" parent="Vallas-Perimetrales" unique_id=1798405853 instance=ExtResource("7_v0nnn")]
 transform = Transform3D(3.8637028, 0, -1.035276, 0, 4, 0, 1.035276, 0, 3.8637028, 21.197014, 4.846705, -87.66115)
 
-[node name="Valla38" parent="." unique_id=300131242 instance=ExtResource("7_v0nnn")]
+[node name="Valla38" parent="Vallas-Perimetrales" unique_id=300131242 instance=ExtResource("7_v0nnn")]
 transform = Transform3D(3.9999998, 0, 0, 0, 4, 0, 0, 0, 3.9999998, 13.4696045, 4.846705, -88.731705)
 
-[node name="Valla39" parent="." unique_id=1673011497 instance=ExtResource("7_v0nnn")]
+[node name="Valla39" parent="Vallas-Perimetrales" unique_id=1673011497 instance=ExtResource("7_v0nnn")]
 transform = Transform3D(3.9999998, 0, 0, 0, 4, 0, 0, 0, 3.9999998, 5.7422028, 4.846705, -88.80226)

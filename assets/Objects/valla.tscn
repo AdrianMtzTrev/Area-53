@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://c3mbdoua05a32"]
 
-[ext_resource type="PackedScene" uid="uid://gwfdej6oq2lt" path="res://assets/models/Valla-militar.glb" id="1_b0d4f"]
+[ext_resource type="PackedScene" uid="uid://gwfdej6oq2lt" path="res://assets/Objects/models/Valla/Valla-militar.glb" id="1_b0d4f"]
 
 [sub_resource type="QuadMesh" id="QuadMesh_2em5r"]
 

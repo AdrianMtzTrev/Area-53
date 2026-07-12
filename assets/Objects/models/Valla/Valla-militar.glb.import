@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://gwfdej6oq2lt"
-path="res://.godot/imported/Valla-militar.glb-f9db1ae7a00881cb395bfa5e8b070d62.scn"
+path="res://.godot/imported/Valla-militar.glb-a21bdab9bd1967e089a02d67398f33a3.scn"
 
 [deps]
 
-source_file="res://assets/models/Valla-militar.glb"
-dest_files=["res://.godot/imported/Valla-militar.glb-f9db1ae7a00881cb395bfa5e8b070d62.scn"]
+source_file="res://assets/Objects/models/Valla/Valla-militar.glb"
+dest_files=["res://.godot/imported/Valla-militar.glb-a21bdab9bd1967e089a02d67398f33a3.scn"]
 
 [params]
 

@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cinjo2tfmwb8b"
-path.s3tc="res://.godot/imported/Valla-militar_2.jpg-e822bc3ce3e81f3969525b7187aa4c13.s3tc.ctex"
+path.s3tc="res://.godot/imported/Valla-militar_2.jpg-151ba6d721ff6fb804ffdb67954c66eb.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -14,8 +14,8 @@ generator_parameters={
 
 [deps]
 
-source_file="res://assets/models/Valla-militar_2.jpg"
-dest_files=["res://.godot/imported/Valla-militar_2.jpg-e822bc3ce3e81f3969525b7187aa4c13.s3tc.ctex"]
+source_file="res://assets/Objects/models/Valla/Valla-militar_2.jpg"
+dest_files=["res://.godot/imported/Valla-militar_2.jpg-151ba6d721ff6fb804ffdb67954c66eb.s3tc.ctex"]
 
 [params]
 

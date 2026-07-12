@@ -4,9 +4,9 @@
 [ext_resource type="Texture2D" uid="uid://bqamn4ldc1ssf" path="res://assets/textures/barren-ground-rock/barred_ground_rock_packed_albedo_height.png" id="1_p78ra"]
 [ext_resource type="Texture2D" uid="uid://bl706uthgiofo" path="res://assets/textures/barren-ground-rock/barren_ground_rock_packed_normal_roughness.png" id="2_y523t"]
 [ext_resource type="PackedScene" uid="uid://bc88qlep4jfmu" path="res://Player/player.tscn" id="3_y523t"]
-[ext_resource type="Script" uid="uid://dttlorogss63u" path="res://addons/road-generator/nodes/road_manager.gd" id="4_ss4qg"]
-[ext_resource type="Script" uid="uid://cjexxsbvofju2" path="res://addons/road-generator/nodes/road_container.gd" id="5_v0nnn"]
-[ext_resource type="Script" uid="uid://dourxilcpbol7" path="res://addons/road-generator/nodes/road_point.gd" id="6_5vpc2"]
+[ext_resource type="Script" uid="uid://bxp3i4cnonh8y" path="res://addons/road-generator/nodes/road_manager.gd" id="4_ss4qg"]
+[ext_resource type="Script" uid="uid://cph7euje06kel" path="res://addons/road-generator/nodes/road_container.gd" id="5_v0nnn"]
+[ext_resource type="Script" uid="uid://difs1qg4mpcpw" path="res://addons/road-generator/nodes/road_point.gd" id="6_5vpc2"]
 [ext_resource type="PackedScene" uid="uid://dwx51e6sccww0" path="res://assets/Objects/valla.tscn" id="7_v0nnn"]
 [ext_resource type="PackedScene" uid="uid://8m4wcu4shfaw" path="res://assets/Objects/van.tscn" id="9_vdou1"]
 [ext_resource type="PackedScene" uid="uid://cmhgb5jjtger5" path="res://assets/Objects/models/Barricade/Barricade.glb" id="11_ixc55"]
@@ -197,7 +197,7 @@ shadow_enabled = true
 
 [node name="LuzEmergencia" parent="DirectionalLight3D" unique_id=1534992779 instance=ExtResource("1_k5x7x")]
 physics_interpolation_mode = 2
-transform = Transform3D(-0.8872724, 0.45675054, -0.0642391, -0.08945127, -0.033766516, 0.9954187, 0.4524892, 0.888953, 0.07081694, -5.2754726, 11.219772, -4.8949633)
+transform = Transform3D(-0.7186081, 0.16596809, -0.35840908, -0.37394208, -0.046324033, 0.7283004, 0.12716061, 0.8016911, 0.116282046, -4.9541445, 11.075876, -5.0537243)
 
 [node name="OmniLight3D" type="OmniLight3D" parent="DirectionalLight3D/LuzEmergencia" unique_id=1971457188]
 transform = Transform3D(0.9999998, -1.4901161e-08, -4.1164458e-07, 4.4703484e-08, 1.0000008, 1.5646219e-07, 3.213063e-07, -7.450581e-09, 1, 0.19104338, 1.5225272, 0.022014618)

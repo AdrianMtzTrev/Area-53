@@ -35,6 +35,7 @@ enabled=PackedStringArray("res://addons/road-generator/plugin.cfg", "res://addon
 [global_group]
 
 grupo_palancas=""
+boton_acceso=""
 
 [input]
 

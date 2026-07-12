@@ -8,12 +8,11 @@
 [ext_resource type="Script" uid="uid://cjexxsbvofju2" path="res://addons/road-generator/nodes/road_container.gd" id="5_v0nnn"]
 [ext_resource type="Script" uid="uid://dourxilcpbol7" path="res://addons/road-generator/nodes/road_point.gd" id="6_5vpc2"]
 [ext_resource type="PackedScene" uid="uid://dwx51e6sccww0" path="res://assets/Objects/valla.tscn" id="7_v0nnn"]
-[ext_resource type="PackedScene" uid="uid://cjtx4if04irql" path="res://assets/Objects/EntradaCompleta.tscn" id="8_5vpc2"]
 [ext_resource type="PackedScene" uid="uid://8m4wcu4shfaw" path="res://assets/Objects/van.tscn" id="9_vdou1"]
-[ext_resource type="PackedScene" uid="uid://lnj44i55cx34" path="res://assets/Objects/models/cube/cube.glb" id="10_04ov5"]
 [ext_resource type="PackedScene" uid="uid://cmhgb5jjtger5" path="res://assets/Objects/models/Barricade/Barricade.glb" id="11_ixc55"]
 [ext_resource type="PackedScene" uid="uid://bmwoubo8gdpmr" path="res://assets/Objects/models/Warning-barricade/Warning-barricade.glb" id="12_sl16p"]
 [ext_resource type="FontFile" uid="uid://djnjkc6l5drdk" path="res://assets/Fuentes/VT323-Regular.ttf" id="13_6vmss"]
+[ext_resource type="PackedScene" uid="uid://pasghspr68y8" path="res://assets/Objects/entrada_bunker.tscn" id="13_k5x7x"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_64d8o"]
 sky_top_color = Color(0.11372549, 0.16470589, 0.2901961, 1)
@@ -114,9 +113,6 @@ size = Vector3(10.498169, 6.904785, 4.7886963)
 [sub_resource type="BoxShape3D" id="BoxShape3D_orc5f"]
 size = Vector3(17.798584, 21.292572, 105.25209)
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_2em5r"]
-size = Vector3(4.2660522, 1.5262451, 7.0612183)
-
 [sub_resource type="Animation" id="Animation_k5x7x"]
 resource_name = "Fade_in_mundo"
 length = 5.0
@@ -194,10 +190,10 @@ shadow_enabled = true
 
 [node name="LuzEmergencia" parent="DirectionalLight3D" unique_id=1668635670 instance=ExtResource("1_k5x7x")]
 physics_interpolation_mode = 2
-transform = Transform3D(-0.8872724, 0.4567505, -0.0642391, -0.08945127, -0.033766575, 0.9954187, 0.4524892, 0.88895315, 0.07081694, -4.9564123, 11.399491, -4.987548)
+transform = Transform3D(-0.8872724, 0.45675054, -0.0642391, -0.08945127, -0.033766516, 0.9954187, 0.4524892, 0.888953, 0.07081694, -5.2754726, 11.219772, -4.8949633)
 
 [node name="OmniLight3D" type="OmniLight3D" parent="DirectionalLight3D/LuzEmergencia" unique_id=1699503311]
-transform = Transform3D(0.99999994, -5.9604645e-08, -4.079193e-07, 4.4703484e-08, 1.0000007, 2.1606684e-07, 3.585592e-07, -2.2351742e-08, 1, 0.059076667, 1.5452847, 0.073308945)
+transform = Transform3D(0.9999998, -1.4901161e-08, -4.1164458e-07, 4.4703484e-08, 1.0000008, 1.5646219e-07, 3.213063e-07, -7.450581e-09, 1, 0.19104338, 1.5225272, 0.022014618)
 light_color = Color(0.9999736, 0.04005985, 0.02742856, 1)
 light_energy = 10.0
 light_indirect_energy = 4.0
@@ -479,12 +475,6 @@ transform = Transform3D(3.9999998, 0, 0, 0, 4, 0, 0, 0, 3.9999998, 13.4696045, 4
 [node name="Valla39" parent="Vallas-Perimetrales" unique_id=1673011497 instance=ExtResource("7_v0nnn")]
 transform = Transform3D(3.9999998, 0, 0, 0, 4, 0, 0, 0, 3.9999998, 5.7422028, 4.846705, -88.80226)
 
-[node name="Entrada" parent="." unique_id=30468986 instance=ExtResource("8_5vpc2")]
-transform = Transform3D(0.09289866, 0, -0.99567556, 0, 1, 0, 0.99567556, 0, 0.09289866, -1.0284905, 4.4513164, 13.619283)
-
-[node name="cube" parent="Entrada" unique_id=1273567681 instance=ExtResource("10_04ov5")]
-transform = Transform3D(-8.742278e-08, 0, 2, 0, 2, 0, -2, 0, -8.742278e-08, 12.13091, -1.8738222, 0.85566485)
-
 [node name="Van" parent="." unique_id=1616981070 instance=ExtResource("9_vdou1")]
 transform = Transform3D(0.7617603, 0, 0.64785904, 0, 1, 0, -0.64785904, 0, 0.7617603, -2.8142335, 2.3108883, -89.46598)
 
@@ -522,13 +512,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32.983665, 0, 0)
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Limites_Invisibles/Muro_4" unique_id=88698759]
 transform = Transform3D(0.99696577, 0, 0.077841744, 0, 1, 0, -0.077841744, 0, 0.99696577, -41.64418, -1.6484051, 59.123917)
 shape = SubResource("BoxShape3D_orc5f")
-
-[node name="PisoBunker" type="StaticBody3D" parent="Limites_Invisibles" unique_id=1608413243]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5686836, 0, 8.103077)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Limites_Invisibles/PisoBunker" unique_id=447706759]
-transform = Transform3D(0.99515325, 0, 0.09833642, 0, 1, 0, -0.09833642, 0, 0.99515325, -0.17905593, 0.26312256, 1.1557598)
-shape = SubResource("BoxShape3D_2em5r")
 
 [node name="Barricade" parent="." unique_id=1328823690 instance=ExtResource("11_ixc55")]
 transform = Transform3D(0.8835731, 0.4682908, 0.001413708, -0.0015161783, 0.0058796704, -0.9999814, -0.46829045, 0.8835548, 0.0059051067, 0, 2.6418924, -70.45907)
@@ -614,5 +597,8 @@ texto_dialogo1 = NodePath("../EfectoEntrada/TextoDialogo")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="ZonaPuerta" unique_id=1512145024]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.6861877, 2.8879395, -5.7411985)
 shape = SubResource("BoxShape3D_dgl0r")
+
+[node name="EntradaBunker" parent="." unique_id=1058019590 instance=ExtResource("13_k5x7x")]
+transform = Transform3D(0.010639899, 0, -0.9999434, 0, 1, 0, 0.9999434, 0, 0.010639899, -1.814084, 4.2128983, 14.085742)
 
 [connection signal="body_entered" from="ZonaPuerta" to="Player" method="_on_zona_puerta_body_entered"]

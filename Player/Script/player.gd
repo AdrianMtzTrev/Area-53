@@ -66,6 +66,10 @@ func _input(event):
 			if objeto_mirado.has_method("iniciar_puzzle"):
 				objeto_mirado.iniciar_puzzle()
 				
+			if objeto_mirado.has_method("abrir_puerta"):
+				print("abrir puerta")
+				objeto_mirado.abrir_puerta()
+				
 	#Interaccion F Linterna
 	if event.is_action_pressed("LINTERNA"):
 		if slot_activo == 1:

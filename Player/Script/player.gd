@@ -17,8 +17,8 @@ var tiene_linterna : bool = true
 @onready var raycast = $Camera3D/RayCast3D
 
 #variables de tambaleo
-const BOB_FRECUENCIA = 2.0
-const BOB_AMPLITUD = 0.88
+const BOB_FRECUENCIA = 0.5
+const BOB_AMPLITUD = 0.28
 var t_bob = 0.0
 
 func _ready():
@@ -67,7 +67,12 @@ func _physics_process(delta):
 	if not is_on_floor():
 		velocity.y -= gravity * delta
 		
-	
+	#Tambaleo
+	if is_on_floor() and (velocity.x != 0 or velocity.z != 0):
+		t_bob += delta * velocity.length()
+		camera.position.y =sin(t_bob * BOB_FRECUENCIA) * BOB_AMPLITUD
+	else:
+		camera.position.y = move_toward(camera.position.y, 0.0, delta)
 		
 	#Obtener teclas de movimiento si no estamos en un menu
 	var input_dir = Vector2.ZERO
@@ -86,3 +91,7 @@ func _physics_process(delta):
 		velocity.z = move_toward(velocity.z, 0, SPEED)
 		
 	move_and_slide()
+	
+func _process(delta):
+	linterna.global_position = camera.global_position
+	linterna.global_transform.basis = linterna.global_transform.basis.slerp(camera.global_transform.basis, 12.0 * delta).orthonormalized()

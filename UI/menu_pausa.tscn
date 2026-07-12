@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cp6tpt6hwbr40"]
 
 [ext_resource type="Shader" uid="uid://c2d5lbqx6mc32" path="res://Shaders/Glitch_pausa.gdshader" id="1_3kej5"]
-[ext_resource type="FontFile" uid="uid://djnjkc6l5drdk" path="res://Fuentes/VT323-Regular.ttf" id="1_ig77w"]
+[ext_resource type="FontFile" uid="uid://djnjkc6l5drdk" path="res://assets/Fuentes/VT323-Regular.ttf" id="1_ig77w"]
 [ext_resource type="Script" uid="uid://4tk0s4rhmi8c" path="res://UI/scripts/menu_pausa.gd" id="1_uwsog"]
 [ext_resource type="Script" uid="uid://7fgy6v3ob14" path="res://UI/scripts/custom_button.gd" id="4_dqmju"]
 

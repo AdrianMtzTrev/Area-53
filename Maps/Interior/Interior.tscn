@@ -15,6 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://cm6wpoph6fjy5" path="res://assets/Objects/models/PasilloUnion/PasilloUnion.glb" id="13_hin2i"]
 [ext_resource type="PackedScene" uid="uid://c26wstpsbbuyg" path="res://assets/Objects/telarana.tscn" id="14_hin2i"]
 [ext_resource type="PackedScene" uid="uid://b4x6ksskt04ms" path="res://assets/Objects/tablanormal.tscn" id="15_kuiyd"]
+[ext_resource type="PackedScene" uid="uid://bc88qlep4jfmu" path="res://Player/player.tscn" id="16_y2q48"]
 
 [node name="Node3D" type="Node3D" unique_id=713244312]
 
@@ -180,11 +181,9 @@ skeleton = NodePath("../..")
 
 [node name="PasilloUnion5" parent="DerechaAll" unique_id=1837195661 instance=ExtResource("4_union1")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -22.530945, -13.251263, 28.133682)
-skeleton = NodePath("../..")
 
 [node name="PasilloUnion7" parent="DerechaAll" unique_id=1193635818 instance=ExtResource("4_union1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.099895, -13.242429, 37.895737)
-skeleton = NodePath("../..")
 
 [node name="cubePasillo9" parent="DerechaAll" unique_id=2104168867 instance=ExtResource("3_pasi1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.755858, -13.328082, 28.356443)
@@ -351,3 +350,11 @@ transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -4.7207127, -10.000851, -68.0
 
 [node name="tablanormal2" parent="." unique_id=1779151801 instance=ExtResource("15_kuiyd")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -4.7207127, -11.79197, -68.04068)
+
+[node name="Player" parent="." unique_id=196113240 node_paths=PackedStringArray("texto_dialogo1") instance=ExtResource("16_y2q48")]
+transform = Transform3D(0.45312667, 0, 0.8914461, 0, 1, 0, -0.8914461, 0, 0.45312667, 6.017562, 1.4405758, 0)
+texto_dialogo1 = NodePath("Dialogo")
+
+[node name="Dialogo" type="Label" parent="Player" unique_id=558116189]
+offset_right = 40.0
+offset_bottom = 23.0

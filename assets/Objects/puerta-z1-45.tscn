@@ -2,7 +2,22 @@
 
 [ext_resource type="PackedScene" uid="uid://l671uw6axvhr" path="res://assets/Objects/models/puerta/puerta.glb" id="1_lygpq"]
 
-[node name="puerta" type="MeshInstance3D" unique_id=693858873]
+[sub_resource type="BoxMesh" id="BoxMesh_vvr5o"]
+size = Vector3(0.13653564, 5.202759, 2.4177246)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_lygpq"]
+size = Vector3(0.13653564, 5.202759, 2.4177246)
+
+[node name="puerta" type="StaticBody3D" unique_id=575626035]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1271013284]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0019836426, -0.0064086914, -0.033569336)
+visible = false
+mesh = SubResource("BoxMesh_vvr5o")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1567648724]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0019836426, -0.0064086914, -0.033569336)
+shape = SubResource("BoxShape3D_lygpq")
 
 [node name="puerta" parent="." unique_id=1031352124 instance=ExtResource("1_lygpq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.45, 0, 0, 0)

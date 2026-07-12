@@ -2,6 +2,21 @@
 
 [ext_resource type="PackedScene" uid="uid://rw4mgj6glued" path="res://assets/Objects/models/estante/Estante.glb" id="1_est01"]
 
-[node name="Estante" type="MeshInstance3D" unique_id=102269525]
+[sub_resource type="BoxMesh" id="BoxMesh_mshhy"]
+size = Vector3(0.970459, 3.5070496, 2.0804443)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_mshhy"]
+size = Vector3(1.0262451, 3.5133972, 2.0804443)
+
+[node name="Estante" type="StaticBody3D" unique_id=1356390513]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1653445629]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.014770508, 1.7117462, 0.04559326)
+visible = false
+mesh = SubResource("BoxMesh_mshhy")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=326044722]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.013122559, 1.7085724, 0.04559326)
+shape = SubResource("BoxShape3D_mshhy")
 
 [node name="Estante" parent="." unique_id=265681784 instance=ExtResource("1_est01")]

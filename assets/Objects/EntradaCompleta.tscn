@@ -21,6 +21,7 @@ size = Vector3(10.071747, 3.631958, 0.2849121)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1423225933]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.6337204, 0.2472167, -0.13214111)
+visible = false
 mesh = SubResource("BoxMesh_ognqd")
 
 [node name="CollisionShape3D3" type="CollisionShape3D" parent="." unique_id=539670371]

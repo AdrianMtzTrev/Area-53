@@ -2,6 +2,36 @@
 
 [ext_resource type="PackedScene" uid="uid://dir70wupo1si4" path="res://assets/Objects/models/escalerasCortas/escalerasCortas.glb" id="1_esc01"]
 
-[node name="escalerasCortas" type="MeshInstance3D" unique_id=427630456]
+[sub_resource type="BoxMesh" id="BoxMesh_vvr5o"]
+size = Vector3(4.3714676, 0.23614502, 5.082306)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_yhrpy"]
+size = Vector3(4.767765, 0.2460022, 5.103302)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_vvr5o"]
+size = Vector3(4.4261627, 4.904419, 0.20898438)
+
+[node name="escalerasCortas" type="StaticBody3D" unique_id=1228282312]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=837253494]
+transform = Transform3D(0.90261275, -0.4304535, 0, 0.4304535, 0.90261275, 0, 0, 0, 1, 0.042745173, -0.15116785, 0.022384644)
+visible = false
+mesh = SubResource("BoxMesh_vvr5o")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=114975249]
+transform = Transform3D(0.90261275, -0.4304535, 0, 0.4304535, 0.90261275, 0, 0, 0, 1, 0.21947521, -0.061425433, 0.005050659)
+shape = SubResource("BoxShape3D_yhrpy")
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="." unique_id=1634806221]
+transform = Transform3D(0.90261275, -0.4304535, 0, 0.4304535, 0.90261275, 0, 0, 0, 1, 0.21947521, 5.0177164, 0.005050659)
+shape = SubResource("BoxShape3D_yhrpy")
 
 [node name="escalerasCortas" parent="." unique_id=104723313 instance=ExtResource("1_esc01")]
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="." unique_id=8101588]
+transform = Transform3D(0.99434584, -0.10619022, 0, 0.10619022, 0.99434584, 0, 0, 0, 1, 0.07958911, 2.3845394, 2.5426655)
+shape = SubResource("BoxShape3D_vvr5o")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="." unique_id=119342406]
+transform = Transform3D(0.99434584, -0.10619022, 0, 0.10619022, 0.99434584, 0, 0, 0, 1, 0.07958911, 2.3845394, -2.5677872)
+shape = SubResource("BoxShape3D_vvr5o")

@@ -2,6 +2,36 @@
 
 [ext_resource type="PackedScene" uid="uid://dm0xslk03j7r8" path="res://assets/Objects/models/models_v2/models_v2.glb" id="1_mv201"]
 
-[node name="models_v2" type="MeshInstance3D" unique_id=233921812]
+[sub_resource type="BoxMesh" id="BoxMesh_wipee"]
+size = Vector3(4.969513, 0.27938843, 5.019043)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_wipee"]
+size = Vector3(4.969513, 0.27938843, 5.019043)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_vvr5o"]
+size = Vector3(4.9400024, 5.069092, 0.2782898)
+
+[node name="models_v2" type="StaticBody3D" unique_id=88606720]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=544277178]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.1486969, 0.09675598, -0.3244629)
+visible = false
+mesh = SubResource("BoxMesh_wipee")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=703654534]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.1486969, 0.09675598, -0.3244629)
+shape = SubResource("BoxShape3D_wipee")
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="." unique_id=344290792]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.1486969, 5.260949, -0.3244629)
+shape = SubResource("BoxShape3D_wipee")
 
 [node name="models_v2" parent="." unique_id=171000228 instance=ExtResource("1_mv201")]
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="." unique_id=1804350089]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.20913696, 2.665985, -2.820038)
+shape = SubResource("BoxShape3D_vvr5o")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="." unique_id=234817725]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.20913696, 2.665985, 2.1339004)
+shape = SubResource("BoxShape3D_vvr5o")

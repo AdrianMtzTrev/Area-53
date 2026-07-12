@@ -4,9 +4,9 @@
 [ext_resource type="Texture2D" uid="uid://bqamn4ldc1ssf" path="res://assets/textures/barren-ground-rock/barred_ground_rock_packed_albedo_height.png" id="1_p78ra"]
 [ext_resource type="Texture2D" uid="uid://bl706uthgiofo" path="res://assets/textures/barren-ground-rock/barren_ground_rock_packed_normal_roughness.png" id="2_y523t"]
 [ext_resource type="PackedScene" uid="uid://bc88qlep4jfmu" path="res://Player/player.tscn" id="3_y523t"]
-[ext_resource type="Script" uid="uid://bxp3i4cnonh8y" path="res://addons/road-generator/nodes/road_manager.gd" id="4_ss4qg"]
-[ext_resource type="Script" uid="uid://cph7euje06kel" path="res://addons/road-generator/nodes/road_container.gd" id="5_v0nnn"]
-[ext_resource type="Script" uid="uid://difs1qg4mpcpw" path="res://addons/road-generator/nodes/road_point.gd" id="6_5vpc2"]
+[ext_resource type="Script" uid="uid://dttlorogss63u" path="res://addons/road-generator/nodes/road_manager.gd" id="4_ss4qg"]
+[ext_resource type="Script" uid="uid://cjexxsbvofju2" path="res://addons/road-generator/nodes/road_container.gd" id="5_v0nnn"]
+[ext_resource type="Script" uid="uid://dourxilcpbol7" path="res://addons/road-generator/nodes/road_point.gd" id="6_5vpc2"]
 [ext_resource type="PackedScene" uid="uid://dwx51e6sccww0" path="res://assets/Objects/valla.tscn" id="7_v0nnn"]
 [ext_resource type="PackedScene" uid="uid://cjtx4if04irql" path="res://assets/Objects/EntradaCompleta.tscn" id="8_5vpc2"]
 [ext_resource type="PackedScene" uid="uid://8m4wcu4shfaw" path="res://assets/Objects/van.tscn" id="9_vdou1"]
@@ -581,9 +581,26 @@ text = "Presiona [F] para encender la linterna"
 horizontal_alignment = 1
 
 [node name="TextoDialogo" type="Label" parent="EfectoEntrada" unique_id=1630206796]
-offset_right = 40.0
-offset_bottom = 23.0
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -393.5
+offset_top = -120.0
+offset_right = 393.5
+offset_bottom = -95.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(1, 1, 1, 0)
+theme_override_fonts/font = ExtResource("13_6vmss")
+theme_override_font_sizes/font_size = 24
+text = "Que oscuridad... La entrada a la supuesta base debe ser donde brilla esa luz roja."
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
 
-[node name="Player" parent="." unique_id=196113240 node_paths=PackedStringArray("texto_tutorial") instance=ExtResource("3_y523t")]
+[node name="Player" parent="." unique_id=196113240 node_paths=PackedStringArray("texto_tutorial", "texto_dialogo1") instance=ExtResource("3_y523t")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.7293477, 2.983676, -82.37264)
 texto_tutorial = NodePath("../EfectoEntrada/Texto Tutorial")
+texto_dialogo1 = NodePath("../EfectoEntrada/TextoDialogo")

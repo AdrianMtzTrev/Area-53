@@ -16,6 +16,7 @@ var tiene_linterna : bool = true
 @onready var camera = $Camera3D
 @onready var raycast = $Camera3D/RayCast3D
 @export var texto_tutorial = Label
+@export var texto_dialogo1 = Label
 var altura_camara_original: float = 0.0
 
 #variables de tambaleo
@@ -71,6 +72,12 @@ func _input(event):
 				var tween = create_tween()
 				tween.tween_property(texto_tutorial, "modulate:a", 0.0, 0.5)
 				tween.tween_callback(texto_tutorial.hide)
+				tween.tween_interval(0.5)
+				tween.tween_callback(texto_dialogo1.show)
+				tween.tween_property(texto_dialogo1, "modulate:a", 1.0, 1.0)
+				tween.tween_interval(4.0)
+				tween.tween_property(texto_dialogo1, "modulate:a", 0.0, 0.5)
+				tween.tween_callback(texto_dialogo1.hide)
 	
 func _physics_process(delta):
 	#Aplicar gravedad si el player no toca el suelo

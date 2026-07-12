@@ -52,18 +52,18 @@ grow_vertical = 2
 color = Color(0, 0, 0, 1)
 
 [node name="TextoHistoria" type="Label" parent="." unique_id=1389769246]
-anchors_preset = 8
-anchor_left = 0.5
+anchors_preset = 14
 anchor_top = 0.5
-anchor_right = 0.5
+anchor_right = 1.0
 anchor_bottom = 0.5
-offset_left = -0.5
-offset_top = -11.5
-offset_right = 0.5
-offset_bottom = 11.5
+offset_top = -14.5
+offset_bottom = 14.5
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("2_mx2mb")
+theme_override_font_sizes/font_size = 28
+horizontal_alignment = 1
+autowrap_mode = 2
 
 [node name="PantallaFade" type="ColorRect" parent="." unique_id=1887773282]
 anchors_preset = 15

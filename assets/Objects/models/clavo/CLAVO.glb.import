@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://dm0xslk03j7r8"
-path="res://.godot/imported/models_v2.glb-486b52ff7635279220f79888a338e163.scn"
+uid="uid://7m1e2m5llsxx"
+path="res://.godot/imported/CLAVO.glb-727fd4c0d661d3735a87be832d8dc163.scn"
 
 [deps]
 
-source_file="res://assets/Objects/models/models_v2/models_v2.glb"
-dest_files=["res://.godot/imported/models_v2.glb-486b52ff7635279220f79888a338e163.scn"]
+source_file="res://assets/Objects/models/clavo/CLAVO.glb"
+dest_files=["res://.godot/imported/CLAVO.glb-727fd4c0d661d3735a87be832d8dc163.scn"]
 
 [params]
 

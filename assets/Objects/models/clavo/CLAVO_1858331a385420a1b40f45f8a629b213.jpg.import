@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cx8jlhrudurc6"
-path.s3tc="res://.godot/imported/models_v2_d50957fbefb318557ddfb763a97bca19.jpg-9a79504851ee5ac5bcd7da0df195b45c.s3tc.ctex"
+uid="uid://bkrvpg85mqttc"
+path.s3tc="res://.godot/imported/CLAVO_1858331a385420a1b40f45f8a629b213.jpg-bcc21d74e95fdffe87b385d130801cad.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "b8d1980f41a38eb5cde449b2cfee18d2"
+"md5": "b862dea3a78a2655c43d9fbdceba24dc"
 }
 
 [deps]
 
-source_file="res://assets/Objects/models/models_v2/models_v2_d50957fbefb318557ddfb763a97bca19.jpg"
-dest_files=["res://.godot/imported/models_v2_d50957fbefb318557ddfb763a97bca19.jpg-9a79504851ee5ac5bcd7da0df195b45c.s3tc.ctex"]
+source_file="res://assets/Objects/models/clavo/CLAVO_1858331a385420a1b40f45f8a629b213.jpg"
+dest_files=["res://.godot/imported/CLAVO_1858331a385420a1b40f45f8a629b213.jpg-bcc21d74e95fdffe87b385d130801cad.s3tc.ctex"]
 
 [params]
 

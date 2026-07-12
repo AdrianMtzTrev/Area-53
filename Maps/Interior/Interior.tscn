@@ -6,9 +6,15 @@
 [ext_resource type="PackedScene" uid="uid://bxo5anuny538f" path="res://assets/Objects/pasillo_union.tscn" id="4_union1"]
 [ext_resource type="PackedScene" uid="uid://d0f07slibr4vr" path="res://assets/Objects/escalerasLargas.tscn" id="5_larga1"]
 [ext_resource type="PackedScene" uid="uid://bc44jnv6qrfx6" path="res://assets/Objects/escalerasCortas.tscn" id="6_corta1"]
-[ext_resource type="PackedScene" uid="uid://b705fu0esn350" path="res://assets/Objects/puerta.tscn" id="7_x3fpc"]
 [ext_resource type="PackedScene" uid="uid://chr2ktr5jn056" path="res://assets/Objects/tabla.tscn" id="8_u7ig7"]
+[ext_resource type="PackedScene" uid="uid://001216dd4a76" path="res://assets/Objects/models_v2.tscn" id="9_4yasb"]
 [ext_resource type="PackedScene" uid="uid://ctgg205w0hlk8" path="res://assets/Objects/puerta-z1-45.tscn" id="9_u7ig7"]
+[ext_resource type="PackedScene" uid="uid://8aaatsfcm7wt" path="res://assets/Objects/cuarto.tscn" id="10_pm2pk"]
+[ext_resource type="PackedScene" uid="uid://0jk2a1gyfii" path="res://assets/Objects/Estante.tscn" id="11_sfmky"]
+[ext_resource type="PackedScene" uid="uid://dm0xslk03j7r8" path="res://assets/Objects/models/models_v2/models_v2.glb" id="12_4csx5"]
+[ext_resource type="PackedScene" uid="uid://cm6wpoph6fjy5" path="res://assets/Objects/models/PasilloUnion/PasilloUnion.glb" id="13_hin2i"]
+[ext_resource type="PackedScene" uid="uid://c26wstpsbbuyg" path="res://assets/Objects/telarana.tscn" id="14_hin2i"]
+[ext_resource type="PackedScene" uid="uid://b4x6ksskt04ms" path="res://assets/Objects/tablanormal.tscn" id="15_kuiyd"]
 
 [node name="Node3D" type="Node3D" unique_id=713244312]
 
@@ -51,23 +57,297 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.105238, -7.309851, 28.36904
 [node name="StaticBody3D3" parent="." unique_id=966575991 instance=ExtResource("2_cube1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -31.782454, -11.576188, 28.37967)
 
-[node name="puerta1" parent="." unique_id=693858873 instance=ExtResource("7_x3fpc")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.45, -33.414772, -13.286518, 29.526047)
-
-[node name="puerta2" parent="." unique_id=685801211 instance=ExtResource("7_x3fpc")]
-transform = Transform3D(-1, 0, -1.2676303e-07, 0, 1, 0, 8.742278e-08, 0, -1.45, -33.414772, -13.286518, 27.101116)
-
 [node name="tabla" parent="." unique_id=163598820 instance=ExtResource("8_u7ig7")]
-transform = Transform3D(2, 0, 0, 0, 1.36608, -2.1911428, 0, 1.4607619, 2.04912, -33.366116, -11.16356, 27.929836)
+transform = Transform3D(2, 0, 0, 0, 1.36608, -1.4607619, 0, 1.4607619, 1.36608, -33.366116, -10.341889, 28.072939)
 
 [node name="tabla2" parent="." unique_id=1117127025 instance=ExtResource("8_u7ig7")]
-transform = Transform3D(2, 0, 0, 0, -1.3993266, -2.143418, 0, 1.4289454, -2.09899, -33.33977, -10.255028, 27.95284)
+transform = Transform3D(2, 0, 0, 0, -1.3993266, -1.4289454, 0, 1.4289454, -1.3993266, -33.33977, -9.50153, 27.944273)
+
+[node name="tabla3" parent="." unique_id=217878446 instance=ExtResource("8_u7ig7")]
+transform = Transform3D(2, 0, 0, 0, -1.9998963, -0.02036953, 0, 0.02036953, -1.9998963, -33.33977, -11.657867, 28.290504)
+
+[node name="tabla4" parent="." unique_id=376457548 instance=ExtResource("8_u7ig7")]
+transform = Transform3D(2, 0, 0, 0, -1.7751095, -0.92140454, 0, 0.92140454, -1.7751095, -24.776451, -10.358484, 37.95214)
 
 [node name="StaticBody3D4" parent="." unique_id=932653161 instance=ExtResource("2_cube1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -35.776283, -11.564691, 28.380407)
 
 [node name="puerta" parent="." unique_id=1047029743 instance=ExtResource("9_u7ig7")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.794716, -13.190404, 39.41495)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.848381, -10.641312, 39.39102)
 
 [node name="puerta3" parent="." unique_id=1139832952 instance=ExtResource("9_u7ig7")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.718874, -13.271499, 36.790344)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.82448, -10.695554, 36.848923)
+
+[node name="puerta4" parent="." unique_id=693858873 instance=ExtResource("9_u7ig7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -33.48767, -10.723774, 29.661186)
+
+[node name="puerta5" parent="." unique_id=749206414 instance=ExtResource("9_u7ig7")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -33.48767, -10.723774, 27.166595)
+
+[node name="models_v2" parent="." unique_id=233921812 instance=ExtResource("9_4yasb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -40.13333, -13.323015, 28.675014)
+
+[node name="escalerasLargas3" parent="." unique_id=1176135918 instance=ExtResource("5_larga1")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -47.0226, -9.552793, 28.354702)
+
+[node name="StaticBody3D6" parent="." unique_id=1573645237 instance=ExtResource("2_cube1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26.847878, -11.548427, 38.08142)
+
+[node name="cuarto" parent="." unique_id=135123349 instance=ExtResource("10_pm2pk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -33.780296, -11.998976, 38.94897)
+
+[node name="Estante" parent="." unique_id=102269525 instance=ExtResource("11_sfmky")]
+transform = Transform3D(-1.3, -1.1454595e-07, -1.5940756e-07, 0, 1.0557085, -0.7586036, 1.9629454e-07, -0.7586036, -1.0557085, -25.628714, -12.440576, 39.36947)
+
+[node name="models_v3" parent="." unique_id=1013724144 instance=ExtResource("12_4csx5")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 16.398033, -7.2773833, 28.04327)
+
+[node name="PasilloUnion4" parent="." unique_id=1012911629 instance=ExtResource("13_hin2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.760847, -7.22341, 28.13956)
+
+[node name="StaticBody3D7" parent="." unique_id=1757100771 instance=ExtResource("2_cube1")]
+transform = Transform3D(-6.556708e-08, 0, 1.5, 0, 1.5, 0, -1.5, 0, -6.556708e-08, -55.1054, -5.4960814, 27.997)
+
+[node name="StaticBody3D8" parent="." unique_id=1828158047 instance=ExtResource("2_cube1")]
+transform = Transform3D(-6.556708e-08, 0, 1.5, 0, 1.5, 0, -1.5, 0, -6.556708e-08, 27.860538, -5.4960814, 27.996996)
+
+[node name="StaticBody3D9" parent="." unique_id=549942971 instance=ExtResource("2_cube1")]
+transform = Transform3D(-1.4987684, 0, -0.060772184, 0, 1.5, 0, 0.060772184, 0, -1.4987684, 21.031622, -5.4960814, 17.293758)
+
+[node name="cubePasillo4" parent="." unique_id=694235195 instance=ExtResource("3_pasi1")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 21.539465, -7.298161, 40.835674)
+
+[node name="Node3D" type="Node3D" parent="." unique_id=273292008]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 6.0695086, -5.950928, 46.5093)
+
+[node name="PasilloUnion5" parent="Node3D" unique_id=1305445307 instance=ExtResource("13_hin2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.760847, -7.22341, 28.13956)
+
+[node name="StaticBody3D10" parent="Node3D" unique_id=1212528304 instance=ExtResource("2_cube1")]
+transform = Transform3D(-6.556708e-08, 0, 1.5, 0, 1.5, 0, -1.5, 0, -6.556708e-08, 27.860538, -5.4960814, 27.996996)
+
+[node name="StaticBody3D11" parent="Node3D" unique_id=1729531198 instance=ExtResource("2_cube1")]
+transform = Transform3D(-1.4987684, 0, -0.060772184, 0, 1.5, 0, 0.060772184, 0, -1.4987684, 21.031622, -5.4960814, 17.293758)
+
+[node name="cubePasillo7" parent="Node3D" unique_id=1779262399 instance=ExtResource("3_pasi1")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 21.539465, -7.298161, 40.835674)
+skeleton = NodePath("../..")
+
+[node name="cubePasillo5" parent="." unique_id=1310555831 instance=ExtResource("3_pasi1")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -22.300076, -13.3226795, 50.547955)
+
+[node name="cubePasillo6" parent="." unique_id=1440774952 instance=ExtResource("3_pasi1")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -22.300076, -13.3226795, 60.58149)
+
+[node name="Telarana" parent="." unique_id=1215427646 instance=ExtResource("14_hin2i")]
+transform = Transform3D(-4.2197883e-08, -1.1402802e-08, 1, -0.26086572, 0.96537507, 0, -0.96537507, -0.26086572, -4.371139e-08, -24.798462, -10.136661, 46.301296)
+
+[node name="Telarana2" parent="." unique_id=362133344 instance=ExtResource("14_hin2i")]
+transform = Transform3D(0.8532475, -0.28528142, 0.43655837, 0.06617912, 0.8895743, 0.4519711, -0.51729006, -0.3567522, 0.7779068, -15.475776, -8.740421, 70.15068)
+
+[node name="Telarana3" parent="." unique_id=2000190631 instance=ExtResource("14_hin2i")]
+transform = Transform3D(-0.82078624, -0.23380902, 0.521194, -0.418951, 0.86662465, -0.27100205, -0.38831666, -0.4407894, -0.8092681, 4.094651, -3.1993492, 30.502327)
+
+[node name="cuarto2" parent="." unique_id=1892334361 instance=ExtResource("10_pm2pk")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 22.363766, -5.9232492, 50.87788)
+
+[node name="DerechaAll" type="Node3D" parent="." unique_id=40137081]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -44.566856, 0, 0.004616576)
+
+[node name="PasilloUnion6" parent="DerechaAll" unique_id=1580560701 instance=ExtResource("13_hin2i")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -22.070053, -13.174338, 68.27014)
+
+[node name="StaticBody3D12" parent="DerechaAll" unique_id=278647234 instance=ExtResource("2_cube1")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -21.92749, -11.44701, 74.369835)
+
+[node name="StaticBody3D13" parent="DerechaAll" unique_id=515528750 instance=ExtResource("2_cube1")]
+transform = Transform3D(-0.060772117, 0, 1.4987684, 0, 1.5, 0, -1.4987684, 0, -0.060772117, -11.22425, -11.44701, 67.540924)
+
+[node name="cubePasillo8" parent="DerechaAll" unique_id=1745802386 instance=ExtResource("3_pasi1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -34.766167, -13.249089, 68.04877)
+skeleton = NodePath("../../..")
+
+[node name="escalerasCortas2" parent="DerechaAll" unique_id=1883847914 instance=ExtResource("6_corta1")]
+transform = Transform3D(-4.3711385e-08, 0, 0.99999994, 0, 1, 0, -0.99999994, 0, -4.3711385e-08, -22.321426, -12.10011, 13.757768)
+skeleton = NodePath("../..")
+
+[node name="StaticBody3D5" parent="DerechaAll" unique_id=159491204 instance=ExtResource("2_cube1")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -22.282719, -9.573997, 9.482664)
+
+[node name="cubePasillo7" parent="DerechaAll" unique_id=610781310 instance=ExtResource("3_pasi1")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -22.295673, -13.36314, 20.808376)
+skeleton = NodePath("../..")
+
+[node name="PasilloUnion5" parent="DerechaAll" unique_id=1837195661 instance=ExtResource("4_union1")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -22.530945, -13.251263, 28.133682)
+skeleton = NodePath("../..")
+
+[node name="PasilloUnion7" parent="DerechaAll" unique_id=1193635818 instance=ExtResource("4_union1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.099895, -13.242429, 37.895737)
+skeleton = NodePath("../..")
+
+[node name="cubePasillo9" parent="DerechaAll" unique_id=2104168867 instance=ExtResource("3_pasi1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.755858, -13.328082, 28.356443)
+skeleton = NodePath("../..")
+
+[node name="escalerasLargas4" parent="DerechaAll" unique_id=1697592084 instance=ExtResource("5_larga1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.45431185, -9.534808, 28.336226)
+skeleton = NodePath("../..")
+
+[node name="cubePasillo10" parent="DerechaAll" unique_id=681195123 instance=ExtResource("3_pasi1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.105238, -7.309851, 28.369045)
+skeleton = NodePath("../..")
+
+[node name="StaticBody3D10" parent="DerechaAll" unique_id=1935164356 instance=ExtResource("2_cube1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -31.782454, -11.576188, 28.37967)
+
+[node name="tabla5" parent="DerechaAll" unique_id=294060185 instance=ExtResource("8_u7ig7")]
+transform = Transform3D(2, 0, 0, 0, 1.36608, -1.4607619, 0, 1.4607619, 1.36608, -33.366116, -10.341889, 28.072939)
+skeleton = NodePath("../..")
+
+[node name="tabla6" parent="DerechaAll" unique_id=154994729 instance=ExtResource("8_u7ig7")]
+transform = Transform3D(2, 0, 0, 0, -1.3993266, -1.4289454, 0, 1.4289454, -1.3993266, -33.33977, -9.50153, 27.944273)
+skeleton = NodePath("../..")
+
+[node name="tabla7" parent="DerechaAll" unique_id=108900215 instance=ExtResource("8_u7ig7")]
+transform = Transform3D(2, 0, 0, 0, -1.9998963, -0.02036953, 0, 0.02036953, -1.9998963, -33.33977, -11.657867, 28.290504)
+skeleton = NodePath("../..")
+
+[node name="tabla8" parent="DerechaAll" unique_id=47152928 instance=ExtResource("8_u7ig7")]
+transform = Transform3D(2, 0, 0, 0, -1.7751095, -0.92140454, 0, 0.92140454, -1.7751095, -24.776451, -10.358484, 37.95214)
+skeleton = NodePath("../..")
+
+[node name="StaticBody3D11" parent="DerechaAll" unique_id=400641234 instance=ExtResource("2_cube1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -35.776283, -11.564691, 28.380407)
+
+[node name="puerta2" parent="DerechaAll" unique_id=1790656909 instance=ExtResource("9_u7ig7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.848381, -10.641312, 39.39102)
+skeleton = NodePath("../..")
+
+[node name="puerta6" parent="DerechaAll" unique_id=1013694305 instance=ExtResource("9_u7ig7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.82448, -10.695554, 36.848923)
+skeleton = NodePath("../..")
+
+[node name="puerta7" parent="DerechaAll" unique_id=119948935 instance=ExtResource("9_u7ig7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -33.48767, -10.723774, 29.661186)
+skeleton = NodePath("../..")
+
+[node name="puerta8" parent="DerechaAll" unique_id=766497016 instance=ExtResource("9_u7ig7")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -33.48767, -10.723774, 27.166595)
+skeleton = NodePath("../..")
+
+[node name="models_v4" parent="DerechaAll" unique_id=1298584573 instance=ExtResource("9_4yasb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -40.13333, -13.323015, 28.675014)
+skeleton = NodePath("../..")
+
+[node name="escalerasLargas5" parent="DerechaAll" unique_id=1259893655 instance=ExtResource("5_larga1")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -47.0226, -9.552793, 28.354702)
+skeleton = NodePath("../..")
+
+[node name="StaticBody3D14" parent="DerechaAll" unique_id=904732352 instance=ExtResource("2_cube1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26.847878, -11.548427, 38.08142)
+
+[node name="cuarto3" parent="DerechaAll" unique_id=60384091 instance=ExtResource("10_pm2pk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -33.780296, -11.998976, 38.94897)
+skeleton = NodePath("../..")
+
+[node name="Node3D2" type="Node3D" parent="DerechaAll" unique_id=2106641989]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.054, 0.12, 29.937)
+
+[node name="puerta3" parent="DerechaAll/Node3D2" unique_id=1297517647 instance=ExtResource("9_u7ig7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.848381, -10.641312, 39.39102)
+skeleton = NodePath("../../..")
+
+[node name="puerta9" parent="DerechaAll/Node3D2" unique_id=523494546 instance=ExtResource("9_u7ig7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.82448, -10.695554, 36.848923)
+skeleton = NodePath("../../..")
+
+[node name="StaticBody3D18" parent="DerechaAll/Node3D2" unique_id=208207003 instance=ExtResource("2_cube1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26.847878, -11.548427, 38.08142)
+
+[node name="cuarto5" parent="DerechaAll/Node3D2" unique_id=2089231775 instance=ExtResource("10_pm2pk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -33.780296, -11.998976, 38.94897)
+skeleton = NodePath("../../..")
+
+[node name="Estante2" parent="DerechaAll" unique_id=386097621 instance=ExtResource("11_sfmky")]
+transform = Transform3D(-1.3, -1.1454595e-07, -1.5940756e-07, 0, 1.0557085, -0.7586036, 1.9629454e-07, -0.7586036, -1.0557085, -25.628714, -12.440576, 39.36947)
+skeleton = NodePath("../..")
+
+[node name="Node3D" type="Node3D" parent="DerechaAll" unique_id=994626795]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -45, 0, 76.24)
+
+[node name="tabla9" parent="DerechaAll/Node3D" unique_id=851346538 instance=ExtResource("8_u7ig7")]
+transform = Transform3D(2, 0, 0, 0, -1.7751095, -0.92140454, 0, 0.92140454, -1.7751095, -24.776451, -9.405422, 37.98627)
+skeleton = NodePath("../../..")
+
+[node name="tabla10" parent="DerechaAll/Node3D" unique_id=7705035 instance=ExtResource("8_u7ig7")]
+transform = Transform3D(2, 0, 0, 0, -1.7751095, -0.92140454, 0, 0.92140454, -1.7751095, -24.776451, -11.080884, 37.821968)
+skeleton = NodePath("../../..")
+
+[node name="puerta3" parent="DerechaAll/Node3D" unique_id=1444443171 instance=ExtResource("9_u7ig7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.848381, -10.641312, 39.39102)
+skeleton = NodePath("../../..")
+
+[node name="puerta9" parent="DerechaAll/Node3D" unique_id=359470809 instance=ExtResource("9_u7ig7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.82448, -10.695554, 36.848923)
+skeleton = NodePath("../../..")
+
+[node name="StaticBody3D18" parent="DerechaAll/Node3D" unique_id=1974941382 instance=ExtResource("2_cube1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26.847878, -11.548427, 38.08142)
+
+[node name="cuarto5" parent="DerechaAll/Node3D" unique_id=694721629 instance=ExtResource("10_pm2pk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -33.780296, -11.998976, 38.94897)
+skeleton = NodePath("../../..")
+
+[node name="Estante3" parent="DerechaAll/Node3D" unique_id=357322131 instance=ExtResource("11_sfmky")]
+transform = Transform3D(-1.3, -1.1454595e-07, -1.5940756e-07, 0, 1.0557085, -0.7586036, 1.9629454e-07, -0.7586036, -1.0557085, -25.628714, -12.440576, 39.36947)
+skeleton = NodePath("../../..")
+
+[node name="models_v5" parent="DerechaAll" unique_id=1837434548 instance=ExtResource("12_4csx5")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 16.398033, -7.2773833, 28.04327)
+
+[node name="PasilloUnion8" parent="DerechaAll" unique_id=1823932860 instance=ExtResource("13_hin2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.760847, -7.22341, 28.13956)
+
+[node name="StaticBody3D15" parent="DerechaAll" unique_id=137026133 instance=ExtResource("2_cube1")]
+transform = Transform3D(-6.556708e-08, 0, 1.5, 0, 1.5, 0, -1.5, 0, -6.556708e-08, -55.1054, -5.4960814, 27.997)
+
+[node name="StaticBody3D16" parent="DerechaAll" unique_id=22996481 instance=ExtResource("2_cube1")]
+transform = Transform3D(-6.556708e-08, 0, 1.5, 0, 1.5, 0, -1.5, 0, -6.556708e-08, 27.860538, -5.4960814, 27.996996)
+
+[node name="StaticBody3D17" parent="DerechaAll" unique_id=1343255821 instance=ExtResource("2_cube1")]
+transform = Transform3D(-1.4987684, 0, -0.060772184, 0, 1.5, 0, 0.060772184, 0, -1.4987684, 21.031622, -5.4960814, 17.293758)
+
+[node name="cubePasillo11" parent="DerechaAll" unique_id=947155799 instance=ExtResource("3_pasi1")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 21.539465, -7.298161, 40.835674)
+skeleton = NodePath("../..")
+
+[node name="cubePasillo12" parent="DerechaAll" unique_id=1160115083 instance=ExtResource("3_pasi1")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -22.300076, -13.3226795, 50.547955)
+skeleton = NodePath("../..")
+
+[node name="cubePasillo13" parent="DerechaAll" unique_id=1355283227 instance=ExtResource("3_pasi1")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -22.300076, -13.3226795, 60.58149)
+skeleton = NodePath("../..")
+
+[node name="Telarana4" parent="DerechaAll" unique_id=1815721379 instance=ExtResource("14_hin2i")]
+transform = Transform3D(-4.2197883e-08, -1.1402802e-08, 1, -0.26086572, 0.96537507, 0, -0.96537507, -0.26086572, -4.371139e-08, -24.798462, -10.136661, 46.301296)
+skeleton = NodePath("../..")
+
+[node name="Telarana5" parent="DerechaAll" unique_id=2003344747 instance=ExtResource("14_hin2i")]
+transform = Transform3D(0.8532475, -0.28528142, 0.43655837, 0.06617912, 0.8895743, 0.4519711, -0.51729006, -0.3567522, 0.7779068, -15.475776, -8.740421, 70.15068)
+skeleton = NodePath("../..")
+
+[node name="Telarana6" parent="DerechaAll" unique_id=712333559 instance=ExtResource("14_hin2i")]
+transform = Transform3D(-0.82078624, -0.23380902, 0.521194, -0.418951, 0.86662465, -0.27100205, -0.38831666, -0.4407894, -0.8092681, 4.094651, -3.1993492, 30.502327)
+skeleton = NodePath("../..")
+
+[node name="cuarto4" parent="DerechaAll" unique_id=1773097377 instance=ExtResource("10_pm2pk")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 22.363766, -5.9232492, 50.87788)
+skeleton = NodePath("../..")
+
+[node name="tablanormal" parent="." unique_id=120945087 instance=ExtResource("15_kuiyd")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -4.7207127, -10.000851, -68.04068)
+
+[node name="tablanormal2" parent="." unique_id=1779151801 instance=ExtResource("15_kuiyd")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -4.7207127, -11.79197, -68.04068)

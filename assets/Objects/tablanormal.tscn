@@ -1,7 +1,20 @@
 [gd_scene format=3 uid="uid://b4x6ksskt04ms"]
 
 [ext_resource type="PackedScene" uid="uid://bjl3cviuf3qyn" path="res://assets/Objects/models/tablaNormal/tablanormal.glb" id="1_tabn1"]
+[ext_resource type="PackedScene" uid="uid://7m1e2m5llsxx" path="res://assets/Objects/models/clavo/CLAVO.glb" id="2_5vqhd"]
 
 [node name="tablanormal" type="MeshInstance3D" unique_id=120945087]
 
 [node name="tablanormal" parent="." unique_id=455400559 instance=ExtResource("1_tabn1")]
+
+[node name="CLAVO" parent="." unique_id=1008317433 instance=ExtResource("2_5vqhd")]
+transform = Transform3D(-4.371139e-09, -0.1, 0, 0.1, -4.371139e-09, 0, 0, 0, 0.1, 0.06251957, 0.22391112, -0.90402955)
+
+[node name="CLAVO2" parent="." unique_id=490819375 instance=ExtResource("2_5vqhd")]
+transform = Transform3D(0.03088008, -0.095112674, 0, 0.095112674, 0.03088008, 0, 0, 0, 0.1, 0.062519565, 0.32586047, -0.90402955)
+
+[node name="CLAVO3" parent="." unique_id=206723652 instance=ExtResource("2_5vqhd")]
+transform = Transform3D(-0.03128022, -0.09498183, 0, 0.09498183, -0.03128022, 0, 0, 0, 0.1, 0.06988184, 0.22003396, 0.84347075)
+
+[node name="CLAVO4" parent="." unique_id=1509784903 instance=ExtResource("2_5vqhd")]
+transform = Transform3D(-0.009696317, -0.093384534, 0.034428358, 0.0995288, -0.009097727, 0.0033540868, 0, 0.034591354, 0.093826644, 0.05053733, 0.40948007, 0.85322875)

@@ -28,9 +28,8 @@ background_mode = 1
 background_color = Color(0.028007371, 0.058840267, 0.1452328, 1)
 sky = SubResource("Sky_nhkl4")
 ambient_light_source = 2
-ambient_light_color = Color(0.10747976, 0.10747973, 0.10747973, 1)
+ambient_light_color = Color(0.080783345, 0.080783345, 0.080783345, 1)
 ambient_light_energy = 0.34
-glow_enabled = true
 fog_enabled = true
 fog_light_color = Color(0.06763965, 0.09225423, 0.14149499, 1)
 fog_light_energy = 0.84
@@ -179,6 +178,9 @@ _data = {
 &"RESET": SubResource("Animation_6vmss")
 }
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_dgl0r"]
+size = Vector3(23.327698, 6.775879, 1)
+
 [node name="Node3D" type="Node3D" unique_id=1265703151]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=206003664]
@@ -192,12 +194,14 @@ shadow_enabled = true
 
 [node name="LuzEmergencia" parent="DirectionalLight3D" unique_id=1668635670 instance=ExtResource("1_k5x7x")]
 physics_interpolation_mode = 2
-transform = Transform3D(-0.8872724, 0.4567505, -0.0642391, -0.08945127, -0.033766586, 0.9954187, 0.4524892, 0.8889532, 0.07081694, -5.1790075, 11.288194, -4.9232907)
+transform = Transform3D(-0.8872724, 0.4567505, -0.0642391, -0.08945127, -0.033766575, 0.9954187, 0.4524892, 0.88895315, 0.07081694, -4.9564123, 11.399491, -4.987548)
 
 [node name="OmniLight3D" type="OmniLight3D" parent="DirectionalLight3D/LuzEmergencia" unique_id=1699503311]
-transform = Transform3D(1, -8.940697e-08, -2.849847e-07, 2.9802322e-08, 1.0000006, 2.0861626e-07, 2.3748726e-07, -7.450581e-09, 1.0000002, 0.04335916, 0.73312855, 0.040540695)
-light_color = Color(1, 0.55628604, 0.49291283, 1)
-light_energy = 5.119
+transform = Transform3D(0.99999994, -5.9604645e-08, -4.079193e-07, 4.4703484e-08, 1.0000007, 2.1606684e-07, 3.585592e-07, -2.2351742e-08, 1, 0.059076667, 1.5452847, 0.073308945)
+light_color = Color(0.9999736, 0.04005985, 0.02742856, 1)
+light_energy = 10.0
+light_indirect_energy = 4.0
+light_size = 0.2
 shadow_enabled = true
 
 [node name="Terrain3D2" type="Terrain3D" parent="." unique_id=247859224]
@@ -592,7 +596,7 @@ offset_right = 393.5
 offset_bottom = -95.0
 grow_horizontal = 2
 grow_vertical = 0
-theme_override_colors/font_color = Color(1, 1, 1, 0)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("13_6vmss")
 theme_override_font_sizes/font_size = 24
 text = "Que oscuridad... La entrada a la supuesta base debe ser donde brilla esa luz roja."
@@ -604,3 +608,11 @@ autowrap_mode = 2
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.7293477, 2.983676, -82.37264)
 texto_tutorial = NodePath("../EfectoEntrada/Texto Tutorial")
 texto_dialogo1 = NodePath("../EfectoEntrada/TextoDialogo")
+
+[node name="ZonaPuerta" type="Area3D" parent="." unique_id=1010661859]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ZonaPuerta" unique_id=1512145024]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.6861877, 2.8879395, -5.7411985)
+shape = SubResource("BoxShape3D_dgl0r")
+
+[connection signal="body_entered" from="ZonaPuerta" to="Player" method="_on_zona_puerta_body_entered"]

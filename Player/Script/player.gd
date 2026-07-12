@@ -1,5 +1,6 @@
 extends CharacterBody3D
 
+var dialogo_puerta_listo : bool = true
 #Velocidad de caminar y gravedad
 const SPEED = 4.0
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
@@ -33,6 +34,8 @@ func _ready():
 	#Linterna apagada al iniciar
 	linterna.visible = false
 	linterna.set_as_top_level(true)
+	
+	if texto_dialogo1: texto_dialogo1.modulate.a = 0.0
 	
 func _input(event):
 	#Detecta movimiento del mouse solo si esta oculto
@@ -112,3 +115,17 @@ func _physics_process(delta):
 func _process(delta):
 	linterna.global_position = camera.global_position
 	linterna.global_transform.basis = linterna.global_transform.basis.slerp(camera.global_transform.basis, 9.0 * delta).orthonormalized()
+
+
+func _on_zona_puerta_body_entered(body: Node3D) -> void:
+	if body == self and dialogo_puerta_listo:
+		dialogo_puerta_listo = false
+		
+		if texto_dialogo1:
+			var tween = create_tween()
+			texto_dialogo1.text = "Debo revisar mi celular... en esa página de Reddit filtraron las clavez de acceso."
+			tween.tween_callback(texto_dialogo1.show)
+			tween.tween_property(texto_dialogo1, "modulate:a", 1.0, 1.0)
+			tween.tween_interval(4.0)
+			tween.tween_property(texto_dialogo1, "modulate:a", 0.0, 0.5)
+			tween.tween_callback(texto_dialogo1.hide)

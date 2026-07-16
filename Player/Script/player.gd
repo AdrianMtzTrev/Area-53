@@ -17,8 +17,8 @@ var tiene_linterna : bool = true
 @onready var linterna = $SpotLight3D
 @onready var camera = $Camera3D
 @onready var raycast = $Camera3D/RayCast3D
-@export var texto_tutorial = Label
-@export var texto_dialogo1 = Label
+@export var texto_tutorial: Label # Corregido a dos puntos (:) para tipado correcto
+@export var texto_dialogo1: Label # Corregido a dos puntos (:) para tipado correcto
 var altura_camara_original: float = 0.0
 
 #variables de tambaleo
@@ -27,11 +27,11 @@ const BOB_AMPLITUD = 0.03
 var t_bob = 0.0
 
 func _ready():
-	#Ocultar cursor del raton y bloquea al cetro de la pantalla
-	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+	# SOLUCIÓN WEB: Quitamos la captura automática de aquí porque el navegador la bloquea.
+	# Dejamos que el cursor sea visible al inicio para que el usuario pueda interactuar.
+	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	
 	pantalla_negra.modulate.a = 0.0
-	
 	altura_camara_original = camera.position.y
 	
 	#Linterna apagada al iniciar
@@ -41,8 +41,13 @@ func _ready():
 	if texto_dialogo1: texto_dialogo1.modulate.a = 0.0
 	
 func _input(event):
-	#Detecta movimiento del mouse solo si esta oculto
-	if	event is InputEventMouseMotion and Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:
+	# SOLUCIÓN WEB CRUCIAL: Captura el mouse de forma legal cuando el jugador hace clic izquierdo
+	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
+		if event.pressed and Input.mouse_mode != Input.MOUSE_MODE_CAPTURED:
+			Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+
+	#Detecta movimiento del mouse solo si esta oculto/capturado
+	if event is InputEventMouseMotion and Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:
 		#Rotar cuerpo entero Eje Y
 		rotate_y(-event.relative.x * mouse_sensibilidad)
 		
@@ -52,20 +57,21 @@ func _input(event):
 		#Limitacion giro de camara360
 		camera.rotation.x = clamp(camera.rotation.x, deg_to_rad(-80), deg_to_rad(80))
 		
-	#Prsionar Esc para liberar mouse
-	if	event.is_action_pressed("ui_cancel"):
+	#Presionar Esc para liberar mouse y abrir pausa
+	if event.is_action_pressed("ui_cancel"):
 		if not get_tree().paused:
-			var menu_pausa = preload("res://UI/menu_pausa.tscn").instantiate()
-			get_tree().root.add_child(menu_pausa)
-			get_tree().paused = true
-			Input.mouse_mode =Input.MOUSE_MODE_VISIBLE
+			# Evitamos crasheos en la web verificando si el menú existe antes de cargarlo
+			if ResourceLoader.exists("res://UI/menu_pausa.tscn"):
+				var menu_pausa = preload("res://UI/menu_pausa.tscn").instantiate()
+				get_tree().root.add_child(menu_pausa)
+				get_tree().paused = true
+			Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 		
-	#Interaccion E
-	if event.is_action_pressed("Interactuar"):
+	#Interaccion E (Solo funciona si el mouse está capturado para evitar clicks fantasmas)
+	if event.is_action_pressed("Interactuar") and Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:
 		if raycast.is_colliding(): 
 			var objeto_mirado = raycast.get_collider()
 			
-			#Comprobamos si el objeto tiene la funcion llamada "Iniciar_Puzzle"
 			if objeto_mirado.has_method("iniciar_puzzle"):
 				objeto_mirado.iniciar_puzzle()
 				
@@ -101,7 +107,7 @@ func _physics_process(delta):
 	else:
 		camera.position.y = move_toward(camera.position.y, altura_camara_original, delta)
 		
-	#Obtener teclas de movimiento si no estamos en un menu
+	#Obtener teclas de movimiento si el mouse está capturado (Foco en el juego)
 	var input_dir = Vector2.ZERO
 	if Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:
 		input_dir = Input.get_vector("move_left","move_right","move_forward","move_backward")
@@ -123,7 +129,6 @@ func _process(delta):
 	linterna.global_position = camera.global_position
 	linterna.global_transform.basis = linterna.global_transform.basis.slerp(camera.global_transform.basis, 9.0 * delta).orthonormalized()
 
-
 func _on_zona_puerta_body_entered(body: Node3D) -> void:
 	if body == self and dialogo_puerta_listo:
 		dialogo_puerta_listo = false
@@ -137,12 +142,11 @@ func _on_zona_puerta_body_entered(body: Node3D) -> void:
 			tween.tween_property(texto_dialogo1, "modulate:a", 0.0, 0.5)
 			tween.tween_callback(texto_dialogo1.hide)
 
-
 func _on_puerta_bunker_body_entered(body: Node3D) -> void:
-		if body == self:
-			var tween = create_tween()
-			tween.tween_property(pantalla_negra, "modulate:a", 1.0, 1.5)
-			tween.tween_callback(cambiar_escena_bunker)
+	if body == self:
+		var tween = create_tween()
+		tween.tween_property(pantalla_negra, "modulate:a", 1.0, 1.5)
+		tween.tween_callback(cambiar_escena_bunker)
 
 func cambiar_escena_bunker():
 	get_tree().change_scene_to_file("res://Maps/Interior/Interior.tscn")
